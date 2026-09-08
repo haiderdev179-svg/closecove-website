@@ -1,5 +1,5 @@
 import React from "react";
-import { Logo } from "./Logo";
+import Image from "next/image";
 import { Mail, ArrowUp } from "lucide-react";
 
 export function Footer() {
@@ -11,7 +11,13 @@ export function Footer() {
       
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 relative z-10">
         <div className="space-y-3">
-          <Logo size={26} />
+          <Image
+            src="/closecove-icon-512.png"
+            alt="CloseCove"
+            width={32}
+            height={32}
+            className="transition-transform duration-200 hover:scale-105"
+          />
           <p className="text-xs text-white/60 max-w-sm leading-relaxed">
             Turn missed opportunities into booked customers. AI lead capture &
             autonomous scheduling systems for local businesses.

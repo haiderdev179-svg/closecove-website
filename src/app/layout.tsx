@@ -9,6 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://closecove.com"),
   title: "CloseCove — Turn Missed Opportunities Into Booked Customers",
   description:
     "AI automation systems that catch every lead your gym, clinic, or shop would otherwise lose. Instant 60-second response, autonomous booking, and retention.",
@@ -21,6 +22,10 @@ export const metadata: Metadata = {
     "CloseCove",
   ],
   authors: [{ name: "CloseCove" }],
+  icons: {
+    icon: "/closecove-favicon-32.png",
+    apple: "/closecove-icon-512.png",
+  },
   openGraph: {
     title: "CloseCove — Turn Missed Opportunities Into Booked Customers",
     description:
@@ -29,6 +34,14 @@ export const metadata: Metadata = {
     siteName: "CloseCove",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/closecove-icon-512.png",
+        width: 512,
+        height: 512,
+        alt: "CloseCove logo",
+      },
+    ],
   },
   robots: {
     index: true,
