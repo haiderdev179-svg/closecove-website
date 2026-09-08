@@ -43,8 +43,8 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
           ...formData,
           selectedTier: selectedTier
             ? selectedTier === "growth"
-              ? "Growth Plan ($700 + $350/mo)"
-              : "Starter Plan ($400 + $200/mo)"
+              ? "Growth Plan ($650 + $250/mo)"
+              : "Starter Plan ($300 + $150/mo)"
             : "General Inquiry",
         }),
       });

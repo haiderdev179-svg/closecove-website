@@ -61,7 +61,7 @@ export function Hero() {
           </div>
           <div className="flex items-center justify-center gap-2 text-zinc-600 text-sm">
             <CheckCircle2 className="w-4 h-4 text-zinc-800 shrink-0" />
-            <span className="font-medium">Zero Extra Staff Overhead</span>
+            <span className="font-medium">No Extra Hiring Needed</span>
           </div>
         </div>
       </div>

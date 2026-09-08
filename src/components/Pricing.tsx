@@ -64,12 +64,12 @@ export function Pricing({ onSelectTier }: PricingProps) {
                 <div className="mb-8 p-4 rounded-xl bg-zinc-50/80 border border-zinc-200/80">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-zinc-950 tracking-tight">
-                      $400
+                      $300
                     </span>
                     <span className="text-sm text-zinc-500">one-time setup</span>
                   </div>
                   <div className="text-sm text-zinc-800 mt-1 flex items-baseline gap-1">
-                    <span className="font-semibold text-zinc-950">+$200</span>
+                    <span className="font-semibold text-zinc-950">+$150</span>
                     <span className="text-zinc-500">/ month hosting & maintenance</span>
                   </div>
                 </div>
@@ -130,12 +130,12 @@ export function Pricing({ onSelectTier }: PricingProps) {
                 <div className="mb-8 p-4 rounded-xl bg-blue-50/60 border border-blue-100/80">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-zinc-950 tracking-tight">
-                      $700
+                      $650
                     </span>
                     <span className="text-sm text-zinc-500">one-time setup</span>
                   </div>
                   <div className="text-sm text-zinc-800 mt-1 flex items-baseline gap-1">
-                    <span className="font-semibold text-zinc-950">+$350</span>
+                    <span className="font-semibold text-zinc-950">+$250</span>
                     <span className="text-zinc-500">/ month fully managed</span>
                   </div>
                 </div>
