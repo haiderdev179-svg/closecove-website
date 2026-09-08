@@ -71,7 +71,7 @@ export function DemoShowcase() {
                 <div className="lg:col-span-7 space-y-6">
                   <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 tracking-wider uppercase">
                     <MonitorSmartphone className="w-4 h-4 text-zinc-600" />
-                    <span>Live AI Receptionist Demo</span>
+                    <span>Live AI Receptionist</span>
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 tracking-tight">
@@ -144,7 +144,7 @@ export function DemoShowcase() {
 
                   <div className="pt-3 border-t border-zinc-200 text-center">
                     <span className="text-xs text-zinc-500 font-mono">
-                      Your team stays focused while CloseCove handles the incoming leads.
+                      Your team stays focused while CloseCove handles incoming leads.
                     </span>
                   </div>
                 </div>
