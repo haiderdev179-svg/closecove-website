@@ -120,7 +120,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                   Growth Tier
                 </div>
                 <h3 className="text-2xl font-bold text-zinc-950 mb-3 tracking-tight">
-                  Full Acquisition & Retention
+                  Capture & Retention
                 </h3>
                 <p className="text-sm text-zinc-600 mb-6 leading-relaxed">
                   For growing practices and high-traffic gyms wanting to both
