@@ -15,7 +15,7 @@ export function Logo({ className = "", showText = true, size = 28 }: LogoProps) 
         alt="CloseCove"
         width={size * 4}
         height={size}
-        className="h-auto w-auto transition-transform duration-200 hover:scale-105"
+        className="h-[36px] w-auto transition-transform duration-200 hover:scale-105"
         priority
       />
     </div>
