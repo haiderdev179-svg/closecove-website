@@ -3,6 +3,15 @@ import { FadeIn } from "./FadeIn";
 import { MessageSquareText, CalendarCheck, RefreshCw } from "lucide-react";
 
 export function Offer() {
+  const setSpotlightPosition = (event: React.MouseEvent<HTMLDivElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+    event.currentTarget.style.setProperty("--x", `${x}%`);
+    event.currentTarget.style.setProperty("--y", `${y}%`);
+  };
+
   const cards = [
     {
       step: "01",
@@ -60,7 +69,10 @@ export function Offer() {
             const IconComponent = card.icon;
             return (
               <FadeIn key={card.title} delay={index * 120} className="h-full">
-                <div className="card-interactive h-full p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-sm flex flex-col justify-between group">
+                <div
+                  className="card-interactive h-full p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-sm flex flex-col justify-between group"
+                  onMouseMove={setSpotlightPosition}
+                >
                   <div>
                     <div className="flex items-center justify-between mb-8">
                       <div className="w-12 h-12 rounded-xl bg-zinc-50/80 border border-zinc-200/80 flex items-center justify-center text-zinc-900 group-hover:bg-blue-50/50 group-hover:text-accent transition-all duration-300">

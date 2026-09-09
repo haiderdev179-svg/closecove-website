@@ -9,6 +9,15 @@ interface PricingProps {
 }
 
 export function Pricing({ onSelectTier }: PricingProps) {
+  const setSpotlightPosition = (event: React.MouseEvent<HTMLDivElement>) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+    event.currentTarget.style.setProperty("--x", `${x}%`);
+    event.currentTarget.style.setProperty("--y", `${y}%`);
+  };
+
   const handleSelect = (tier: "starter" | "growth") => {
     if (onSelectTier) {
       onSelectTier(tier);
@@ -48,7 +57,10 @@ export function Pricing({ onSelectTier }: PricingProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Starter Tier */}
           <FadeIn delay={100} className="h-full">
-            <div className="card-interactive h-full rounded-2xl bg-white border border-zinc-200/80 p-8 sm:p-10 flex flex-col justify-between shadow-sm ring-1 ring-zinc-200/50">
+            <div
+              className="card-interactive h-full rounded-2xl bg-white border border-zinc-200/80 p-8 sm:p-10 flex flex-col justify-between shadow-sm ring-1 ring-zinc-200/50"
+              onMouseMove={setSpotlightPosition}
+            >
               <div>
                 <div className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
                   Starter Tier
@@ -109,7 +121,10 @@ export function Pricing({ onSelectTier }: PricingProps) {
 
           {/* Growth Tier (Recommended, Intensified Accent Border & Glow on Hover) */}
           <FadeIn delay={200} className="h-full">
-            <div className="h-full rounded-2xl bg-white border-2 border-accent/75 hover:border-accent p-8 sm:p-10 flex flex-col justify-between relative shadow-md hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-accent/20">
+            <div
+              className="card-interactive h-full rounded-2xl bg-white border-2 border-accent/75 hover:border-accent p-8 sm:p-10 flex flex-col justify-between relative shadow-md hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-accent/20"
+              onMouseMove={setSpotlightPosition}
+            >
               {/* Accent Badge */}
               <div className="absolute -top-3 right-8 px-3.5 py-1 rounded-full bg-accent text-white text-xs font-semibold uppercase tracking-wider shadow-sm">
                 Most Popular

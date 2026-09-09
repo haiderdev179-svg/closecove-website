@@ -1,7 +1,12 @@
+"use client";
+
 import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function Hero() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 px-6 overflow-hidden bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA]">
       {/* Ambient glow elements */}
@@ -34,13 +39,33 @@ export function Hero() {
 
         {/* CTAs with polished hover states */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in animation-delay-300">
-          <a
-            href="#demo"
-            className="btn-accent w-full sm:w-auto px-7 py-3.5 rounded-lg text-base font-semibold flex items-center justify-center gap-2.5 group cursor-pointer shadow-sm hover:shadow-accent-glow"
-          >
-            <span>See it in action</span>
-            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </a>
+          <div className="relative w-full sm:w-auto">
+            <motion.span
+              aria-hidden="true"
+              className="absolute inset-0 rounded-lg border border-accent/60"
+              animate={
+                shouldReduceMotion
+                  ? { opacity: 0.6 }
+                  : { opacity: [0.25, 0.65, 0.25], scale: [1, 1.01, 1] }
+              }
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0 }
+                  : {
+                      duration: 2.8,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }
+              }
+            />
+            <a
+              href="#demo"
+              className="btn-accent relative w-full sm:w-auto px-7 py-3.5 rounded-lg text-base font-semibold flex items-center justify-center gap-2.5 group cursor-pointer shadow-sm hover:shadow-accent-glow"
+            >
+              <span>See it in action</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </a>
+          </div>
           <a
             href="/#inquire"
             className="btn-secondary w-full sm:w-auto px-7 py-3.5 rounded-lg text-base font-medium flex items-center justify-center cursor-pointer"

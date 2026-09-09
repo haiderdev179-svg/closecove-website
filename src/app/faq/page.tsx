@@ -1,4 +1,8 @@
+"use client";
+
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { LegalPage } from "@/components/LegalPage";
+import { useState } from "react";
 
 const faqs = [
   {
@@ -61,6 +65,9 @@ const faqs = [
 ];
 
 export default function FAQPage() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <LegalPage>
       <div className="space-y-8 text-zinc-700">
@@ -71,23 +78,52 @@ export default function FAQPage() {
         </header>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <details
-              key={faq.question}
-              className="group rounded-2xl border border-zinc-200 bg-white shadow-sm"
-              open={index === 0}
-            >
-              <summary className="cursor-pointer list-none p-5 md:p-6 text-left text-lg font-semibold text-zinc-900 flex items-center justify-between gap-4">
-                <span>{faq.question}</span>
-                <span className="text-zinc-500 group-open:rotate-45 transition-transform">
-                  +
-                </span>
-              </summary>
-              <div className="px-5 pb-5 md:px-6 md:pb-6 text-base leading-7 text-zinc-700 [&_p]:m-0 [&_p]:leading-7">
-                {faq.answer}
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+
+            return (
+              <div
+                key={faq.question}
+                className="group rounded-2xl border border-zinc-200 bg-white shadow-sm"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  aria-expanded={isOpen}
+                  className="w-full cursor-pointer list-none p-5 md:p-6 text-left text-lg font-semibold text-zinc-900 flex items-center justify-between gap-4"
+                >
+                  <span>{faq.question}</span>
+                  <motion.span
+                    animate={{ rotate: isOpen ? 45 : 0, opacity: isOpen ? 1 : 0.7 }}
+                    transition={
+                      shouldReduceMotion ? { duration: 0 } : { duration: 0.2 }
+                    }
+                    className="text-zinc-500"
+                  >
+                    +
+                  </motion.span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={shouldReduceMotion ? false : { height: 0, opacity: 0 }}
+                      animate={shouldReduceMotion ? { opacity: 1 } : { height: "auto", opacity: 1 }}
+                      exit={shouldReduceMotion ? { opacity: 0 } : { height: 0, opacity: 0 }}
+                      transition={
+                        shouldReduceMotion ? { duration: 0 } : { duration: 0.25, ease: "easeOut" }
+                      }
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 pb-5 md:px-6 md:pb-6 text-base leading-7 text-zinc-700">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            </details>
-          ))}
+            );
+          })}
         </div>
       </div>
     </LegalPage>
