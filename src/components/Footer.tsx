@@ -26,19 +26,19 @@ export function Footer() {
 
         {/* Quick links */}
         <div className="flex flex-wrap items-center gap-6 text-xs text-white/70">
-          <a href="#problem" className="relative hover:text-white transition-colors duration-200 py-1 group">
+          <a href="/#problem" className="relative hover:text-white transition-colors duration-200 py-1 group">
             <span>The Problem</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
           </a>
-          <a href="#offer" className="relative hover:text-white transition-colors duration-200 py-1 group">
+          <a href="/#offer" className="relative hover:text-white transition-colors duration-200 py-1 group">
             <span>What We Do</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
           </a>
-          <a href="#demo" className="relative hover:text-white transition-colors duration-200 py-1 group">
+          <a href="/#demo" className="relative hover:text-white transition-colors duration-200 py-1 group">
             <span>Live Demo</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
           </a>
-          <a href="#pricing" className="relative hover:text-white transition-colors duration-200 py-1 group">
+          <a href="/#pricing" className="relative hover:text-white transition-colors duration-200 py-1 group">
             <span>Pricing</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
           </a>

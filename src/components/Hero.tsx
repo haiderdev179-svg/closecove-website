@@ -59,7 +59,7 @@ export function Hero() {
               }
             />
             <a
-              href="#demo"
+              href="/#demo"
               className="btn-accent relative w-full sm:w-auto px-7 py-3.5 rounded-lg text-base font-semibold flex items-center justify-center gap-2.5 group cursor-pointer shadow-sm hover:shadow-accent-glow"
             >
               <span>See it in action</span>
