@@ -46,6 +46,18 @@ export function Footer() {
             <span>Contact</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
           </a>
+          <a href="/privacy" className="relative hover:text-white transition-colors duration-200 py-1 group">
+            <span>Privacy Policy</span>
+            <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
+          </a>
+          <a href="/terms" className="relative hover:text-white transition-colors duration-200 py-1 group">
+            <span>Terms &amp; Conditions</span>
+            <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
+          </a>
+          <a href="/faq" className="relative hover:text-white transition-colors duration-200 py-1 group">
+            <span>FAQ</span>
+            <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
+          </a>
         </div>
 
         {/* Contact info & back to top */}
