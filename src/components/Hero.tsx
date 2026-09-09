@@ -42,7 +42,7 @@ export function Hero() {
             <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
           <a
-            href="#inquire"
+            href="/#inquire"
             className="btn-secondary w-full sm:w-auto px-7 py-3.5 rounded-lg text-base font-medium flex items-center justify-center cursor-pointer"
           >
             Book a free 15-min call

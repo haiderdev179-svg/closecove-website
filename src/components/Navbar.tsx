@@ -52,7 +52,7 @@ export function Navbar() {
         {/* Desktop Action */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="#inquire"
+            href="/#inquire"
             className="btn-accent px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white cursor-pointer group shadow-sm hover:shadow-accent-glow"
           >
             <span>Book a Free Call</span>
@@ -86,7 +86,7 @@ export function Navbar() {
             ))}
             <div className="pt-3 border-t border-zinc-200/60">
               <a
-                href="#inquire"
+                href="/#inquire"
                 onClick={() => setMobileMenuOpen(false)}
                 className="btn-accent w-full py-2.5 rounded-lg text-center text-sm font-medium flex items-center justify-center gap-2 group shadow-sm"
               >

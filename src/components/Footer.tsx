@@ -42,7 +42,7 @@ export function Footer() {
             <span>Pricing</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
           </a>
-          <a href="#inquire" className="relative hover:text-white transition-colors duration-200 py-1 group">
+          <a href="/#inquire" className="relative hover:text-white transition-colors duration-200 py-1 group">
             <span>Contact</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
           </a>

@@ -180,7 +180,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
           <div className="text-center mt-12 text-sm text-zinc-500">
             Need multi-location deployment or tailored custom integration?{" "}
             <a
-              href="#inquire"
+              href="/#inquire"
               className="text-zinc-950 font-medium underline underline-offset-4 hover:text-accent transition-colors duration-300"
             >
               Submit an inquiry below
