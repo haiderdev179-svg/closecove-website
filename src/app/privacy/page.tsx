@@ -3,7 +3,7 @@ import { LegalPage } from "@/components/LegalPage";
 export default function PrivacyPage() {
   return (
     <LegalPage>
-      <article className="prose prose-zinc max-w-none">
+      <article className="space-y-6 text-zinc-700 [&_h1]:text-4xl [&_h1]:md:text-5xl [&_h1]:font-bold [&_h1]:tracking-tight [&_h1]:text-zinc-950 [&_h2]:mt-8 [&_h2]:text-xl [&_h2]:md:text-2xl [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:text-zinc-900 [&_p]:m-0 [&_p]:text-base [&_p]:leading-7 [&_ul]:m-0 [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_li]:text-base [&_li]:leading-7 [&_li]:text-zinc-700 [&_strong]:font-semibold [&_strong]:text-zinc-950 [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-4">
         <h1>Privacy Policy</h1>
 
         <p>

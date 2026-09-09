@@ -63,7 +63,7 @@ const faqs = [
 export default function FAQPage() {
   return (
     <LegalPage>
-      <div className="space-y-8">
+      <div className="space-y-8 text-zinc-700">
         <header className="space-y-4">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-950">
             Frequently Asked Questions
@@ -83,7 +83,7 @@ export default function FAQPage() {
                   +
                 </span>
               </summary>
-              <div className="px-5 pb-5 md:px-6 md:pb-6 text-base leading-7 text-zinc-700">
+              <div className="px-5 pb-5 md:px-6 md:pb-6 text-base leading-7 text-zinc-700 [&_p]:m-0 [&_p]:leading-7">
                 {faq.answer}
               </div>
             </details>
