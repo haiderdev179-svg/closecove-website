@@ -70,12 +70,12 @@ export function Offer() {
             return (
               <FadeIn key={card.title} delay={index * 120} className="h-full">
                 <div
-                  className="card-interactive h-full p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-sm flex flex-col justify-between group transition-colors duration-[1200ms] ease-in-out hover:bg-[#1D3147]"
+                  className="card-interactive h-full p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-sm flex flex-col justify-between group transition-colors duration-[1200ms] ease-in-out hover:bg-[var(--accent)]"
                   onMouseMove={setSpotlightPosition}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                      <div className="w-12 h-12 rounded-xl bg-zinc-50/80 border border-zinc-200/80 flex items-center justify-center text-zinc-900 transition-colors duration-[1200ms] ease-in-out group-hover:bg-[#2F4F65] group-hover:border-[#4E6D82] group-hover:text-[#EAF3FF]">
+                      <div className="w-12 h-12 rounded-xl bg-zinc-50/80 border border-zinc-200/80 flex items-center justify-center text-zinc-900 transition-colors duration-[1200ms] ease-in-out group-hover:bg-[var(--accent-hover)] group-hover:border-[#9EC3FF] group-hover:text-[#EAF3FF]">
                         <IconComponent className="w-6 h-6" />
                       </div>
                       <span className="font-mono text-xs text-zinc-400">
