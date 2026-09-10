@@ -176,17 +176,21 @@ body {
   z-index: 1;
 }
 
+.card-interactive {
+  transition: box-shadow 1200ms ease-in-out, border-color 1200ms ease-in-out, background-color 1200ms ease-in-out;
+}
+
 .card-interactive .icon-box {
-  transition: box-shadow 1200ms ease-in-out, color 1200ms ease-in-out, border-color 1200ms ease-in-out;
+  transition: color 1200ms ease-in-out;
 }
 
 .card-interactive .icon-box svg {
   transition: color 1200ms ease-in-out;
 }
 
-.card-interactive:hover .icon-box,
-.card-interactive:focus-within .icon-box {
-  box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
+.card-interactive:hover,
+.card-interactive:focus-within {
+  box-shadow: 0 0 30px rgba(0, 102, 255, 0.28);
   border-color: rgba(0, 102, 255, 0.45);
 }
 
