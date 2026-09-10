@@ -75,7 +75,7 @@ export function Offer() {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                      <div className="w-12 h-12 rounded-xl bg-zinc-50/80 border border-zinc-200/80 flex items-center justify-center text-zinc-900 transition-all duration-[1200ms] ease-in-out group-hover:text-[var(--accent)] group-hover:shadow-[0_0_20px_rgba(0,102,255,0.4)]">
+                      <div className="icon-box w-12 h-12 rounded-xl bg-zinc-50/80 border border-zinc-200/80 flex items-center justify-center text-zinc-900 transition-all duration-[1200ms] ease-in-out">
                         <IconComponent className="w-6 h-6" />
                       </div>
                       <span className="font-mono text-xs text-zinc-400">

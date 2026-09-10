@@ -176,6 +176,25 @@ body {
   z-index: 1;
 }
 
+.card-interactive .icon-box {
+  transition: box-shadow 1200ms ease-in-out, color 1200ms ease-in-out, border-color 1200ms ease-in-out;
+}
+
+.card-interactive .icon-box svg {
+  transition: color 1200ms ease-in-out;
+}
+
+.card-interactive:hover .icon-box,
+.card-interactive:focus-within .icon-box {
+  box-shadow: 0 0 20px rgba(0, 102, 255, 0.4);
+  border-color: rgba(0, 102, 255, 0.45);
+}
+
+.card-interactive:hover .icon-box svg,
+.card-interactive:focus-within .icon-box svg {
+  color: var(--accent);
+}
+
 /* Respect reduced motion for card interactions */
 @media (prefers-reduced-motion: reduce) {
   .card-interactive:hover {
