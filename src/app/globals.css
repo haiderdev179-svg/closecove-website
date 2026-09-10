@@ -147,37 +147,12 @@ body {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  transition: background-color 1200ms ease-in-out, border-color 1200ms ease-in-out;
-}
-
-.card-interactive::before {
-  content: "";
-  position: absolute;
-  inset: -30%;
-  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0, 102, 255, 0.10), transparent 35%);
-  opacity: 0;
-  transition: opacity 180ms ease;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.card-interactive:hover,
-.card-interactive:focus-within {
-  border-color: inherit;
-}
-
-.card-interactive:hover::before,
-.card-interactive:focus-within::before {
-  opacity: 1;
+  transition: box-shadow 1200ms ease-in-out, border-color 1200ms ease-in-out;
 }
 
 .card-interactive > * {
   position: relative;
   z-index: 1;
-}
-
-.card-interactive {
-  transition: box-shadow 1200ms ease-in-out, border-color 1200ms ease-in-out, background-color 1200ms ease-in-out;
 }
 
 .card-interactive .icon-box {
