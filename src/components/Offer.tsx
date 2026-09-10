@@ -63,19 +63,19 @@ export function Offer() {
           </p>
         </FadeIn>
 
-        {/* 3 Offer Cards with smooth card-interactive hover lift & border shift */}
+        {/* 3 Offer Cards with a gentle hover tint and no movement */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, index) => {
             const IconComponent = card.icon;
             return (
               <FadeIn key={card.title} delay={index * 120} className="h-full">
                 <div
-                  className="card-interactive h-full p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-sm flex flex-col justify-between group transition-all duration-700 ease-in-out hover:bg-[#0A1628] hover:border-[#0A1628] hover:shadow-[0_16px_32px_-12px_rgba(10,22,40,0.45)]"
+                  className="card-interactive h-full p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-sm flex flex-col justify-between group transition-colors duration-[1200ms] ease-in-out hover:bg-[#1D3147]"
                   onMouseMove={setSpotlightPosition}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                      <div className="w-12 h-12 rounded-xl bg-zinc-50/80 border border-zinc-200/80 flex items-center justify-center text-zinc-900 transition-all duration-700 ease-in-out group-hover:bg-[#1F3D4D] group-hover:border-[#2B536D] group-hover:text-[#EAF3FF]">
+                      <div className="w-12 h-12 rounded-xl bg-zinc-50/80 border border-zinc-200/80 flex items-center justify-center text-zinc-900 transition-colors duration-[1200ms] ease-in-out group-hover:bg-[#2F4F65] group-hover:border-[#4E6D82] group-hover:text-[#EAF3FF]">
                         <IconComponent className="w-6 h-6" />
                       </div>
                       <span className="font-mono text-xs text-zinc-400">
@@ -83,20 +83,20 @@ export function Offer() {
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-zinc-950 mb-1.5 tracking-tight transition-colors duration-700 ease-in-out group-hover:text-white">
+                    <h3 className="text-xl font-bold text-zinc-950 mb-1.5 tracking-tight transition-colors duration-[1200ms] ease-in-out group-hover:text-white">
                       {card.title}
                     </h3>
-                    <div className="text-xs uppercase tracking-wider text-zinc-500 font-medium mb-4 transition-colors duration-700 ease-in-out group-hover:text-white/65">
+                    <div className="text-xs uppercase tracking-wider text-zinc-500 font-medium mb-4 transition-colors duration-[1200ms] ease-in-out group-hover:text-white/65">
                       {card.subtitle}
                     </div>
 
-                    <p className="text-sm text-zinc-600 leading-relaxed font-normal transition-colors duration-700 ease-in-out group-hover:text-white/75">
+                    <p className="text-sm text-zinc-600 leading-relaxed font-normal transition-colors duration-[1200ms] ease-in-out group-hover:text-white/75">
                       {card.description}
                     </p>
                   </div>
 
-                  <div className="pt-8 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs text-zinc-500 transition-colors duration-700 ease-in-out group-hover:text-white/60 group-hover:border-white/10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 transition-colors duration-700 ease-in-out group-hover:bg-white/70" />
+                  <div className="pt-8 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs text-zinc-500 transition-colors duration-[1200ms] ease-in-out group-hover:text-white/60">
+                    <span className="w-1.5 h-1.5 rounded-full bg-zinc-400" />
                     <span>Autonomous & fully managed</span>
                   </div>
                 </div>
