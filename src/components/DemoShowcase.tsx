@@ -3,7 +3,7 @@ import { FadeIn } from "./FadeIn";
 import { ExternalLink, Check, MonitorSmartphone } from "lucide-react";
 
 export function DemoShowcase() {
-  const DEMO_URL = "https://fitflow-demo-xi.vercel.app";
+  const DEMO_URL = "https://closecove-demo.vercel.app/";
 
   return (
     <section
@@ -56,12 +56,12 @@ export function DemoShowcase() {
                 <span className="w-2.5 h-2.5 rounded-full bg-zinc-300" />
                 <span className="w-2.5 h-2.5 rounded-full bg-zinc-300" />
                 <span className="ml-2 text-xs font-mono text-zinc-500 hidden sm:inline">
-                  Client Example: FitFlow Fitness Club
+                  Client Example: Iron Village Fitness
                 </span>
               </div>
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-700 bg-white px-3 py-1 rounded-md border border-zinc-200/80 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>fitflow-demo-xi.vercel.app</span>
+                <span>closecove-demo.vercel.app</span>
               </div>
             </div>
 
@@ -79,7 +79,7 @@ export function DemoShowcase() {
                   </h3>
 
                   <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-                    Inside the FitFlow demo, we demonstrate how an automated conversational assistant handles class schedules, membership questions, and immediate trial class bookings so your team can stay focused on the people in front of them while the assistant handles incoming questions and trial bookings.
+                    Inside this live demo, we demonstrate how an automated conversational assistant handles class schedules, membership questions, and immediate trial class bookings so your team can stay focused on the people in front of them while the assistant handles incoming questions and trial bookings.
                   </p>
 
                   <div className="space-y-3 pt-2">
@@ -110,7 +110,7 @@ export function DemoShowcase() {
                       rel="noopener noreferrer"
                       className="btn-accent px-6 py-3 rounded-lg text-sm font-semibold inline-flex items-center gap-2 group cursor-pointer shadow-sm hover:shadow-accent-glow"
                     >
-                      <span>Launch FitFlow Demo</span>
+                      <span>Launch Demo</span>
                       <ExternalLink className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </a>
                   </div>
@@ -125,7 +125,7 @@ export function DemoShowcase() {
                   {/* Simulated message bubbles */}
                   <div className="space-y-3 font-sans text-xs sm:text-sm">
                     <div className="bg-white text-zinc-800 p-3 rounded-lg rounded-tl-none max-w-[85%] border border-zinc-200 shadow-xs">
-                      Hi there! Looking to try a workout at FitFlow this week?
+                      Hi there! Looking to try a workout this week?
                     </div>
                     <div className="bg-zinc-200 text-zinc-900 font-medium p-3 rounded-lg rounded-tr-none ml-auto max-w-[85%] border border-zinc-300 shadow-xs">
                       Yes, what time is the morning HIIT class tomorrow?
