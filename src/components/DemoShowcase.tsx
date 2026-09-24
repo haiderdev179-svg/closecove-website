@@ -12,7 +12,7 @@ export function DemoShowcase() {
     >
       {/* Ambient glow elements for demo section */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
-      
+
       <div className="max-w-5xl mx-auto relative z-10">
         <FadeIn>
           <div className="text-xs uppercase tracking-widest text-zinc-500 font-semibold mb-3">
@@ -28,8 +28,8 @@ export function DemoShowcase() {
                 </span>
               </h2>
               <p className="text-lg text-zinc-600 font-normal max-w-xl">
-                This is a real working example built for a high-intensity fitness
-                club — test asking questions and booking a trial yourself.
+                This is a real working example — pick your industry inside the demo
+                and test asking questions or booking an appointment yourself.
               </p>
             </div>
             <div>
@@ -68,7 +68,7 @@ export function DemoShowcase() {
             {/* Inner Content Grid */}
             <FadeIn delay={200}>
               <div className="p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-7 space-y-6">
+                <div className="lg:col-span-12 space-y-6">
                   <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 tracking-wider uppercase">
                     <MonitorSmartphone className="w-4 h-4 text-zinc-600" />
                     <span>Live AI Receptionist Demo</span>
@@ -87,13 +87,13 @@ export function DemoShowcase() {
                       <div className="w-5 h-5 rounded-full bg-zinc-100 border border-zinc-200 flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-3 h-3 text-zinc-900" />
                       </div>
-                      <span>Ask about membership tiers, peak hours, or trainer credentials</span>
+                      <span>Ask about services, pricing, or availability</span>
                     </div>
                     <div className="flex items-start gap-3 text-sm text-zinc-700">
                       <div className="w-5 h-5 rounded-full bg-zinc-100 border border-zinc-200 flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-3 h-3 text-zinc-900" />
                       </div>
-                      <span>Walk through the frictionless 30-second trial booking flow</span>
+                      <span>Walk through the frictionless booking flow</span>
                     </div>
                     <div className="flex items-start gap-3 text-sm text-zinc-700">
                       <div className="w-5 h-5 rounded-full bg-zinc-100 border border-zinc-200 flex items-center justify-center shrink-0 mt-0.5">
@@ -113,39 +113,6 @@ export function DemoShowcase() {
                       <span>Launch Demo</span>
                       <ExternalLink className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </a>
-                  </div>
-                </div>
-
-                {/* Visual Preview / Simulated Chat Card (Airy Light Gray Surface) */}
-                <div className="lg:col-span-5 bg-zinc-50/80 border border-zinc-200/80 rounded-xl p-6 space-y-4 backdrop-blur-sm">
-                  <div className="text-xs uppercase tracking-widest text-zinc-400 font-mono">
-                    Live Interaction Preview
-                  </div>
-                  
-                  {/* Simulated message bubbles */}
-                  <div className="space-y-3 font-sans text-xs sm:text-sm">
-                    <div className="bg-white text-zinc-800 p-3 rounded-lg rounded-tl-none max-w-[85%] border border-zinc-200 shadow-xs">
-                      Hi there! Looking to try a workout this week?
-                    </div>
-                    <div className="bg-zinc-200 text-zinc-900 font-medium p-3 rounded-lg rounded-tr-none ml-auto max-w-[85%] border border-zinc-300 shadow-xs">
-                      Yes, what time is the morning HIIT class tomorrow?
-                    </div>
-                    <div className="bg-white text-zinc-800 p-3 rounded-lg rounded-tl-none max-w-[85%] border border-zinc-200 shadow-xs">
-                      We have spots open at 7:00 AM and 8:30 AM. Would you like me to reserve your free first trial spot for the 7:00 AM class?
-                    </div>
-                    <div className="bg-zinc-200 text-zinc-900 font-medium p-3 rounded-lg rounded-tr-none ml-auto max-w-[85%] border border-zinc-300 shadow-xs">
-                      7:00 AM works perfectly!
-                    </div>
-                    <div className="bg-white text-zinc-900 font-medium p-3 rounded-lg rounded-tl-none max-w-[85%] border border-zinc-200 shadow-xs flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                      <span>Locked in. Your trial's on the calendar.</span>
-                    </div>
-                  </div>
-
-                  <div className="pt-3 border-t border-zinc-200 text-center">
-                    <span className="text-xs text-zinc-500 font-mono">
-                      Your team stays focused while CloseCove handles the incoming leads.
-                    </span>
                   </div>
                 </div>
               </div>

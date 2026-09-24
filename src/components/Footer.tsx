@@ -86,7 +86,7 @@ export function Footer() {
           © {new Date().getFullYear()} CloseCove (closecove.com). All rights reserved.
         </div>
         <div>
-          Built for high-intent local service providers, gyms, and medical clinics.
+          Built for local service businesses that don't want to miss a lead.
         </div>
       </div>
     </footer>
