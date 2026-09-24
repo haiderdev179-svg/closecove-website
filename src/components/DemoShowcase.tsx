@@ -79,7 +79,7 @@ export function DemoShowcase() {
                   </h3>
 
                   <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
-                    Inside this live demo, we demonstrate how an automated conversational assistant handles class schedules, membership questions, and immediate trial class bookings so your team can stay focused on the people in front of them while the assistant handles incoming questions and trial bookings.
+                    Inside this live demo, we demonstrate how an automated conversational assistant handles service questions, availability, and instant bookings so your team can stay focused on the people in front of them while the assistant handles incoming questions and appointments.
                   </p>
 
                   <div className="space-y-3 pt-2">

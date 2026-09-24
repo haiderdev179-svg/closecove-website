@@ -13,7 +13,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     businessName: "",
-    businessType: "Gym / Fitness Studio",
+    businessType: "Fitness / Gym",
     contact: "",
     challenge: "",
   });
@@ -23,10 +23,11 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const businessTypes = [
-    "Gym / Fitness Studio",
-    "Dental / Medical Clinic",
-    "Local Service / Trade",
-    "E-commerce",
+    "Fitness / Gym",
+    "Home Services",
+    "Pet Care",
+    "Salon & Spa",
+    "Professional Services",
     "Other",
   ];
 
@@ -137,7 +138,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       setFormData({
                         name: "",
                         businessName: "",
-                        businessType: "Gym / Fitness Studio",
+                        businessType: "Fitness / Gym",
                         contact: "",
                         challenge: "",
                       });
@@ -265,7 +266,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                   <textarea
                     id="challenge"
                     rows={4}
-                    placeholder="e.g. Front desk misses calls during busy afternoon workouts, or people DM on Instagram and we take 4 hours to reply..."
+                    placeholder="e.g. Front desk misses calls during busy hours, or people message us and we take 4 hours to reply..."
                     value={formData.challenge}
                     onChange={(e) =>
                       setFormData({ ...formData, challenge: e.target.value })
