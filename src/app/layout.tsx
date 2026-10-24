@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://closecove.com"),
   title: "CloseCove — Turn Missed Opportunities Into Booked Customers",
   description:
-    "AI automation systems that catch every lead your gym, clinic, or shop would otherwise lose. Instant 60-second response, autonomous booking, and retention.",
+    "AI automation systems that catch every lead your local business would otherwise lose. Instant 60-second response, autonomous booking, and retention.",
   keywords: [
     "AI Automation",
     "Local Business Automation",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CloseCove — Turn Missed Opportunities Into Booked Customers",
     description:
-      "AI systems that catch every lead your gym, clinic, or shop would otherwise lose.",
+      "AI systems that catch every lead your local business would otherwise lose.",
     url: "https://closecove.com",
     siteName: "CloseCove",
     locale: "en_US",

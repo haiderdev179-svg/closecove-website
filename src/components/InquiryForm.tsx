@@ -13,7 +13,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     businessName: "",
-    businessType: "Fitness / Gym",
+    businessType: "Home Services",
     contact: "",
     challenge: "",
   });
@@ -138,7 +138,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       setFormData({
                         name: "",
                         businessName: "",
-                        businessType: "Fitness / Gym",
+                        businessType: "Home Services",
                         contact: "",
                         challenge: "",
                       });
@@ -190,7 +190,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       id="businessName"
                       type="text"
                       required
-                      placeholder="Apex Athletic Club"
+                      placeholder="Bright Smile Dental"
                       value={formData.businessName}
                       onChange={(e) =>
                         setFormData({
@@ -246,7 +246,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       id="contact"
                       type="text"
                       required
-                      placeholder="alex@apexclub.com or (555) 019-2834"
+                      placeholder="alex@brightsmile.com or (555) 019-2834"
                       value={formData.contact}
                       onChange={(e) =>
                         setFormData({ ...formData, contact: e.target.value })
