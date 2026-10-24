@@ -91,7 +91,7 @@ export async function POST(request: Request) {
 
     // Forward to backend server to store as a lead
     try {
-      await fetch("https://closecove-missed-call.onrender.com/api/website-inquiry", {
+      await fetch("https://www.getclosecove.com/api/website-inquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(inquiryPayload),
