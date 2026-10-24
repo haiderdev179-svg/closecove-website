@@ -61,7 +61,7 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           from: "CloseCove Inquiries <hello@closecove.com>",
-          to: ["closecoveagency@gmail.com"],
+          to: ["hello@closecove.com"],
           subject: `New Lead: ${inquiryPayload.businessName} (${inquiryPayload.businessType})`,
           html: `
             <h2>New Inquiry on CloseCove.com</h2>
@@ -87,6 +87,18 @@ export async function POST(request: Request) {
         { error: "Unable to send your inquiry. Please try again later." },
         { status: 502 }
       );
+    }
+
+    // Forward to backend server to store as a lead
+    try {
+      await fetch("https://closecove-missed-call.onrender.com/api/website-inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(inquiryPayload),
+      });
+    } catch (backendErr) {
+      // Non-blocking — email already sent, lead storage is best-effort
+      console.error("Failed to forward inquiry to backend:", backendErr);
     }
 
     return NextResponse.json({
