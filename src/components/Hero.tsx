@@ -32,7 +32,7 @@ export function Hero() {
 
         {/* Niche Value Proposition */}
         <p className="max-w-2xl mx-auto text-lg sm:text-xl text-zinc-600 font-normal leading-relaxed mb-10 animate-fade-in animation-delay-200">
-          AI systems that catch every inbound lead your gym, clinic, or shop
+          AI systems that catch every inbound lead your local business
           would otherwise lose — responding in seconds and booking directly into
           your schedule 24/7.
         </p>

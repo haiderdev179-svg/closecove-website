@@ -56,7 +56,7 @@ export function DemoShowcase() {
                 <span className="w-2.5 h-2.5 rounded-full bg-zinc-300" />
                 <span className="w-2.5 h-2.5 rounded-full bg-zinc-300" />
                 <span className="ml-2 text-xs font-mono text-zinc-500 hidden sm:inline">
-                  Client Example: Iron Village Fitness
+                  Demo: See It In Action
                 </span>
               </div>
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-700 bg-white px-3 py-1 rounded-md border border-zinc-200/80 shadow-sm">

@@ -35,7 +35,7 @@ export function Offer() {
       title: "Win-Back & Retention",
       subtitle: "Lapsed Member Reactivation",
       description:
-        "Automatically identifies quiet members or past patients who haven't visited in 30+ days and triggers personalized, low-friction re-engagement messages to reactivate lost revenue.",
+        "Automatically identifies inactive customers or past clients who haven't visited in 30+ days and triggers personalized, low-friction re-engagement messages to reactivate lost revenue.",
     },
   ];
 

@@ -69,7 +69,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                   Lead Capture & Booking
                 </h3>
                 <p className="text-sm text-zinc-600 mb-6 leading-relaxed">
-                  Ideal for solo clinics, studios, and single-location businesses
+                  Ideal for local businesses
                   aiming to never lose a missed phone call again.
                 </p>
 
@@ -138,8 +138,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                   Growth & Retention
                 </h3>
                 <p className="text-sm text-zinc-600 mb-6 leading-relaxed">
-                  For growing practices and high-traffic gyms wanting to both
-                  capture every new lead and systematically revive lapsed clients.
+                  For growing businesses wanting to both capture every new lead and systematically revive lapsed clients
                 </p>
 
                 <div className="mb-8 p-4 rounded-xl bg-blue-50/60 border border-blue-100/80">

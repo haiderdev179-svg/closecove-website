@@ -25,8 +25,8 @@ export function Problem() {
             </span>
           </h2>
           <p className="text-lg sm:text-xl text-white/70 leading-relaxed font-normal mb-16 max-w-3xl">
-            Every week, high-intent prospects call, text, or message your
-            business while you’re coaching clients, treating patients, or
+             Every week, high-intent prospects call, text, or message your
+            business while you're serving customers, managing appointments, or
             closed for the night. Faster response means significantly higher conversion.
             When your response takes hours, that revenue quietly walks down the street to your competitor.
           </p>
@@ -74,17 +74,17 @@ export function Problem() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={300} className="h-full">
+       <FadeIn delay={300} className="h-full">
             <div className="dark-card h-full p-7 rounded-2xl flex flex-col justify-between">
               <div>
                 <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-white mb-5">
                   <UserX className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">
-                  Silent Member Churn
+                  Silent Customer Churn
                 </h3>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  Members and regular patients quietly stop booking without a
+                  Regulars and past customers quietly stop booking without a
                   word. Consistent follow-up directly grows repeat and referral revenue.
                 </p>
               </div>
