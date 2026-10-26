@@ -280,6 +280,12 @@ body {
   }
 }
 
+/* Hero video: replace Chrome's heavy black control gradient with a light navy one */
+#watch video::-webkit-media-controls-panel {
+  background-image: none !important;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.35), transparent) !important;
+}
+
 /* Selection highlight */
 ::selection {
   background-color: rgba(0, 102, 255, 0.15);
