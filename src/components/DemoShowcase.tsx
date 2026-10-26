@@ -67,8 +67,27 @@ export function DemoShowcase() {
 
             {/* Inner Content Grid */}
             <FadeIn delay={200}>
-              <div className="p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div className="lg:col-span-12 space-y-6">
+              <div className="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+                {/* Looping product preview — muted autoplay, shows first on mobile */}
+                <div className="lg:col-span-7 lg:order-last">
+                  <div className="rounded-xl overflow-hidden border border-zinc-200 shadow-lg bg-[#0F172A]">
+                    <video
+                      className="w-full h-auto block aspect-video"
+                      src="/videos/closecove-demo-loop.mp4"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      aria-label="Example: CloseCove texts back a missed call, books the appointment, alerts the owner and adds it to the calendar"
+                    />
+                  </div>
+                  <p className="mt-3 text-xs text-zinc-500 text-center">
+                    Example conversation · missed call → booked → owner alerted → on the calendar
+                  </p>
+                </div>
+
+                <div className="lg:col-span-5 space-y-6">
                   <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 tracking-wider uppercase">
                     <MonitorSmartphone className="w-4 h-4 text-zinc-600" />
                     <span>Live AI Receptionist Demo</span>
