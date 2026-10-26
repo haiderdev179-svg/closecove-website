@@ -12,7 +12,7 @@ export function Hero() {
       {/* Ambient glow elements */}
       <div className="absolute -top-48 -right-48 w-96 h-96 rounded-full bg-gradient-to-br from-blue-500/10 to-transparent blur-3xl opacity-50 pointer-events-none" />
       <div className="absolute top-1/4 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-indigo-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
-      
+
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Subtitle / positioning pill */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-200/80 bg-white/80 backdrop-blur-sm text-xs uppercase tracking-widest text-zinc-600 mb-8 animate-fade-in shadow-sm hover:border-blue-500/30 hover:bg-white/90 transition-all duration-300">
@@ -38,7 +38,7 @@ export function Hero() {
         </p>
 
         {/* CTAs with polished hover states */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in animation-delay-300">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 animate-fade-in animation-delay-300">
           <div className="relative w-full sm:w-auto">
             <motion.span
               aria-hidden="true"
@@ -59,7 +59,7 @@ export function Hero() {
               }
             />
             <a
-              href="/#demo"
+              href="/#watch"
               className="btn-accent relative w-full sm:w-auto px-7 py-3.5 rounded-lg text-base font-semibold flex items-center justify-center gap-2.5 group cursor-pointer shadow-sm hover:shadow-accent-glow"
             >
               <span>See it in action</span>
@@ -74,11 +74,28 @@ export function Hero() {
           </a>
         </div>
 
+        {/* Explainer video — loads only when the visitor presses play */}
+        <div
+          id="watch"
+          className="relative max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden border border-zinc-200 shadow-xl bg-[#0F172A] scroll-mt-28 animate-fade-in animation-delay-300"
+        >
+          <video
+            className="w-full h-auto block aspect-video"
+            controls
+            playsInline
+            preload="none"
+            poster="/videos/closecove-explainer-poster.jpg"
+            aria-label="CloseCove explainer video"
+          >
+            <source src="/videos/closecove-explainer-web.mp4" type="video/mp4" />
+          </video>
+        </div>
+
         {/* Subtle Credibility / Reality metrics */}
         <div className="pt-8 border-t border-zinc-200 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in animation-delay-400">
           <div className="flex items-center justify-center gap-2 text-zinc-600 text-sm">
             <CheckCircle2 className="w-4 h-4 text-zinc-800 shrink-0" />
-            <span className="font-medium">&lt; 60s Lead Response Time</span>
+            <span className="font-medium">&lt; 30s Lead Response Time</span>
           </div>
           <div className="flex items-center justify-center gap-2 text-zinc-600 text-sm">
             <CheckCircle2 className="w-4 h-4 text-zinc-800 shrink-0" />
