@@ -30,11 +30,11 @@ export default function TermsPage() {
         <h2>The Live Demo</h2>
 
         <p>
-          The interactive demo on this site (&quot;FitFlow&quot;) is an illustrative
-          example built with mocked data for a fictional business. It demonstrates
-          the type of system we build but is not connected to real SMS, calendar,
-          or payment systems. A live client system is custom-built with your real
-          business information and real integrations.
+          The interactive demo on this site showcases CloseCove&apos;s real
+          missed-call text-back and booking system. It is connected to live SMS
+          and calendar integrations to demonstrate how the system works. A client
+          system is custom-built with your real business information, phone number,
+          and branding.
         </p>
 
         <h2>Pricing &amp; Payment</h2>
