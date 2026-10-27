@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Mail, ArrowUp } from "lucide-react";
+import { Mail, ArrowUp, Facebook, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -71,6 +71,27 @@ export function Footer() {
           </a>
           <span className="text-white/30">|</span>
           <a
+            href="https://www.facebook.com/profile.php?id=61594550660142"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 rounded-md hover:bg-white/10 hover:text-white text-white/50 transition-all duration-200 hover:-translate-y-0.5"
+            title="Facebook"
+            aria-label="Facebook"
+          >
+            <Facebook className="w-4 h-4" />
+          </a>
+          <a
+            href="https://www.instagram.com/closecoveagency/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-1.5 rounded-md hover:bg-white/10 hover:text-white text-white/50 transition-all duration-200 hover:-translate-y-0.5"
+            title="Instagram"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-4 h-4" />
+          </a>
+          <span className="text-white/30">|</span>
+          <
             href="#"
             className="p-1.5 rounded-md hover:bg-white/10 hover:text-white text-white/50 transition-all duration-200 hover:-translate-y-0.5"
             title="Back to top"
