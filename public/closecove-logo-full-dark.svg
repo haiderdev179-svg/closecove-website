@@ -1,0 +1,5 @@
+<svg width="640" height="160" viewBox="0 0 640 160" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="80" cy="80" r="56" fill="#2563eb"/>
+  <path d="M 52 80 Q 80 108 108 68" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="160" y="96" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#ffffff">Close<tspan fill="#9ca3af">Cove</tspan></text>
+</svg>
