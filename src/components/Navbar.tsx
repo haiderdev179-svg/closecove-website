@@ -2,37 +2,19 @@
 
 import React, { useState, useEffect } from "react";
 import { Logo } from "./Logo";
-import { Menu, X, ArrowUpRight, Sun, Moon } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
-
-    // Sync dark state from DOM
-    setIsDark(document.documentElement.classList.contains("dark"));
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    const html = document.documentElement;
-    if (html.classList.contains("dark")) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
-    } else {
-      html.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDark(true);
-    }
-  };
 
   const navLinks = [
     { name: "The Problem", href: "/#problem" },
@@ -43,7 +25,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 dark:bg-[#0a0a1a]/90 backdrop-blur-lg border-b border-zinc-200/60 dark:border-white/8 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 dark:bg-[#0a0a1a]/90 backdrop-blur-lg border-b border-zinc-200/60 dark:border-transparent ${
         isScrolled ? "py-3.5 shadow-sm bg-white/95 dark:bg-[#0a0a1a]/95" : "py-4 sm:py-5"
       }`}
     >
@@ -52,7 +34,7 @@ export function Navbar() {
           <Logo size={28} />
         </a>
 
-        {/* Desktop Nav */}
+        {/* Desktop Nav with Animated Hover Indicator */}
         <nav className="hidden md:flex items-center gap-8 text-sm">
           {navLinks.map((link) => (
             <a
@@ -61,23 +43,17 @@ export function Navbar() {
               className="relative text-zinc-600 dark:text-white/70 hover:text-zinc-950 dark:hover:text-white transition-colors duration-200 font-medium tracking-tight py-1 group inline-flex flex-col items-center"
             >
               <span>{link.name}</span>
+              {/* Subtle accent line indicator that animates in on hover */}
               <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
             </a>
           ))}
         </nav>
 
         {/* Desktop Action */}
-        <div className="hidden md:flex items-center gap-3">
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-lg text-zinc-500 dark:text-white/50 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-all duration-200 cursor-pointer"
-            aria-label="Toggle theme"
-          >
-            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
+        <div className="hidden md:flex items-center gap-4">
           <a
             href="/#inquire"
-            className="btn-accent px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#0a0a1a] cursor-pointer group shadow-sm hover:shadow-accent-glow"
+            className="btn-accent px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white cursor-pointer group shadow-sm hover:shadow-accent-glow"
           >
             <span>Book a Free Call</span>
             <ArrowUpRight className="w-4 h-4 opacity-90 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -87,7 +63,7 @@ export function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-zinc-600 dark:text-white/70 hover:text-zinc-950 dark:hover:text-white p-2 rounded-lg hover:bg-zinc-100/80 dark:hover:bg-white/10 focus:outline-none focus:ring-1 focus:ring-zinc-300 dark:focus:ring-white/20 transition-all duration-200"
+          className="md:hidden text-zinc-600 hover:text-zinc-950 p-2 rounded-lg hover:bg-zinc-100/80 focus:outline-none focus:ring-1 focus:ring-zinc-300 transition-all duration-200"
           aria-label="Toggle navigation menu"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -96,7 +72,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white/95 dark:bg-[#0a0a1a]/95 backdrop-blur-lg border-b border-zinc-200/60 dark:border-white/8 px-6 py-6 animate-fade-in shadow-lg">
+        <div className="md:hidden bg-white/95 dark:bg-[#0a0a1a]/95 backdrop-blur-lg border-b border-zinc-200/60 dark:border-transparent px-6 py-6 animate-fade-in shadow-lg dark:shadow-none">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
@@ -108,22 +84,15 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
-            <div className="pt-3 border-t border-zinc-200/60 dark:border-white/8 flex items-center justify-between">
+            <div className="pt-3 border-t border-zinc-200/60">
               <a
                 href="/#inquire"
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn-accent flex-1 py-2.5 rounded-lg text-center text-sm font-medium flex items-center justify-center gap-2 group shadow-sm"
+                className="btn-accent w-full py-2.5 rounded-lg text-center text-sm font-medium flex items-center justify-center gap-2 group shadow-sm"
               >
                 <span>Book a Free Call</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
-              <button
-                onClick={toggleTheme}
-                className="ml-3 p-2.5 rounded-lg text-zinc-500 dark:text-white/50 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-all duration-200 cursor-pointer"
-                aria-label="Toggle theme"
-              >
-                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
             </div>
           </div>
         </div>
