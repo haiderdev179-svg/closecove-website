@@ -58,7 +58,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
           {/* Starter Tier */}
           <FadeIn delay={100} className="h-full">
             <div
-              className="card-interactive h-full rounded-2xl bg-white dark:bg-white/[0.04] border border-zinc-200/80 dark:border-transparent p-7 sm:p-8 flex flex-col justify-between shadow-sm dark:shadow-none ring-1 ring-zinc-200/50 dark:ring-transparent"
+              className="card-interactive h-full rounded-2xl bg-white dark:bg-[#151530] border border-zinc-200/80 dark:border-transparent p-7 sm:p-8 flex flex-col justify-between shadow-sm dark:shadow-none ring-1 ring-zinc-200/50 dark:ring-transparent"
               onMouseMove={setSpotlightPosition}
             >
               <div>
@@ -73,7 +73,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                   aiming to never lose a missed phone call again.
                 </p>
 
-                <div className="mb-8 p-4 rounded-xl bg-zinc-50/80 dark:bg-white/[0.04] border border-zinc-200/80 dark:border-white/[0.06]">
+                <div className="mb-8 p-4 rounded-xl bg-zinc-50/80 dark:bg-white/[0.06] border border-zinc-200/80 dark:border-white/[0.08]">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-zinc-950 dark:text-white tracking-tight">
                       $300
@@ -122,11 +122,11 @@ export function Pricing({ onSelectTier }: PricingProps) {
           {/* Growth Tier (Recommended) */}
           <FadeIn delay={200} className="h-full">
             <div
-              className="card-interactive h-full rounded-2xl bg-white dark:bg-white/[0.06] border-2 border-accent/75 hover:border-accent p-7 sm:p-8 flex flex-col justify-between relative shadow-md dark:shadow-none hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-accent/20"
+              className="card-interactive h-full rounded-2xl bg-white dark:bg-[#161638] border-2 border-accent/75 hover:border-accent p-7 sm:p-8 flex flex-col justify-between relative shadow-md dark:shadow-none hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-accent/20"
               onMouseMove={setSpotlightPosition}
             >
               {/* Accent Badge */}
-              <div className="absolute -top-3 right-8 px-3.5 py-1 rounded-full bg-accent text-white text-xs font-semibold uppercase tracking-wider shadow-sm">
+              <div className="absolute -top-2.5 right-8 px-3 py-0.5 rounded-full bg-accent text-white text-[10px] font-semibold uppercase tracking-wider shadow-sm w-fit">
                 Most Popular
               </div>
 
