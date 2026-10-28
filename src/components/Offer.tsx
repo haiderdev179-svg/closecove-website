@@ -42,61 +42,61 @@ export function Offer() {
   return (
     <section
       id="offer"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-white/6 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0a0a1a] dark:to-[#0a0a1a]"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA]"
     >
       <div className="max-w-5xl mx-auto">
         <FadeIn>
-          <div className="text-xs uppercase tracking-widest text-zinc-500 dark:text-white/35 font-semibold mb-3">
+          <div className="text-xs uppercase tracking-widest text-zinc-500 font-semibold mb-3">
             02 / What We Build
           </div>
-          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950 dark:text-white mb-6">
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950 mb-6">
             Three simple systems.
             <br />
-            <span className="text-zinc-500 dark:text-white/45 font-normal">
+            <span className="text-zinc-500 font-normal">
               Zero missed opportunities.
             </span>
           </h2>
-          <p className="text-lg text-zinc-600 dark:text-white/50 font-normal max-w-2xl mb-16 leading-relaxed">
+          <p className="text-lg text-zinc-600 font-normal max-w-2xl mb-16 leading-relaxed">
             We don't sell bloated software dashboards. We install autonomous
             lead capture and booking systems that work invisibly in the
             background using your existing phone numbers and calendar.
           </p>
         </FadeIn>
 
-        {/* 3 Offer Cards */}
+        {/* 3 Offer Cards with a gentle hover tint and no movement */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, index) => {
             const IconComponent = card.icon;
             return (
               <FadeIn key={card.title} delay={index * 120} className="h-full">
                 <div
-                  className="card-interactive h-full p-8 rounded-2xl bg-white dark:bg-white/[0.04] border border-zinc-200/80 dark:border-white/[0.06] shadow-sm dark:shadow-none flex flex-col justify-between group transition-colors duration-[1200ms] ease-in-out"
+                  className="card-interactive h-full p-8 rounded-2xl bg-white border border-zinc-200/80 shadow-sm flex flex-col justify-between group transition-colors duration-[1200ms] ease-in-out"
                   onMouseMove={setSpotlightPosition}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                      <div className="icon-box w-12 h-12 rounded-xl bg-zinc-50/80 dark:bg-white/[0.06] border border-zinc-200/80 dark:border-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white/70 transition-all duration-[1200ms] ease-in-out">
+                      <div className="icon-box w-12 h-12 rounded-xl bg-zinc-50/80 border border-zinc-200/80 flex items-center justify-center text-zinc-900 transition-all duration-[1200ms] ease-in-out">
                         <IconComponent className="w-6 h-6" />
                       </div>
-                      <span className="font-mono text-xs text-zinc-400 dark:text-white/20">
+                      <span className="font-mono text-xs text-zinc-400">
                         {card.step}
                       </span>
                     </div>
 
-                    <h3 className="text-xl font-bold text-zinc-950 dark:text-white mb-1.5 tracking-tight">
+                    <h3 className="text-xl font-bold text-zinc-950 mb-1.5 tracking-tight">
                       {card.title}
                     </h3>
-                    <div className="text-xs uppercase tracking-wider text-zinc-500 dark:text-white/40 font-medium mb-4">
+                    <div className="text-xs uppercase tracking-wider text-zinc-500 font-medium mb-4">
                       {card.subtitle}
                     </div>
 
-                    <p className="text-sm text-zinc-600 dark:text-white/50 leading-relaxed font-normal">
+                    <p className="text-sm text-zinc-600 leading-relaxed font-normal">
                       {card.description}
                     </p>
                   </div>
 
-                  <div className="pt-8 mt-6 border-t border-zinc-100 dark:border-white/[0.06] flex items-center gap-2 text-xs text-zinc-500 dark:text-white/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-white/25" />
+                  <div className="pt-8 mt-6 border-t border-zinc-100 flex items-center gap-2 text-xs text-zinc-500">
+                    <span className="w-1.5 h-1.5 rounded-full bg-zinc-400" />
                     <span>Autonomous & fully managed</span>
                   </div>
                 </div>

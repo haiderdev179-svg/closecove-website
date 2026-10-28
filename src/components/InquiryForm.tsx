@@ -67,7 +67,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
   return (
     <section
       id="inquire"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-white/6 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0f0f24] dark:to-[#0f0f24] relative"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0f0f24] dark:to-[#0f0f24] relative"
     >
       <div className="max-w-3xl mx-auto">
         <FadeIn>

@@ -31,7 +31,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
   return (
     <section
       id="pricing"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-white/6 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0f0f24] dark:to-[#0f0f24]"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0f0f24] dark:to-[#0f0f24]"
     >
       <div className="max-w-5xl mx-auto">
         <FadeIn>
