@@ -58,7 +58,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
           {/* Starter Tier */}
           <FadeIn delay={100} className="h-full">
             <div
-              className="card-interactive h-full rounded-2xl bg-white dark:bg-[#1a1a3a] border border-zinc-200/80 dark:border-white/[0.08] p-7 sm:p-8 flex flex-col justify-between shadow-sm dark:shadow-none ring-1 ring-zinc-200/50 dark:ring-transparent"
+              className="card-interactive h-full rounded-2xl bg-white dark:bg-[#1a1a3a] border border-zinc-200/80 dark:border-white/[0.08] p-6 sm:p-7 flex flex-col justify-between shadow-sm dark:shadow-none ring-1 ring-zinc-200/50 dark:ring-transparent"
               onMouseMove={setSpotlightPosition}
             >
               <div>
@@ -68,12 +68,12 @@ export function Pricing({ onSelectTier }: PricingProps) {
                 <h3 className="text-2xl font-bold text-zinc-950 dark:text-white mb-3 tracking-tight">
                   Lead Capture & Booking
                 </h3>
-                <p className="text-sm text-zinc-600 dark:text-white/50 mb-6 leading-relaxed">
+                <p className="text-sm text-zinc-600 dark:text-white/50 mb-4 leading-relaxed">
                   Ideal for local businesses
                   aiming to never lose a missed phone call again.
                 </p>
 
-                <div className="mb-8 p-4 rounded-xl bg-zinc-50/80 dark:bg-white/[0.06] border border-zinc-200/80 dark:border-white/[0.08]">
+                <div className="mb-6 p-4 rounded-xl bg-zinc-50/80 dark:bg-white/[0.06] border border-zinc-200/80 dark:border-white/[0.08]">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-zinc-950 dark:text-white tracking-tight">
                       $300
@@ -86,7 +86,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                   </div>
                 </div>
 
-                <div className="space-y-3.5 mb-8">
+                <div className="space-y-3 mb-6">
                   <div className="text-xs uppercase tracking-wider text-zinc-500 dark:text-white/40 font-medium">
                     What is included:
                   </div>
@@ -102,7 +102,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                       key={feature}
                       className="flex items-start gap-2.5 text-sm text-zinc-700 dark:text-white/55"
                     >
-                      <Check className="w-4 h-4 text-zinc-900 dark:text-white/70 shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-zinc-900 dark:text-white shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </div>
                   ))}
@@ -122,7 +122,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
           {/* Growth Tier (Recommended) */}
           <FadeIn delay={200} className="h-full">
             <div
-              className="card-interactive h-full rounded-2xl bg-white dark:bg-[#1c1c42] border-2 border-accent/75 hover:border-accent p-7 sm:p-8 flex flex-col justify-between relative shadow-md dark:shadow-none hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-accent/20"
+              className="card-interactive h-full rounded-2xl bg-white dark:bg-[#1c1c42] border border-transparent p-6 sm:p-7 flex flex-col justify-between relative shadow-md dark:shadow-none hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-zinc-200/50 dark:ring-transparent"
               onMouseMove={setSpotlightPosition}
             >
               {/* Accent Badge */}
@@ -137,11 +137,11 @@ export function Pricing({ onSelectTier }: PricingProps) {
                 <h3 className="text-2xl font-bold text-zinc-950 dark:text-white mb-3 tracking-tight">
                   Growth & Retention
                 </h3>
-                <p className="text-sm text-zinc-600 dark:text-white/50 mb-6 leading-relaxed">
+                <p className="text-sm text-zinc-600 dark:text-white/50 mb-4 leading-relaxed">
                   For growing businesses wanting to both capture every new lead and systematically revive lapsed clients
                 </p>
 
-                <div className="mb-8 p-4 rounded-xl bg-blue-50/60 dark:bg-accent/10 border border-blue-100/80 dark:border-accent/20">
+                <div className="mb-6 p-4 rounded-xl bg-blue-50/60 dark:bg-accent/10 border border-blue-100/80 dark:border-accent/20">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-zinc-950 dark:text-white tracking-tight">
                       $650
@@ -154,7 +154,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                   </div>
                 </div>
 
-                <div className="space-y-3.5 mb-8">
+                <div className="space-y-3 mb-6">
                   <div className="text-xs uppercase tracking-wider text-zinc-500 dark:text-white/40 font-medium">
                     What is included:
                   </div>
