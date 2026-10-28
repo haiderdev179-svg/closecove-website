@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import { Logo } from "./Logo";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Sun, Moon } from "lucide-react";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,23 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setIsDark(document.documentElement.classList.contains("dark"));
+  }, []);
+
+  const toggleTheme = () => {
+    const html = document.documentElement;
+    if (html.classList.contains("dark")) {
+      html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDark(false);
+    } else {
+      html.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDark(true);
+    }
+  };
 
   const navLinks = [
     { name: "The Problem", href: "/#problem" },
@@ -51,6 +69,15 @@ export function Navbar() {
 
         {/* Desktop Action */}
         <div className="hidden md:flex items-center gap-4">
+          {/* Dark mode toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg text-zinc-500 dark:text-white/50 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/[0.06] transition-colors duration-200 cursor-pointer"
+            aria-label="Toggle dark mode"
+          >
+            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
+
           <a
             href="/#inquire"
             className="btn-accent px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white cursor-pointer group shadow-sm hover:shadow-accent-glow"
@@ -61,13 +88,24 @@ export function Navbar() {
         </div>
 
         {/* Mobile menu button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-zinc-600 hover:text-zinc-950 p-2 rounded-lg hover:bg-zinc-100/80 focus:outline-none focus:ring-1 focus:ring-zinc-300 transition-all duration-200"
-          aria-label="Toggle navigation menu"
-        >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        <div className="md:hidden flex items-center gap-2">
+          {/* Mobile dark mode toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg text-zinc-500 dark:text-white/50 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/[0.06] transition-colors duration-200 cursor-pointer"
+            aria-label="Toggle dark mode"
+          >
+            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+          </button>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-zinc-600 dark:text-white/70 hover:text-zinc-950 dark:hover:text-white p-2 rounded-lg hover:bg-zinc-100/80 dark:hover:bg-white/[0.06] focus:outline-none focus:ring-1 focus:ring-zinc-300 transition-all duration-200"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -84,7 +122,7 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
-            <div className="pt-3 border-t border-zinc-200/60">
+            <div className="pt-3 border-t border-zinc-200/60 dark:border-white/[0.06]">
               <a
                 href="/#inquire"
                 onClick={() => setMobileMenuOpen(false)}
