@@ -67,7 +67,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
   return (
     <section
       id="inquire"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-white/6 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0a0a1a] dark:to-[#0a0a1a] relative"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-white/6 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0f0f24] dark:to-[#0f0f24] relative"
     >
       <div className="max-w-3xl mx-auto">
         <FadeIn>
@@ -91,11 +91,11 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
 
         {/* Inquiry Form Card */}
         <FadeIn delay={150}>
-          <div className="card-interactive rounded-2xl border border-zinc-200/80 dark:border-white/8 bg-white dark:bg-white/[0.03] p-8 sm:p-12 shadow-md dark:shadow-none relative overflow-hidden ring-1 ring-zinc-200/50 dark:ring-white/5">
+          <div className="card-interactive rounded-2xl border border-zinc-200/80 dark:border-transparent bg-white dark:bg-white/[0.04] p-8 sm:p-12 shadow-md dark:shadow-none relative overflow-hidden ring-1 ring-zinc-200/50 dark:ring-transparent">
             {/* Selected Plan indicator pill if chosen */}
             {selectedTier && !submitted && (
-              <div className="mb-8 p-3.5 rounded-xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/8 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-sm text-zinc-800 dark:text-white/60">
+              <div className="mb-8 p-3.5 rounded-xl bg-zinc-50 dark:bg-white/[0.04] border border-zinc-200 dark:border-white/[0.06] flex items-center justify-between">
+                <div className="flex items-center gap-2 text-sm text-zinc-800 dark:text-white/70">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                   <span>
                     Selected Interest:{" "}
@@ -119,7 +119,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
             {submitted ? (
               /* Success State Card */
               <div className="py-12 text-center space-y-5 animate-fade-in">
-                <div className="w-16 h-16 rounded-full bg-blue-50 dark:bg-accent/10 border border-blue-100 dark:border-accent/20 flex items-center justify-center mx-auto text-accent shadow-xs">
+                <div className="w-16 h-16 rounded-full bg-blue-50 dark:bg-accent/10 border border-blue-100 dark:border-accent/20 flex items-center justify-center mx-auto text-accent shadow-xs dark:shadow-none">
                   <CheckCircle2 className="w-8 h-8 text-accent" />
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 dark:text-white tracking-tight">
@@ -175,7 +175,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25"
+                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25 dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08]"
                     />
                   </div>
 
@@ -198,7 +198,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                           businessName: e.target.value,
                         })
                       }
-                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25"
+                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25 dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08]"
                     />
                   </div>
                 </div>
@@ -221,13 +221,13 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                           businessType: e.target.value,
                         })
                       }
-                      className="w-full px-4 py-3 rounded-lg input-studio text-sm cursor-pointer"
+                      className="w-full px-4 py-3 rounded-lg input-studio text-sm cursor-pointer dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08]"
                     >
                       {businessTypes.map((type) => (
                         <option
                           key={type}
                           value={type}
-                          className="bg-white dark:bg-[#0a0a1a] text-zinc-900 dark:text-white"
+                          className="bg-white dark:bg-[#1a1a2e] text-zinc-900 dark:text-white"
                         >
                           {type}
                         </option>
@@ -251,7 +251,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       onChange={(e) =>
                         setFormData({ ...formData, contact: e.target.value })
                       }
-                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25"
+                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25 dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08]"
                     />
                   </div>
                 </div>
@@ -271,7 +271,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                     onChange={(e) =>
                       setFormData({ ...formData, challenge: e.target.value })
                     }
-                    className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25 resize-none"
+                    className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25 dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08] resize-none"
                   />
                 </div>
 

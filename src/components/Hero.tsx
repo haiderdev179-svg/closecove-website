@@ -8,14 +8,14 @@ export function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 px-6 overflow-hidden bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0d0d22] dark:to-[#0a0a1a]">
+    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 px-6 overflow-hidden bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0a0a1a] dark:to-[#0a0a1a]">
       {/* Ambient glow elements */}
       <div className="absolute -top-48 -right-48 w-96 h-96 rounded-full bg-gradient-to-br from-blue-500/10 to-transparent blur-3xl opacity-50 pointer-events-none" />
       <div className="absolute top-1/4 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-indigo-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Subtitle / positioning pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-200/80 dark:border-white/10 bg-white/80 dark:bg-white/5 backdrop-blur-sm text-xs uppercase tracking-widest text-zinc-600 dark:text-white/50 mb-8 animate-fade-in shadow-sm hover:border-blue-500/30 hover:bg-white/90 dark:hover:bg-white/8 transition-all duration-300">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-200/80 dark:border-white/[0.08] bg-white/80 dark:bg-white/[0.05] backdrop-blur-sm text-xs uppercase tracking-widest text-zinc-600 dark:text-white/50 mb-8 animate-fade-in shadow-sm dark:shadow-none hover:border-blue-500/30 hover:bg-white/90 dark:hover:bg-white/[0.08] transition-all duration-300">
           <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
           <span className="font-medium">AI Automation for Local Businesses</span>
         </div>
@@ -77,7 +77,7 @@ export function Hero() {
         {/* Explainer video — loads only when the visitor presses play */}
         <div
           id="watch"
-          className="relative max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/8 shadow-xl bg-[#0F172A] scroll-mt-28 animate-fade-in animation-delay-300"
+          className="relative max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden border border-zinc-200 dark:border-transparent shadow-xl dark:shadow-none bg-[#0F172A] scroll-mt-28 animate-fade-in animation-delay-300"
         >
           <video
             className="w-full h-auto block aspect-video"
@@ -92,16 +92,16 @@ export function Hero() {
         </div>
 
         {/* Subtle Credibility / Reality metrics */}
-        <div className="pt-8 border-t border-zinc-200 dark:border-white/8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in animation-delay-400">
-          <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/50 text-sm">
+        <div className="pt-8 border-t border-zinc-200 dark:border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in animation-delay-400">
+          <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/55 text-sm">
             <CheckCircle2 className="w-4 h-4 text-zinc-800 dark:text-white/70 shrink-0" />
             <span className="font-medium">&lt; 30s Lead Response Time</span>
           </div>
-          <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/50 text-sm">
+          <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/55 text-sm">
             <CheckCircle2 className="w-4 h-4 text-zinc-800 dark:text-white/70 shrink-0" />
             <span className="font-medium">Direct Calendar Integration</span>
           </div>
-          <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/50 text-sm">
+          <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/55 text-sm">
             <CheckCircle2 className="w-4 h-4 text-zinc-800 dark:text-white/70 shrink-0" />
             <span className="font-medium">No Extra Hiring Needed</span>
           </div>

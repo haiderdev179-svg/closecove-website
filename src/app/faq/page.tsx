@@ -84,7 +84,7 @@ export default function FAQPage() {
             return (
               <div
                 key={faq.question}
-                className="group rounded-2xl border border-zinc-200 dark:border-white/8 bg-white dark:bg-white/[0.03] shadow-sm dark:shadow-none"
+                className="group rounded-2xl border border-zinc-200 dark:border-white/[0.06] bg-white dark:bg-white/[0.03] shadow-sm dark:shadow-none"
               >
                 <button
                   type="button"
