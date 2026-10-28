@@ -15,7 +15,7 @@ export function Navbar() {
     };
     window.addEventListener("scroll", handleScroll);
 
-    // Sync theme state on mount
+    // Sync dark state from DOM
     setIsDark(document.documentElement.classList.contains("dark"));
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -52,16 +52,15 @@ export function Navbar() {
           <Logo size={28} />
         </a>
 
-        {/* Desktop Nav with Animated Hover Indicator */}
+        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-sm">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="relative text-zinc-600 dark:text-white/55 hover:text-zinc-950 dark:hover:text-white transition-colors duration-200 font-medium tracking-tight py-1 group inline-flex flex-col items-center"
+              className="relative text-zinc-600 dark:text-white/70 hover:text-zinc-950 dark:hover:text-white transition-colors duration-200 font-medium tracking-tight py-1 group inline-flex flex-col items-center"
             >
               <span>{link.name}</span>
-              {/* Subtle accent line indicator that animates in on hover */}
               <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
             </a>
           ))}
@@ -69,15 +68,13 @@ export function Navbar() {
 
         {/* Desktop Action */}
         <div className="hidden md:flex items-center gap-3">
-          {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="w-9 h-9 rounded-lg border border-zinc-200 dark:border-white/12 bg-zinc-50 dark:bg-white/5 flex items-center justify-center text-zinc-500 dark:text-white/60 hover:text-zinc-900 dark:hover:text-white hover:border-zinc-300 dark:hover:border-white/20 transition-all duration-200 cursor-pointer"
-            aria-label="Toggle dark mode"
+            className="p-2 rounded-lg text-zinc-500 dark:text-white/50 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-all duration-200 cursor-pointer"
+            aria-label="Toggle theme"
           >
-            {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
-
           <a
             href="/#inquire"
             className="btn-accent px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-[#0a0a1a] cursor-pointer group shadow-sm hover:shadow-accent-glow"
@@ -90,7 +87,7 @@ export function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-zinc-600 dark:text-white/60 hover:text-zinc-950 dark:hover:text-white p-2 rounded-lg hover:bg-zinc-100/80 dark:hover:bg-white/10 focus:outline-none focus:ring-1 focus:ring-zinc-300 dark:focus:ring-white/20 transition-all duration-200"
+          className="md:hidden text-zinc-600 dark:text-white/70 hover:text-zinc-950 dark:hover:text-white p-2 rounded-lg hover:bg-zinc-100/80 dark:hover:bg-white/10 focus:outline-none focus:ring-1 focus:ring-zinc-300 dark:focus:ring-white/20 transition-all duration-200"
           aria-label="Toggle navigation menu"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -111,24 +108,22 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
-            <div className="pt-3 border-t border-zinc-200/60 dark:border-white/10 flex items-center gap-3">
-              {/* Mobile Theme Toggle */}
-              <button
-                onClick={toggleTheme}
-                className="w-10 h-10 rounded-lg border border-zinc-200 dark:border-white/12 bg-zinc-50 dark:bg-white/5 flex items-center justify-center text-zinc-500 dark:text-white/60 hover:text-zinc-900 dark:hover:text-white transition-all duration-200 cursor-pointer flex-shrink-0"
-                aria-label="Toggle dark mode"
-              >
-                {isDark ? <Sun className="w-4.5 h-4.5" /> : <Moon className="w-4.5 h-4.5" />}
-              </button>
-
+            <div className="pt-3 border-t border-zinc-200/60 dark:border-white/8 flex items-center justify-between">
               <a
                 href="/#inquire"
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn-accent w-full py-2.5 rounded-lg text-center text-sm font-medium flex items-center justify-center gap-2 group shadow-sm"
+                className="btn-accent flex-1 py-2.5 rounded-lg text-center text-sm font-medium flex items-center justify-center gap-2 group shadow-sm"
               >
                 <span>Book a Free Call</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
+              <button
+                onClick={toggleTheme}
+                className="ml-3 p-2.5 rounded-lg text-zinc-500 dark:text-white/50 hover:text-zinc-900 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-white/10 transition-all duration-200 cursor-pointer"
+                aria-label="Toggle theme"
+              >
+                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
             </div>
           </div>
         </div>

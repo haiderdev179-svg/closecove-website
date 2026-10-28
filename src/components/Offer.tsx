@@ -63,22 +63,22 @@ export function Offer() {
           </p>
         </FadeIn>
 
-        {/* 3 Offer Cards with a gentle hover tint and no movement */}
+        {/* 3 Offer Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, index) => {
             const IconComponent = card.icon;
             return (
               <FadeIn key={card.title} delay={index * 120} className="h-full">
                 <div
-                  className="card-interactive h-full p-8 rounded-2xl bg-white dark:bg-white/[0.03] border border-zinc-200/80 dark:border-white/8 shadow-sm dark:shadow-none flex flex-col justify-between group transition-colors duration-[1200ms] ease-in-out"
+                  className="card-interactive h-full p-8 rounded-2xl bg-white dark:bg-white/[0.04] border border-zinc-200/80 dark:border-white/[0.06] shadow-sm dark:shadow-none flex flex-col justify-between group transition-colors duration-[1200ms] ease-in-out"
                   onMouseMove={setSpotlightPosition}
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                      <div className="icon-box w-12 h-12 rounded-xl bg-zinc-50/80 dark:bg-white/5 border border-zinc-200/80 dark:border-white/10 flex items-center justify-center text-zinc-900 dark:text-white/70 transition-all duration-[1200ms] ease-in-out">
+                      <div className="icon-box w-12 h-12 rounded-xl bg-zinc-50/80 dark:bg-white/[0.06] border border-zinc-200/80 dark:border-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white/70 transition-all duration-[1200ms] ease-in-out">
                         <IconComponent className="w-6 h-6" />
                       </div>
-                      <span className="font-mono text-xs text-zinc-400 dark:text-white/25">
+                      <span className="font-mono text-xs text-zinc-400 dark:text-white/20">
                         {card.step}
                       </span>
                     </div>
@@ -86,7 +86,7 @@ export function Offer() {
                     <h3 className="text-xl font-bold text-zinc-950 dark:text-white mb-1.5 tracking-tight">
                       {card.title}
                     </h3>
-                    <div className="text-xs uppercase tracking-wider text-zinc-500 dark:text-white/35 font-medium mb-4">
+                    <div className="text-xs uppercase tracking-wider text-zinc-500 dark:text-white/40 font-medium mb-4">
                       {card.subtitle}
                     </div>
 
@@ -95,7 +95,7 @@ export function Offer() {
                     </p>
                   </div>
 
-                  <div className="pt-8 mt-6 border-t border-zinc-100 dark:border-white/6 flex items-center gap-2 text-xs text-zinc-500 dark:text-white/30">
+                  <div className="pt-8 mt-6 border-t border-zinc-100 dark:border-white/[0.06] flex items-center gap-2 text-xs text-zinc-500 dark:text-white/30">
                     <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-white/25" />
                     <span>Autonomous & fully managed</span>
                   </div>
