@@ -102,7 +102,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                       key={feature}
                       className="flex items-start gap-2.5 text-sm text-zinc-700 dark:text-white/55"
                     >
-                      <Check className="w-4 h-4 text-zinc-900 dark:text-accent shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </div>
                   ))}
