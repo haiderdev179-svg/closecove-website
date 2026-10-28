@@ -31,78 +31,78 @@ export function Pricing({ onSelectTier }: PricingProps) {
   return (
     <section
       id="pricing"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA]"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-white/6 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0f0f24] dark:to-[#0f0f24]"
     >
       <div className="max-w-5xl mx-auto">
         <FadeIn>
-          <div className="text-xs uppercase tracking-widest text-zinc-500 font-semibold mb-3">
+          <div className="text-xs uppercase tracking-widest text-zinc-500 dark:text-white/35 font-semibold mb-3">
             04 / Transparent Investment
           </div>
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950 mb-4">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950 dark:text-white mb-4">
               Straightforward pricing.
               <br />
-              <span className="text-zinc-500 font-normal">
+              <span className="text-zinc-500 dark:text-white/45 font-normal">
                 No surprises or hidden retainers.
               </span>
             </h2>
-            <p className="text-zinc-600 text-base sm:text-lg">
+            <p className="text-zinc-600 dark:text-white/45 text-base sm:text-lg">
               Local business owners shouldn't have to jump on high-pressure sales
               calls just to see a price tag.
             </p>
           </div>
         </FadeIn>
 
-        {/* Pricing Cards (Airy Light Cards with Polished Hover Micro-interactions) */}
+        {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Starter Tier */}
           <FadeIn delay={100} className="h-full">
             <div
-              className="card-interactive h-full rounded-2xl bg-white border border-zinc-200/80 p-8 sm:p-10 flex flex-col justify-between shadow-sm ring-1 ring-zinc-200/50"
+              className="card-interactive h-full rounded-2xl bg-white dark:bg-white/[0.03] border border-zinc-200/80 dark:border-white/8 p-7 sm:p-8 flex flex-col justify-between shadow-sm dark:shadow-none ring-1 ring-zinc-200/50 dark:ring-white/5"
               onMouseMove={setSpotlightPosition}
             >
               <div>
-                <div className="text-xs font-mono uppercase tracking-wider text-zinc-500 mb-2">
+                <div className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-white/35 mb-2">
                   Starter Tier
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-950 mb-3 tracking-tight">
+                <h3 className="text-2xl font-bold text-zinc-950 dark:text-white mb-2 tracking-tight">
                   Lead Capture & Booking
                 </h3>
-                <p className="text-sm text-zinc-600 mb-6 leading-relaxed">
+                <p className="text-sm text-zinc-600 dark:text-white/45 mb-5 leading-relaxed">
                   Ideal for local businesses
                   aiming to never lose a missed phone call again.
                 </p>
 
-                <div className="mb-8 p-4 rounded-xl bg-zinc-50/80 border border-zinc-200/80">
+                <div className="mb-6 p-3.5 rounded-xl bg-zinc-50/80 dark:bg-white/[0.03] border border-zinc-200/80 dark:border-white/8">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-zinc-950 tracking-tight">
+                    <span className="text-4xl font-bold text-zinc-950 dark:text-white tracking-tight">
                       $300
                     </span>
-                    <span className="text-sm text-zinc-500">one-time setup</span>
+                    <span className="text-sm text-zinc-500 dark:text-white/40">one-time setup</span>
                   </div>
-                  <div className="text-sm text-zinc-800 mt-1 flex items-baseline gap-1">
-                    <span className="font-semibold text-zinc-950">+$150</span>
-                    <span className="text-zinc-500">/ month hosting & maintenance</span>
+                  <div className="text-sm text-zinc-800 dark:text-white/55 mt-1 flex items-baseline gap-1">
+                    <span className="font-semibold text-zinc-950 dark:text-white">+$150</span>
+                    <span className="text-zinc-500 dark:text-white/40">/ month hosting & maintenance</span>
                   </div>
                 </div>
 
-                <div className="space-y-3.5 mb-8">
-                  <div className="text-xs uppercase tracking-wider text-zinc-500 font-medium">
+                <div className="space-y-3 mb-6">
+                  <div className="text-xs uppercase tracking-wider text-zinc-500 dark:text-white/35 font-medium">
                     What is included:
                   </div>
                   {[
-                    "24/7 Missed-Call AI Text-Back",
-                    "Custom Website Booking Chat Agent",
-                    "Google Calendar Sync",
-                    "Up to 300 conversations per month",
-                    "Instant SMS alerts for new leads",
-                    "No long-term contract — cancel anytime",
+                    "📞 24/7 Missed-Call AI Text-Back",
+                    "💬 Custom Website Booking Chat Agent",
+                    "📅 Google Calendar Sync",
+                    "🔄 Up to 300 conversations per month",
+                    "⚡ Instant SMS alerts for new leads",
+                    "✅ No long-term contract — cancel anytime",
                   ].map((feature) => (
                     <div
                       key={feature}
-                      className="flex items-start gap-2.5 text-sm text-zinc-700"
+                      className="flex items-start gap-2.5 text-sm text-zinc-700 dark:text-white/55"
                     >
-                      <Check className="w-4 h-4 text-zinc-900 shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-zinc-900 dark:text-white/70 shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </div>
                   ))}
@@ -119,10 +119,10 @@ export function Pricing({ onSelectTier }: PricingProps) {
             </div>
           </FadeIn>
 
-          {/* Growth Tier (Recommended, Intensified Accent Border & Glow on Hover) */}
+          {/* Growth Tier */}
           <FadeIn delay={200} className="h-full">
             <div
-              className="card-interactive h-full rounded-2xl bg-white border-2 border-accent/75 hover:border-accent p-8 sm:p-10 flex flex-col justify-between relative shadow-md hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-accent/20"
+              className="card-interactive h-full rounded-2xl bg-white dark:bg-gradient-to-br dark:from-[rgba(0,102,255,0.08)] dark:to-[rgba(0,102,255,0.02)] border-2 border-accent/75 hover:border-accent p-7 sm:p-8 flex flex-col justify-between relative shadow-md hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-accent/20"
               onMouseMove={setSpotlightPosition}
             >
               {/* Accent Badge */}
@@ -131,45 +131,45 @@ export function Pricing({ onSelectTier }: PricingProps) {
               </div>
 
               <div>
-                <div className="text-xs font-mono uppercase tracking-wider text-accent mb-2 font-semibold">
+                <div className="text-xs font-mono uppercase tracking-wider text-accent dark:text-[#5599FF] mb-2 font-semibold">
                   Growth Tier
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-950 mb-3 tracking-tight">
+                <h3 className="text-2xl font-bold text-zinc-950 dark:text-white mb-2 tracking-tight">
                   Growth & Retention
                 </h3>
-                <p className="text-sm text-zinc-600 mb-6 leading-relaxed">
+                <p className="text-sm text-zinc-600 dark:text-white/45 mb-5 leading-relaxed">
                   For growing businesses wanting to both capture every new lead and systematically revive lapsed clients
                 </p>
 
-                <div className="mb-8 p-4 rounded-xl bg-blue-50/60 border border-blue-100/80">
+                <div className="mb-6 p-3.5 rounded-xl bg-blue-50/60 dark:bg-[rgba(0,102,255,0.06)] border border-blue-100/80 dark:border-[rgba(0,102,255,0.15)]">
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-bold text-zinc-950 tracking-tight">
+                    <span className="text-4xl font-bold text-zinc-950 dark:text-white tracking-tight">
                       $650
                     </span>
-                    <span className="text-sm text-zinc-500">one-time setup</span>
+                    <span className="text-sm text-zinc-500 dark:text-white/40">one-time setup</span>
                   </div>
-                  <div className="text-sm text-zinc-800 mt-1 flex items-baseline gap-1">
-                    <span className="font-semibold text-zinc-950">+$250</span>
-                    <span className="text-zinc-500">/ month fully managed</span>
+                  <div className="text-sm text-zinc-800 dark:text-white/55 mt-1 flex items-baseline gap-1">
+                    <span className="font-semibold text-zinc-950 dark:text-white">+$250</span>
+                    <span className="text-zinc-500 dark:text-white/40">/ month fully managed</span>
                   </div>
                 </div>
 
-                <div className="space-y-3.5 mb-8">
-                  <div className="text-xs uppercase tracking-wider text-zinc-500 font-medium">
+                <div className="space-y-3 mb-6">
+                  <div className="text-xs uppercase tracking-wider text-zinc-500 dark:text-white/35 font-medium">
                     What is included:
                   </div>
-                  <div className="text-xs text-zinc-500 font-medium pb-1">
+                  <div className="text-xs text-zinc-500 dark:text-white/35 font-medium pb-1">
                     Everything in Starter, plus:
                   </div>
                   {[
-                    "Automated Win-Back & Retention Workflows",
-                    "Custom Lead Qualification & Screening Logic",
-                    "Unlimited conversations per month",
-                    "Monthly check-in call to review performance",
+                    "🔁 Automated Win-Back & Retention Workflows",
+                    "🎯 Custom Lead Qualification & Screening Logic",
+                    "♾️ Unlimited conversations per month",
+                    "📊 Monthly check-in call to review performance",
                   ].map((feature) => (
                     <div
                       key={feature}
-                      className="flex items-start gap-2.5 text-sm text-zinc-800"
+                      className="flex items-start gap-2.5 text-sm text-zinc-800 dark:text-white/60"
                     >
                       <Check className="w-4 h-4 text-accent shrink-0 mt-0.5" />
                       <span>{feature}</span>
@@ -191,11 +191,11 @@ export function Pricing({ onSelectTier }: PricingProps) {
 
         {/* Reassurance footnote */}
         <FadeIn delay={300}>
-          <div className="text-center mt-12 text-sm text-zinc-500">
+          <div className="text-center mt-12 text-sm text-zinc-500 dark:text-white/35">
             Need multi-location deployment or tailored custom integration?{" "}
             <a
               href="/#inquire"
-              className="text-zinc-950 font-medium underline underline-offset-4 hover:text-accent transition-colors duration-300"
+              className="text-zinc-950 dark:text-white font-medium underline underline-offset-4 hover:text-accent transition-colors duration-300"
             >
               Submit an inquiry below
             </a>{" "}

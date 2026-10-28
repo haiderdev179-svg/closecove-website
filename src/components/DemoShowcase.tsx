@@ -8,26 +8,26 @@ export function DemoShowcase() {
   return (
     <section
       id="demo"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] relative overflow-hidden"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-white/6 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0f0f24] dark:to-[#0f0f24] relative overflow-hidden"
     >
       {/* Ambient glow elements for demo section */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         <FadeIn>
-          <div className="text-xs uppercase tracking-widest text-zinc-500 font-semibold mb-3">
+          <div className="text-xs uppercase tracking-widest text-zinc-500 dark:text-white/35 font-semibold mb-3">
             03 / Live Working Demo
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950 mb-4">
+              <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950 dark:text-white mb-4">
                 Don't take our word for it.
                 <br />
-                <span className="text-zinc-500 font-normal">
+                <span className="text-zinc-500 dark:text-white/45 font-normal">
                   Try the system right now.
                 </span>
               </h2>
-              <p className="text-lg text-zinc-600 font-normal max-w-xl">
+              <p className="text-lg text-zinc-600 dark:text-white/50 font-normal max-w-xl">
                 This is a real working example — pick your industry inside the demo
                 and test asking questions or booking an appointment yourself.
               </p>
@@ -48,18 +48,18 @@ export function DemoShowcase() {
 
         {/* Demo Showcase Container: Interactive Lift & Border Highlight */}
         <FadeIn delay={150}>
-          <div className="card-interactive rounded-2xl border border-zinc-200/80 bg-white shadow-md overflow-hidden ring-1 ring-zinc-200/50">
+          <div className="card-interactive rounded-2xl border border-zinc-200/80 dark:border-white/8 bg-white dark:bg-white/[0.03] shadow-md dark:shadow-none overflow-hidden ring-1 ring-zinc-200/50 dark:ring-white/5">
             {/* Top Mockup Header */}
-            <div className="px-6 py-4 border-b border-zinc-200/80 bg-zinc-50/90 flex items-center justify-between">
+            <div className="px-6 py-4 border-b border-zinc-200/80 dark:border-white/8 bg-zinc-50/90 dark:bg-white/[0.03] flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300" />
-                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300" />
-                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300" />
-                <span className="ml-2 text-xs font-mono text-zinc-500 hidden sm:inline">
+                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/20" />
+                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/20" />
+                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/20" />
+                <span className="ml-2 text-xs font-mono text-zinc-500 dark:text-white/40 hidden sm:inline">
                   Demo: See It In Action
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-mono text-zinc-700 bg-white px-3 py-1 rounded-md border border-zinc-200/80 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-mono text-zinc-700 dark:text-white/60 bg-white dark:bg-white/[0.05] px-3 py-1 rounded-md border border-zinc-200/80 dark:border-white/10 shadow-sm dark:shadow-none">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span>closecove-demo.vercel.app</span>
               </div>
@@ -70,7 +70,7 @@ export function DemoShowcase() {
               <div className="p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
                 {/* Looping product preview — muted autoplay, shows first on mobile */}
                 <div className="lg:col-span-7 lg:order-last">
-                  <div className="rounded-xl overflow-hidden border border-zinc-200 shadow-lg bg-[#0F172A]">
+                  <div className="rounded-xl overflow-hidden border border-zinc-200 dark:border-white/10 shadow-lg bg-[#0F172A]">
                     <video
                       className="w-full h-auto block aspect-video"
                       src="/videos/closecove-demo-loop.mp4"
@@ -82,41 +82,41 @@ export function DemoShowcase() {
                       aria-label="Example: CloseCove texts back a missed call, books the appointment, alerts the owner and adds it to the calendar"
                     />
                   </div>
-                  <p className="mt-3 text-xs text-zinc-500 text-center">
+                  <p className="mt-3 text-xs text-zinc-500 dark:text-white/35 text-center">
                     Example conversation · missed call → booked → owner alerted → on the calendar
                   </p>
                 </div>
 
                 <div className="lg:col-span-5 space-y-6">
-                  <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 tracking-wider uppercase">
-                    <MonitorSmartphone className="w-4 h-4 text-zinc-600" />
+                  <div className="inline-flex items-center gap-2 text-xs font-mono text-zinc-500 dark:text-white/40 tracking-wider uppercase">
+                    <MonitorSmartphone className="w-4 h-4 text-zinc-600 dark:text-white/50" />
                     <span>Live AI Receptionist Demo</span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 tracking-tight">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 dark:text-white tracking-tight">
                     Experience how your prospects will be greeted, qualified, and booked.
                   </h3>
 
-                  <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+                  <p className="text-zinc-600 dark:text-white/50 text-sm sm:text-base leading-relaxed">
                     Inside this live demo, we demonstrate how an automated conversational assistant handles service questions, availability, and instant bookings so your team can stay focused on the people in front of them while the assistant handles incoming questions and appointments.
                   </p>
 
                   <div className="space-y-3 pt-2">
-                    <div className="flex items-start gap-3 text-sm text-zinc-700">
-                      <div className="w-5 h-5 rounded-full bg-zinc-100 border border-zinc-200 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-zinc-900" />
+                    <div className="flex items-start gap-3 text-sm text-zinc-700 dark:text-white/55">
+                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-zinc-900 dark:text-white/70" />
                       </div>
                       <span>Ask about services, pricing, or availability</span>
                     </div>
-                    <div className="flex items-start gap-3 text-sm text-zinc-700">
-                      <div className="w-5 h-5 rounded-full bg-zinc-100 border border-zinc-200 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-zinc-900" />
+                    <div className="flex items-start gap-3 text-sm text-zinc-700 dark:text-white/55">
+                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-zinc-900 dark:text-white/70" />
                       </div>
                       <span>Walk through the frictionless booking flow</span>
                     </div>
-                    <div className="flex items-start gap-3 text-sm text-zinc-700">
-                      <div className="w-5 h-5 rounded-full bg-zinc-100 border border-zinc-200 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-zinc-900" />
+                    <div className="flex items-start gap-3 text-sm text-zinc-700 dark:text-white/55">
+                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/5 border border-zinc-200 dark:border-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-zinc-900 dark:text-white/70" />
                       </div>
                       <span>Inspect the autonomous calendar reservation confirmation</span>
                     </div>

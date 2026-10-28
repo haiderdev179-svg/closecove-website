@@ -6,7 +6,7 @@ export function Problem() {
   return (
     <section
       id="problem"
-      className="py-24 md:py-32 px-6 border-t border-white/10 dark-section relative overflow-hidden"
+      className="py-24 md:py-32 px-6 border-t border-white/10 dark:border-white/6 dark-section dark:bg-none dark:!bg-[#0f0f24] relative overflow-hidden"
     >
       {/* Ambient glow elements for dark section */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-gradient-to-br from-blue-500/10 to-transparent blur-3xl opacity-50 pointer-events-none" />

@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Mail, ArrowUp } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 dark-section py-16 px-6 relative overflow-hidden">
+    <footer className="border-t border-white/10 dark-section dark:bg-none dark:!bg-[#0f0f24] py-16 px-6 relative overflow-hidden">
       {/* Ambient glow elements for footer */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-gradient-to-br from-blue-500/10 to-transparent blur-3xl opacity-50 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-gradient-to-br from-indigo-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
@@ -46,18 +47,18 @@ export function Footer() {
             <span>Contact</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
           </a>
-          <a href="/privacy" className="relative hover:text-white transition-colors duration-200 py-1 group">
+          <Link href="/privacy" className="relative hover:text-white transition-colors duration-200 py-1 group">
             <span>Privacy Policy</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
-          </a>
-          <a href="/terms" className="relative hover:text-white transition-colors duration-200 py-1 group">
+          </Link>
+          <Link href="/terms" className="relative hover:text-white transition-colors duration-200 py-1 group">
             <span>Terms &amp; Conditions</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
-          </a>
-          <a href="/faq" className="relative hover:text-white transition-colors duration-200 py-1 group">
+          </Link>
+          <Link href="/faq" className="relative hover:text-white transition-colors duration-200 py-1 group">
             <span>FAQ</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
-          </a>
+          </Link>
         </div>
 
         {/* Contact info & back to top */}

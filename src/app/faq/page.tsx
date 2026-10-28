@@ -70,9 +70,9 @@ export default function FAQPage() {
 
   return (
     <LegalPage>
-      <div className="space-y-8 text-zinc-700">
+      <div className="space-y-8 text-zinc-700 dark:text-white/55">
         <header className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-950">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-950 dark:text-white">
             Frequently Asked Questions
           </h1>
         </header>
@@ -84,13 +84,13 @@ export default function FAQPage() {
             return (
               <div
                 key={faq.question}
-                className="group rounded-2xl border border-zinc-200 bg-white shadow-sm"
+                className="group rounded-2xl border border-zinc-200 dark:border-white/8 bg-white dark:bg-white/[0.03] shadow-sm dark:shadow-none"
               >
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
-                  className="w-full cursor-pointer list-none p-5 md:p-6 text-left text-lg font-semibold text-zinc-900 flex items-center justify-between gap-4"
+                  className="w-full cursor-pointer list-none p-5 md:p-6 text-left text-lg font-semibold text-zinc-900 dark:text-white/90 flex items-center justify-between gap-4"
                 >
                   <span>{faq.question}</span>
                   <motion.span
@@ -98,7 +98,7 @@ export default function FAQPage() {
                     transition={
                       shouldReduceMotion ? { duration: 0 } : { duration: 0.2 }
                     }
-                    className="text-zinc-500"
+                    className="text-zinc-500 dark:text-white/40"
                   >
                     +
                   </motion.span>
@@ -115,7 +115,7 @@ export default function FAQPage() {
                       }
                       className="overflow-hidden"
                     >
-                      <div className="px-5 pb-5 md:px-6 md:pb-6 text-base leading-7 text-zinc-700 bg-zinc-50 rounded-b-2xl mx-0 -mb-0 pt-4">
+                      <div className="px-5 pb-5 md:px-6 md:pb-6 text-base leading-7 text-zinc-700 dark:text-white/55 bg-zinc-50 dark:bg-white/[0.02] rounded-b-2xl mx-0 -mb-0 pt-4">
                         {faq.answer}
                       </div>
                     </motion.div>

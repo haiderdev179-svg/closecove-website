@@ -67,39 +67,39 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
   return (
     <section
       id="inquire"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] relative"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-white/6 bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0a0a1a] dark:to-[#0a0a1a] relative"
     >
       <div className="max-w-3xl mx-auto">
         <FadeIn>
-          <div className="text-xs uppercase tracking-widest text-zinc-500 font-semibold mb-3">
+          <div className="text-xs uppercase tracking-widest text-zinc-500 dark:text-white/35 font-semibold mb-3">
             05 / Get Started
           </div>
           <div className="text-center max-w-xl mx-auto mb-12">
-            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950 mb-4">
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950 dark:text-white mb-4">
               Book a free 15-minute
               <br />
-              <span className="text-zinc-500 font-normal">
+              <span className="text-zinc-500 dark:text-white/45 font-normal">
                 lead audit call.
               </span>
             </h2>
-            <p className="text-zinc-600 text-base">
+            <p className="text-zinc-600 dark:text-white/50 text-base">
               Tell us a bit about your business. We'll examine your current
               response speed and show you exactly where leads are leaking.
             </p>
           </div>
         </FadeIn>
 
-        {/* Inquiry Form Card (Clean White Surface with 1px Border & Soft Shadow) */}
+        {/* Inquiry Form Card */}
         <FadeIn delay={150}>
-          <div className="card-interactive rounded-2xl border border-zinc-200/80 bg-white p-8 sm:p-12 shadow-md relative overflow-hidden ring-1 ring-zinc-200/50">
+          <div className="card-interactive rounded-2xl border border-zinc-200/80 dark:border-white/8 bg-white dark:bg-white/[0.03] p-8 sm:p-12 shadow-md dark:shadow-none relative overflow-hidden ring-1 ring-zinc-200/50 dark:ring-white/5">
             {/* Selected Plan indicator pill if chosen */}
             {selectedTier && !submitted && (
-              <div className="mb-8 p-3.5 rounded-xl bg-zinc-50 border border-zinc-200 flex items-center justify-between">
-                <div className="flex items-center gap-2 text-sm text-zinc-800">
+              <div className="mb-8 p-3.5 rounded-xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/8 flex items-center justify-between">
+                <div className="flex items-center gap-2 text-sm text-zinc-800 dark:text-white/60">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                   <span>
                     Selected Interest:{" "}
-                    <strong className="text-zinc-950 capitalize">
+                    <strong className="text-zinc-950 dark:text-white capitalize">
                       {selectedTier} Plan
                     </strong>
                   </span>
@@ -108,7 +108,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                   <button
                     type="button"
                     onClick={onClearTier}
-                    className="text-xs text-zinc-500 hover:text-zinc-900 underline cursor-pointer font-medium transition-colors duration-200"
+                    className="text-xs text-zinc-500 dark:text-white/40 hover:text-zinc-900 dark:hover:text-white underline cursor-pointer font-medium transition-colors duration-200"
                   >
                     Clear
                   </button>
@@ -119,15 +119,15 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
             {submitted ? (
               /* Success State Card */
               <div className="py-12 text-center space-y-5 animate-fade-in">
-                <div className="w-16 h-16 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mx-auto text-accent shadow-xs">
+                <div className="w-16 h-16 rounded-full bg-blue-50 dark:bg-accent/10 border border-blue-100 dark:border-accent/20 flex items-center justify-center mx-auto text-accent shadow-xs">
                   <CheckCircle2 className="w-8 h-8 text-accent" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 tracking-tight">
+                <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 dark:text-white tracking-tight">
                   Inquiry Received!
                 </h3>
-                <p className="text-zinc-600 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
-                  Thanks <span className="text-zinc-950 font-semibold">{formData.name}</span>. We've
-                  noted details for <span className="text-zinc-950 font-semibold">{formData.businessName}</span>.
+                <p className="text-zinc-600 dark:text-white/50 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
+                  Thanks <span className="text-zinc-950 dark:text-white font-semibold">{formData.name}</span>. We've
+                  noted details for <span className="text-zinc-950 dark:text-white font-semibold">{formData.businessName}</span>.
                   We'll review your lead flow and reach out within 4 business hours to lock in your call.
                 </p>
                 <div className="pt-4">
@@ -153,7 +153,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
               /* Core Form */
               <form onSubmit={handleSubmit} className="space-y-6">
                 {errorMessage && (
-                  <div className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
+                  <div className="p-4 rounded-lg bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-700 dark:text-red-400 text-sm">
                     {errorMessage}
                   </div>
                 )}
@@ -162,7 +162,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-xs uppercase tracking-wider text-zinc-700 font-medium mb-2"
+                      className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
                     >
                       Your Name *
                     </label>
@@ -175,14 +175,14 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400"
+                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25"
                     />
                   </div>
 
                   <div>
                     <label
                       htmlFor="businessName"
-                      className="block text-xs uppercase tracking-wider text-zinc-700 font-medium mb-2"
+                      className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
                     >
                       Business Name *
                     </label>
@@ -198,7 +198,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                           businessName: e.target.value,
                         })
                       }
-                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400"
+                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25"
                     />
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                   <div>
                     <label
                       htmlFor="businessType"
-                      className="block text-xs uppercase tracking-wider text-zinc-700 font-medium mb-2"
+                      className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
                     >
                       Business Type *
                     </label>
@@ -227,7 +227,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                         <option
                           key={type}
                           value={type}
-                          className="bg-white text-zinc-900"
+                          className="bg-white dark:bg-[#0a0a1a] text-zinc-900 dark:text-white"
                         >
                           {type}
                         </option>
@@ -238,7 +238,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                   <div>
                     <label
                       htmlFor="contact"
-                      className="block text-xs uppercase tracking-wider text-zinc-700 font-medium mb-2"
+                      className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
                     >
                       Phone or Email *
                     </label>
@@ -251,7 +251,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       onChange={(e) =>
                         setFormData({ ...formData, contact: e.target.value })
                       }
-                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400"
+                      className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25"
                     />
                   </div>
                 </div>
@@ -259,7 +259,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                 <div>
                   <label
                     htmlFor="challenge"
-                    className="block text-xs uppercase tracking-wider text-zinc-700 font-medium mb-2"
+                    className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
                   >
                     What's your biggest challenge with leads or bookings right now?
                   </label>
@@ -271,7 +271,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                     onChange={(e) =>
                       setFormData({ ...formData, challenge: e.target.value })
                     }
-                    className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 resize-none"
+                    className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25 resize-none"
                   />
                 </div>
 
@@ -295,7 +295,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                   </button>
                 </div>
 
-                <div className="text-center text-xs text-zinc-400 pt-2">
+                <div className="text-center text-xs text-zinc-400 dark:text-white/30 pt-2">
                   No payment required • 100% confidential • Direct response within 4 hours
                 </div>
               </form>

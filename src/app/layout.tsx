@@ -56,8 +56,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-white text-zinc-900 antialiased selection:bg-accent/15 selection:text-black font-sans">
+    <html lang="en" className={`${inter.variable} scroll-smooth`} suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-screen bg-white dark:bg-[#0a0a1a] text-zinc-900 dark:text-[#f0f0f5] antialiased selection:bg-accent/15 selection:text-black dark:selection:text-white font-sans transition-colors duration-300">
         {children}
         <Script src="https://getclosecove.com/widget.js" strategy="lazyOnload" />
       </body>
