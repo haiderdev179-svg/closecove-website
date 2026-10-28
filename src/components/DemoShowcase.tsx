@@ -3,7 +3,7 @@ import { FadeIn } from "./FadeIn";
 import { ExternalLink, Check, MonitorSmartphone } from "lucide-react";
 
 export function DemoShowcase() {
-  const DEMO_URL = "https://closecove-demo.vercel.app/";
+  const DEMO_URL = "https://demo.closecove.com/";
 
   return (
     <section
@@ -48,20 +48,20 @@ export function DemoShowcase() {
 
         {/* Demo Showcase Container */}
         <FadeIn delay={150}>
-          <div className="card-interactive rounded-2xl border border-zinc-200/80 dark:border-transparent bg-white dark:bg-white/[0.04] shadow-md dark:shadow-none overflow-hidden ring-1 ring-zinc-200/50 dark:ring-transparent">
+          <div className="card-interactive rounded-2xl border border-zinc-200/80 dark:border-transparent bg-white dark:bg-[#1a1a3a] shadow-md dark:shadow-none overflow-hidden ring-1 ring-zinc-200/50 dark:ring-transparent">
             {/* Top Mockup Header */}
             <div className="px-6 py-4 border-b border-zinc-200/80 dark:border-white/[0.06] bg-zinc-50/90 dark:bg-white/[0.03] flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/20" />
-                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/20" />
-                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/20" />
+                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/50" />
+                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/50" />
+                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/50" />
                 <span className="ml-2 text-xs font-mono text-zinc-500 dark:text-white/40 hidden sm:inline">
                   Demo: See It In Action
                 </span>
               </div>
               <div className="flex items-center gap-2 text-xs font-mono text-zinc-700 dark:text-white/60 bg-white dark:bg-white/[0.05] px-3 py-1 rounded-md border border-zinc-200/80 dark:border-white/[0.08] shadow-sm dark:shadow-none">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>closecove-demo.vercel.app</span>
+                <span>demo.closecove.com</span>
               </div>
             </div>
 
@@ -103,20 +103,20 @@ export function DemoShowcase() {
 
                   <div className="space-y-3 pt-2">
                     <div className="flex items-start gap-3 text-sm text-zinc-700 dark:text-white/55">
-                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-transparent flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-zinc-900 dark:text-white/70" />
+                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/[0.12] border border-zinc-200 dark:border-transparent flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-zinc-900 dark:text-white" />
                       </div>
                       <span>Ask about services, pricing, or availability</span>
                     </div>
                     <div className="flex items-start gap-3 text-sm text-zinc-700 dark:text-white/55">
-                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-transparent flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-zinc-900 dark:text-white/70" />
+                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/[0.12] border border-zinc-200 dark:border-transparent flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-zinc-900 dark:text-white" />
                       </div>
                       <span>Walk through the frictionless booking flow</span>
                     </div>
                     <div className="flex items-start gap-3 text-sm text-zinc-700 dark:text-white/55">
-                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/[0.06] border border-zinc-200 dark:border-transparent flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-zinc-900 dark:text-white/70" />
+                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/[0.12] border border-zinc-200 dark:border-transparent flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-zinc-900 dark:text-white" />
                       </div>
                       <span>Inspect the autonomous calendar reservation confirmation</span>
                     </div>
