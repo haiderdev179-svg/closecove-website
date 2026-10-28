@@ -52,9 +52,9 @@ export function DemoShowcase() {
             {/* Top Mockup Header */}
             <div className="px-6 py-4 border-b border-zinc-200/80 dark:border-white/[0.06] bg-zinc-50/90 dark:bg-white/[0.03] flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/50" />
-                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/50" />
-                <span className="w-2.5 h-2.5 rounded-full bg-zinc-300 dark:bg-white/50" />
+                <span className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
                 <span className="ml-2 text-xs font-mono text-zinc-500 dark:text-white/40 hidden sm:inline">
                   Demo: See It In Action
                 </span>
@@ -103,20 +103,20 @@ export function DemoShowcase() {
 
                   <div className="space-y-3 pt-2">
                     <div className="flex items-start gap-3 text-sm text-zinc-700 dark:text-white/55">
-                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/[0.12] border border-zinc-200 dark:border-transparent flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-zinc-900 dark:text-white" />
+                      <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-accent" />
                       </div>
                       <span>Ask about services, pricing, or availability</span>
                     </div>
                     <div className="flex items-start gap-3 text-sm text-zinc-700 dark:text-white/55">
-                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/[0.12] border border-zinc-200 dark:border-transparent flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-zinc-900 dark:text-white" />
+                      <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-accent" />
                       </div>
                       <span>Walk through the frictionless booking flow</span>
                     </div>
                     <div className="flex items-start gap-3 text-sm text-zinc-700 dark:text-white/55">
-                      <div className="w-5 h-5 rounded-full bg-zinc-100 dark:bg-white/[0.12] border border-zinc-200 dark:border-transparent flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3 h-3 text-zinc-900 dark:text-white" />
+                      <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3 h-3 text-accent" />
                       </div>
                       <span>Inspect the autonomous calendar reservation confirmation</span>
                     </div>
