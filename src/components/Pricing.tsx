@@ -96,6 +96,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                     "📅 Google Calendar Sync",
                     "🔄 Up to 300 conversations per month",
                     "⚡ Instant SMS alerts for new leads",
+                    "📊 Owner Dashboard Panel",
                     "✅ No long-term contract — cancel anytime",
                   ].map((feature) => (
                     <div
