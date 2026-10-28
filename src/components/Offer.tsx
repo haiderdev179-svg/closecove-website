@@ -70,7 +70,7 @@ export function Offer() {
             return (
               <FadeIn key={card.title} delay={index * 120} className="h-full">
                 <div
-                  className="card-interactive h-full p-8 rounded-2xl bg-white dark:bg-[#151530] border border-zinc-200/80 dark:border-transparent shadow-sm dark:shadow-none flex flex-col justify-between group transition-colors duration-[1200ms] ease-in-out ring-1 ring-zinc-200/50 dark:ring-transparent"
+                  className="card-interactive h-full p-8 rounded-2xl bg-white dark:bg-[#1a1a3a] border border-zinc-200/80 dark:border-white/[0.08] shadow-sm dark:shadow-none flex flex-col justify-between group transition-colors duration-[1200ms] ease-in-out ring-1 ring-zinc-200/50 dark:ring-transparent"
                   onMouseMove={setSpotlightPosition}
                 >
                   <div>

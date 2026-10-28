@@ -58,7 +58,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
           {/* Starter Tier */}
           <FadeIn delay={100} className="h-full">
             <div
-              className="card-interactive h-full rounded-2xl bg-white dark:bg-[#151530] border border-zinc-200/80 dark:border-transparent p-7 sm:p-8 flex flex-col justify-between shadow-sm dark:shadow-none ring-1 ring-zinc-200/50 dark:ring-transparent"
+              className="card-interactive h-full rounded-2xl bg-white dark:bg-[#1a1a3a] border border-zinc-200/80 dark:border-white/[0.08] p-7 sm:p-8 flex flex-col justify-between shadow-sm dark:shadow-none ring-1 ring-zinc-200/50 dark:ring-transparent"
               onMouseMove={setSpotlightPosition}
             >
               <div>
@@ -122,7 +122,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
           {/* Growth Tier (Recommended) */}
           <FadeIn delay={200} className="h-full">
             <div
-              className="card-interactive h-full rounded-2xl bg-white dark:bg-[#161638] border-2 border-accent/75 hover:border-accent p-7 sm:p-8 flex flex-col justify-between relative shadow-md dark:shadow-none hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-accent/20"
+              className="card-interactive h-full rounded-2xl bg-white dark:bg-[#1c1c42] border-2 border-accent/75 hover:border-accent p-7 sm:p-8 flex flex-col justify-between relative shadow-md dark:shadow-none hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-accent/20"
               onMouseMove={setSpotlightPosition}
             >
               {/* Accent Badge */}
