@@ -96,7 +96,7 @@ export function Offer() {
                   </div>
 
                   <div className="pt-8 mt-6 border-t border-zinc-100 dark:border-white/[0.06] flex items-center gap-2 text-xs text-zinc-500 dark:text-white/35">
-                    <span className="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-white/30" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                     <span>Autonomous & fully managed</span>
                   </div>
                 </div>
