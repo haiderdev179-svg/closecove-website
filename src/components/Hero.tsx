@@ -86,7 +86,7 @@ export function Hero() {
         {/* Explainer video — loads only when the visitor presses play */}
         <div
           id="watch"
-          className="relative max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden border border-zinc-200 dark:border-transparent shadow-xl dark:shadow-none scroll-mt-28 animate-fade-in animation-delay-300 cursor-pointer group/video"
+          className="relative max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden border border-zinc-200 dark:border-transparent shadow-[0_8px_40px_rgba(0,0,0,0.12)] scroll-mt-28 animate-fade-in animation-delay-300 cursor-pointer group/video"
           onClick={!isPlaying ? handlePlay : undefined}
         >
           {/* Poster overlay — light bg, mixed text, wave footer */}
@@ -129,7 +129,7 @@ export function Hero() {
                 </div>
               </div>
               {/* Sharp play button — not blurred */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ paddingTop: '15%' }}>
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent flex items-center justify-center group-hover/video:scale-110 transition-transform duration-300 pointer-events-auto">
                   <Play className="w-7 h-7 sm:w-8 sm:h-8 text-white fill-white ml-0.5" />
                 </div>
