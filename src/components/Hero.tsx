@@ -15,9 +15,9 @@ export function Hero() {
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Subtitle / positioning pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-white text-xs uppercase tracking-widest mb-8 animate-fade-in shadow-sm hover:shadow-accent-glow transition-all duration-300 font-semibold">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-200/80 dark:border-white/[0.08] bg-white/80 dark:bg-white/[0.05] backdrop-blur-sm text-xs uppercase tracking-widest mb-8 animate-fade-in shadow-sm dark:shadow-none transition-all duration-300 font-semibold">
           <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_2px_rgba(239,68,68,0.7)]" />
-          <span>AI Automation for Local Businesses</span>
+          <span className="text-zinc-500 dark:text-white/50">AI Automation for Local Businesses</span>
         </div>
 
         {/* Staggered Entrance Headline */}
