@@ -91,17 +91,22 @@ export function Hero() {
         >
           {/* Poster overlay — light bg, mixed text, wave footer */}
           {!isPlaying && (
-            <div className="absolute inset-0 z-10 flex flex-col bg-[#EDF2F7]" style={{ filter: 'blur(1.5px)' }}>
-              {/* Center content */}
-              <div className="flex-1 flex flex-col items-center justify-center pb-5">
-                <h3 className="text-2xl sm:text-4xl md:text-[56px] font-extrabold tracking-tight leading-tight text-center px-5">
-                  <span className="mr-2">🎬</span>
-                  <span className="text-zinc-900">See </span>
-                  <span className="text-accent">CloseCove </span>
-                  <span className="text-zinc-900">in </span>
-                  <span className="text-accent">Action</span>
-                </h3>
-                <div className="mt-8 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent flex items-center justify-center group-hover/video:scale-110 transition-transform duration-300">
+            <div className="absolute inset-0 z-10">
+              {/* Blurred layer — bg + text */}
+              <div className="absolute inset-0 flex flex-col bg-[#EDF2F7]" style={{ filter: 'blur(1.5px)' }}>
+                <div className="flex-1 flex flex-col items-center justify-center pb-5">
+                  <h3 className="text-2xl sm:text-4xl md:text-[56px] font-extrabold tracking-tight leading-tight text-center px-5">
+                    <span className="mr-2">🎬</span>
+                    <span className="text-zinc-900">See </span>
+                    <span className="text-accent">CloseCove </span>
+                    <span className="text-zinc-900">in </span>
+                    <span className="text-accent">Action</span>
+                  </h3>
+                </div>
+              </div>
+              {/* Sharp play button on top */}
+              <div className="absolute inset-0 flex items-center justify-center pt-16">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent flex items-center justify-center group-hover/video:scale-110 transition-transform duration-300">
                   <Play className="w-7 h-7 sm:w-8 sm:h-8 text-white fill-white ml-0.5" />
                 </div>
               </div>
