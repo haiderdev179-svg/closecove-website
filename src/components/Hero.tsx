@@ -92,8 +92,9 @@ export function Hero() {
           {/* Poster overlay — light bg, mixed text, wave footer */}
           {!isPlaying && (
             <div className="absolute inset-0 z-10">
-              {/* Blurred background */}
-              <div className="absolute inset-[-20px] bg-[#EDF2F7] blur-[20px]" />
+              {/* Blurred background with color variation */}
+              <div className="absolute inset-[-30px] blur-[24px]" style={{ background: 'radial-gradient(ellipse at 30% 20%, #dae4f0 0%, #e8eef6 30%, #f0f4f8 50%, #dce6f0 70%, #e2eaf4 100%)' }} />
+              <div className="absolute inset-0 bg-[#EDF2F7]/30" />
               {/* Sharp content on top */}
               <div className="absolute inset-0 flex flex-col">
               {/* Center content */}
