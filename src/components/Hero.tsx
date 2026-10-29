@@ -94,15 +94,15 @@ export function Hero() {
         {/* Subtle Credibility / Reality metrics */}
         <div className="pt-8 border-t border-zinc-200 dark:border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in animation-delay-400">
           <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/55 text-sm">
-            <CheckCircle2 className="w-4 h-4 text-zinc-800 dark:text-white/70 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
             <span className="font-medium">&lt; 30s Lead Response Time</span>
           </div>
           <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/55 text-sm">
-            <CheckCircle2 className="w-4 h-4 text-zinc-800 dark:text-white/70 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
             <span className="font-medium">Direct Calendar Integration</span>
           </div>
           <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/55 text-sm">
-            <CheckCircle2 className="w-4 h-4 text-zinc-800 dark:text-white/70 shrink-0" />
+            <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
             <span className="font-medium">No Extra Hiring Needed</span>
           </div>
         </div>
