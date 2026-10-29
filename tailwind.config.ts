@@ -9,6 +9,11 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      fontSize: {
+        xs: ["0.8125rem", { lineHeight: "1.25rem" }],   // 13px (was 12px)
+        sm: ["0.9375rem", { lineHeight: "1.375rem" }],   // 15px (was 14px)
+        base: ["1.0625rem", { lineHeight: "1.625rem" }], // 17px (was 16px)
+      },
       colors: {
         background: "#050505",
         surface: "#0D0D0D",
