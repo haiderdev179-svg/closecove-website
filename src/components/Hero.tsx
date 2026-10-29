@@ -91,7 +91,7 @@ export function Hero() {
         >
           {/* Poster overlay — light bg, mixed text, wave footer */}
           {!isPlaying && (
-            <div className="absolute inset-0 z-10 flex flex-col bg-[#EDF2F7]/80 backdrop-blur-[16px]">
+            <div className="absolute inset-0 z-10 flex flex-col bg-[#E2E8F0]/60 backdrop-blur-[24px]">
               {/* Center content */}
               <div className="flex-1 flex flex-col items-center justify-center pb-5">
                 <h3 className="text-2xl sm:text-4xl md:text-[56px] font-extrabold tracking-tight leading-tight text-center px-5">
