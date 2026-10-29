@@ -1,11 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Play } from "lucide-react";
 
 export function Hero() {
   const shouldReduceMotion = useReducedMotion();
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
 
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 px-6 overflow-hidden bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0a0a1a] dark:to-[#0a0a1a]">
@@ -77,15 +86,26 @@ export function Hero() {
         {/* Explainer video — loads only when the visitor presses play */}
         <div
           id="watch"
-          className="relative max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden border border-zinc-200 dark:border-transparent shadow-xl dark:shadow-none bg-[#0F172A] scroll-mt-28 animate-fade-in animation-delay-300"
+          className="relative max-w-4xl mx-auto mb-14 rounded-2xl overflow-hidden border border-zinc-200 dark:border-transparent shadow-xl dark:shadow-none bg-[#0F172A] scroll-mt-28 animate-fade-in animation-delay-300 cursor-pointer group/video"
+          onClick={!isPlaying ? handlePlay : undefined}
         >
+          {/* Play button overlay */}
+          {!isPlaying && (
+            <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/20 group-hover/video:bg-black/30 transition-colors duration-300">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-accent flex items-center justify-center shadow-[0_0_30px_8px_rgba(0,102,255,0.4)] group-hover/video:shadow-[0_0_40px_12px_rgba(0,102,255,0.5)] group-hover/video:scale-110 transition-all duration-300">
+                <Play className="w-8 h-8 sm:w-10 sm:h-10 text-white fill-white ml-1" />
+              </div>
+            </div>
+          )}
           <video
+            ref={videoRef}
             className="w-full h-auto block aspect-video"
-            controls
+            controls={isPlaying}
             playsInline
             preload="none"
             poster="/videos/closecove-explainer-poster.jpg"
             aria-label="CloseCove explainer video"
+            onEnded={() => setIsPlaying(false)}
           >
             <source src="/videos/closecove-explainer-web.mp4" type="video/mp4" />
           </video>
