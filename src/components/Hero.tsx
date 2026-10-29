@@ -91,9 +91,12 @@ export function Hero() {
         >
           {/* Poster overlay — light bg, mixed text, wave footer */}
           {!isPlaying && (
-            <div className="absolute inset-0 z-10 flex flex-col bg-[#E2E8F0]/60 backdrop-blur-[24px]">
+            <div className="absolute inset-0 z-10 flex flex-col">
+              {/* Blurred background layer */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#c7d2e0] via-[#d5dce6] to-[#b8c6d6] blur-[20px] scale-110" />
+              <div className="absolute inset-0 bg-[#dce3ed]/40" />
               {/* Center content */}
-              <div className="flex-1 flex flex-col items-center justify-center pb-5">
+              <div className="relative flex-1 flex flex-col items-center justify-center pb-5">
                 <h3 className="text-2xl sm:text-4xl md:text-[56px] font-extrabold tracking-tight leading-tight text-center px-5">
                   <span className="mr-2">🎬</span>
                   <span className="text-zinc-900">See </span>
@@ -107,7 +110,7 @@ export function Hero() {
               </div>
 
               {/* Wave + footer bar */}
-              <div className="w-full mt-auto">
+              <div className="relative w-full mt-auto">
                 <svg viewBox="0 0 800 50" preserveAspectRatio="none" className="block w-full h-[30px]" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0,35 C150,10 350,48 500,30 C650,10 750,40 800,25 L800,50 L0,50 Z" fill="#0066FF"/>
                 </svg>
