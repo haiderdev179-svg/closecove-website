@@ -10,9 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       fontSize: {
-        xs: ["0.8125rem", { lineHeight: "1.25rem" }],   // 13px (was 12px)
-        sm: ["0.9375rem", { lineHeight: "1.375rem" }],   // 15px (was 14px)
-        base: ["1.0625rem", { lineHeight: "1.625rem" }], // 17px (was 16px)
+        xs: ["0.875rem", { lineHeight: "1.375rem" }],  // 14px (was 12px)
+        sm: ["1rem", { lineHeight: "1.5rem" }],         // 16px (was 14px)
+        base: ["1.125rem", { lineHeight: "1.75rem" }],  // 18px (was 16px)
       },
       colors: {
         background: "#050505",
