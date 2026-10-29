@@ -16,7 +16,7 @@ export function Hero() {
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Subtitle / positioning pill */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-200/80 dark:border-white/[0.08] bg-white/80 dark:bg-white/[0.05] backdrop-blur-sm text-xs uppercase tracking-widest mb-8 animate-fade-in shadow-sm dark:shadow-none transition-all duration-300 font-semibold">
-          <span className="w-2 h-2 rounded-full bg-[#FF0000] animate-pulse shadow-[0_0_10px_3px_rgba(255,0,0,0.7)]" />
+          <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_3px_rgba(0,102,255,0.7)]" />
           <span><span className="text-zinc-900 dark:text-white/80">AI Automation</span> <span className="text-zinc-400 dark:text-white/40">for Local Businesses</span></span>
         </div>
 
