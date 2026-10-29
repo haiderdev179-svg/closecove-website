@@ -16,6 +16,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
     businessType: "Home Services",
     contact: "",
     challenge: "",
+    smsConsent: false,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -141,6 +142,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                         businessType: "Home Services",
                         contact: "",
                         challenge: "",
+                        smsConsent: false,
                       });
                     }}
                     className="btn-secondary px-6 py-2.5 rounded-lg text-sm font-medium cursor-pointer shadow-sm hover:shadow-accent-glow"
@@ -273,6 +275,33 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                     }
                     className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25 dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08] resize-none"
                   />
+                </div>
+
+                {/* SMS Consent Checkbox */}
+                <div className="flex items-start gap-3">
+                  <input
+                    id="smsConsent"
+                    type="checkbox"
+                    required
+                    checked={formData.smsConsent}
+                    onChange={(e) =>
+                      setFormData({ ...formData, smsConsent: e.target.checked })
+                    }
+                    className="mt-1 w-4 h-4 rounded border-zinc-300 dark:border-white/20 text-accent focus:ring-accent/50 cursor-pointer accent-[#3678F2]"
+                  />
+                  <label
+                    htmlFor="smsConsent"
+                    className="text-xs text-zinc-600 dark:text-white/50 leading-relaxed cursor-pointer"
+                  >
+                    I agree to receive SMS messages and calls from CloseCove regarding my inquiry, appointment reminders, and service updates. Message & data rates may apply. Reply STOP to opt out at any time.{" "}
+                    <a
+                      href="/legal"
+                      target="_blank"
+                      className="text-accent hover:underline"
+                    >
+                      Privacy Policy
+                    </a>
+                  </label>
                 </div>
 
                 <div className="pt-2">
