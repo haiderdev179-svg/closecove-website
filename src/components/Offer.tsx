@@ -75,7 +75,7 @@ export function Offer() {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-8">
-                      <div className="icon-box w-12 h-12 rounded-xl bg-zinc-50/80 dark:bg-white/[0.06] border border-zinc-200/80 dark:border-white/[0.08] flex items-center justify-center text-zinc-900 dark:text-white/70 transition-all duration-[1200ms] ease-in-out">
+                      <div className="icon-box w-12 h-12 rounded-xl bg-zinc-50/80 dark:bg-white/[0.06] border border-zinc-200/80 dark:border-white/[0.08] flex items-center justify-center text-accent transition-all duration-[1200ms] ease-in-out">
                         <IconComponent className="w-6 h-6" />
                       </div>
                       <span className="font-mono text-xs text-zinc-400 dark:text-white/30">
