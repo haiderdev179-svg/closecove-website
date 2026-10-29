@@ -92,7 +92,7 @@ export function Hero() {
           {/* Poster overlay — light bg, mixed text, wave footer */}
           {!isPlaying && (
             <div className="absolute inset-0 z-10">
-              {/* Blurred layer — bg + text */}
+              {/* Blurred layer — bg, text, wave, footer */}
               <div className="absolute inset-0 flex flex-col bg-[#EDF2F7]" style={{ filter: 'blur(1.5px)' }}>
                 <div className="flex-1 flex flex-col items-center justify-center pb-5">
                   <h3 className="text-2xl sm:text-4xl md:text-[56px] font-extrabold tracking-tight leading-tight text-center px-5">
@@ -102,36 +102,36 @@ export function Hero() {
                     <span className="text-zinc-900">in </span>
                     <span className="text-accent">Action</span>
                   </h3>
+                  {/* Spacer for play button */}
+                  <div className="mt-8 w-16 h-16 sm:w-20 sm:h-20" />
+                </div>
+                <div className="w-full mt-auto">
+                  <svg viewBox="0 0 800 50" preserveAspectRatio="none" className="block w-full h-[30px]" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,35 C150,10 350,48 500,30 C650,10 750,40 800,25 L800,50 L0,50 Z" fill="#0066FF"/>
+                  </svg>
+                  <div className="bg-accent px-5 py-2 flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3.5 text-[11px] text-white font-medium">
+                      <div className="flex items-center gap-1.5">
+                        <svg className="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <span>closecove.com</span>
+                      </div>
+                      <div className="w-px h-3.5 bg-white/40" />
+                      <div className="flex items-center gap-1.5">
+                        <svg className="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                        <span>hello@closecove.com</span>
+                      </div>
+                    </div>
+                    <div className="text-right text-white">
+                      <div className="text-lg font-bold leading-tight" style={{ fontFamily: "'Dancing Script', cursive" }}>CloseCove</div>
+                      <div className="text-[8px] opacity-85 italic" style={{ fontFamily: "'Dancing Script', cursive" }}>More Leads. Loyal Customers. Real Growth.</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              {/* Sharp play button on top */}
-              <div className="absolute inset-0 flex items-center justify-center pt-16">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent flex items-center justify-center group-hover/video:scale-110 transition-transform duration-300">
+              {/* Sharp play button — not blurred */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ paddingTop: '15%' }}>
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent flex items-center justify-center group-hover/video:scale-110 transition-transform duration-300 pointer-events-auto">
                   <Play className="w-7 h-7 sm:w-8 sm:h-8 text-white fill-white ml-0.5" />
-                </div>
-              </div>
-
-              {/* Wave + footer bar */}
-              <div className="relative w-full mt-auto">
-                <svg viewBox="0 0 800 50" preserveAspectRatio="none" className="block w-full h-[30px]" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0,35 C150,10 350,48 500,30 C650,10 750,40 800,25 L800,50 L0,50 Z" fill="#0066FF"/>
-                </svg>
-                <div className="bg-accent px-5 py-2 flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-3.5 text-[11px] text-white font-medium">
-                    <div className="flex items-center gap-1.5">
-                      <svg className="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                      <span>closecove.com</span>
-                    </div>
-                    <div className="w-px h-3.5 bg-white/40" />
-                    <div className="flex items-center gap-1.5">
-                      <svg className="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-                      <span>hello@closecove.com</span>
-                    </div>
-                  </div>
-                  <div className="text-right text-white">
-                    <div className="text-lg font-bold leading-tight" style={{ fontFamily: "'Dancing Script', cursive" }}>CloseCove</div>
-                    <div className="text-[8px] opacity-85 italic" style={{ fontFamily: "'Dancing Script', cursive" }}>More Leads. Loyal Customers. Real Growth.</div>
-                  </div>
                 </div>
               </div>
             </div>
