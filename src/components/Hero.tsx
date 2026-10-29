@@ -91,11 +91,7 @@ export function Hero() {
         >
           {/* Poster overlay — light bg, mixed text, wave footer */}
           {!isPlaying && (
-            <div className="absolute inset-0 z-10">
-              {/* Blurred background — same #EDF2F7 but with blur effect */}
-              <div className="absolute inset-[-20px] bg-[#EDF2F7] blur-[20px]" />
-              {/* Sharp content on top */}
-              <div className="absolute inset-0 flex flex-col">
+            <div className="absolute inset-0 z-10 flex flex-col bg-[#EDF2F7]">
               {/* Center content */}
               <div className="flex-1 flex flex-col items-center justify-center pb-5">
                 <h3 className="text-2xl sm:text-4xl md:text-[56px] font-extrabold tracking-tight leading-tight text-center px-5">
@@ -132,7 +128,6 @@ export function Hero() {
                     <div className="text-[8px] opacity-85 italic" style={{ fontFamily: "'Dancing Script', cursive" }}>More Leads. Loyal Customers. Real Growth.</div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
           )}
