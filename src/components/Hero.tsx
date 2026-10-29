@@ -130,7 +130,7 @@ export function Hero() {
               </div>
               {/* Sharp play button — not blurred */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent flex items-center justify-center group-hover/video:scale-110 transition-transform duration-300 pointer-events-auto">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-accent flex items-center justify-center group-hover/video:scale-90 transition-transform duration-300 pointer-events-auto">
                   <Play className="w-7 h-7 sm:w-8 sm:h-8 text-white fill-white ml-0.5" />
                 </div>
               </div>
