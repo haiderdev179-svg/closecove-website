@@ -7,7 +7,7 @@ export default function PrivacyPage() {
         <h1>Privacy Policy</h1>
 
         <p>
-          <strong>Effective Date:</strong> September 10, 2026
+          <strong>Effective Date:</strong> November 3, 2026
         </p>
 
         <p>
@@ -54,6 +54,43 @@ export default function PrivacyPage() {
           marketing purposes.
         </p>
 
+        <h2>SMS / Text Messaging</h2>
+
+        <p>
+          By providing your phone number and checking the SMS opt-in box on our
+          inquiry form (or by opting in through any other method), you consent to
+          receive SMS text messages from CloseCove. These messages may include
+          service reminders, appointment confirmations, follow-ups related to your
+          inquiry, and updates about our services. Message frequency varies.
+          Message and data rates may apply.
+        </p>
+
+        <p>
+          <strong>
+            Your mobile number and opt-in consent will not be shared with or sold
+            to third parties or affiliates for marketing or promotional purposes.
+          </strong>
+        </p>
+
+        <p>
+          You can opt out of receiving text messages at any time by replying{" "}
+          <strong>STOP</strong> to any message you receive from us. After opting
+          out, you will receive one final confirmation message and no further
+          texts will be sent.
+        </p>
+
+        <p>
+          For help or questions about our text messaging program, reply{" "}
+          <strong>HELP</strong> to any message, or contact us at{" "}
+          <a href="mailto:hello@closecove.com">hello@closecove.com</a>.
+        </p>
+
+        <p>
+          Supported carriers include all major US mobile carriers. CloseCove is
+          not responsible for delayed or undelivered messages caused by carrier
+          network issues.
+        </p>
+
         <h2>Third-Party Services We Use</h2>
 
         <p>
@@ -68,14 +105,18 @@ export default function PrivacyPage() {
             our team via email
           </li>
           <li>
+            <strong>Telnyx</strong> — used to send and receive SMS text messages
+            and phone calls on our behalf
+          </li>
+          <li>
             <strong>Vercel</strong> — hosts this website
           </li>
         </ul>
 
         <p>
           These providers process data only as needed to perform their function
-          (e.g., sending an email, serving the website) and are bound by their
-          own privacy and security practices.
+          (e.g., sending an email, delivering a text message, serving the website)
+          and are bound by their own privacy and security practices.
         </p>
 
         <h2>Data Retention</h2>
@@ -110,8 +151,8 @@ export default function PrivacyPage() {
         <h2>Contact</h2>
 
         <p>
-          Questions about this policy or your data can be sent to
-          hello@closecove.com.
+          Questions about this policy or your data can be sent to{" "}
+          <a href="mailto:hello@closecove.com">hello@closecove.com</a>.
         </p>
       </article>
     </LegalPage>
