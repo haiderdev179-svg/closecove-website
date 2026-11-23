@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { FadeIn } from "@/components/FadeIn";
 import {
   Phone,
@@ -139,12 +139,12 @@ function HeroSection() {
    PHONE MOCKUP — Full realistic conversation
    ═══════════════════════════════════════════════════════════════ */
 function PhoneMockup() {
-  const bubbleVariants = {
+  const bubbleVariants: Variants = {
     hidden: { opacity: 0, y: 12 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.6 + 0.3, duration: 0.45, ease: "easeOut" },
+      transition: { delay: i * 0.6 + 0.3, duration: 0.45, ease: [0, 0, 0.2, 1] },
     }),
   };
 
@@ -249,7 +249,7 @@ function PhoneMockup() {
   );
 }
 
-function BotBubble({ children, i, variants }: { children: React.ReactNode; i: number; variants: Record<string, unknown> }) {
+function BotBubble({ children, i, variants }: { children: React.ReactNode; i: number; variants: Variants }) {
   return (
     <motion.div custom={i} variants={variants} initial="hidden" whileInView="visible" viewport={{ once: true }}
       className="bg-[#E3EEF4] dark:bg-[#1a2a38] rounded-2xl rounded-bl-sm px-3 py-2.5 text-[13px] text-[#10222F] dark:text-gray-200 max-w-[88%]">
@@ -258,7 +258,7 @@ function BotBubble({ children, i, variants }: { children: React.ReactNode; i: nu
   );
 }
 
-function CustomerBubble({ children, i, variants }: { children: React.ReactNode; i: number; variants: Record<string, unknown> }) {
+function CustomerBubble({ children, i, variants }: { children: React.ReactNode; i: number; variants: Variants }) {
   return (
     <motion.div custom={i} variants={variants} initial="hidden" whileInView="visible" viewport={{ once: true }}
       className="bg-[#10222F] dark:bg-blue-600 text-white rounded-2xl rounded-br-sm px-3 py-2.5 text-[13px] max-w-[80%] self-end">
