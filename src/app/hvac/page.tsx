@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
@@ -18,6 +18,19 @@ import {
   Loader2,
   ArrowRight,
 } from "lucide-react";
+
+/* ═══════════════════════════════════════════════════════════════
+   US TIMEZONE OPTIONS (IANA)
+   ═══════════════════════════════════════════════════════════════ */
+const US_TIMEZONES = [
+  { value: "America/New_York", label: "Eastern Time" },
+  { value: "America/Chicago", label: "Central Time" },
+  { value: "America/Denver", label: "Mountain Time" },
+  { value: "America/Los_Angeles", label: "Pacific Time" },
+  { value: "America/Phoenix", label: "Arizona (no DST)" },
+  { value: "America/Anchorage", label: "Alaska Time" },
+  { value: "Pacific/Honolulu", label: "Hawaii Time" },
+];
 
 /* ═══════════════════════════════════════════════════════════════
    PAGE
@@ -56,7 +69,7 @@ function FunnelNavbar() {
           href="#book"
           className="inline-block bg-[#10222F] text-[#EAF2F6] px-[18px] py-2.5 rounded-full font-medium text-[15px] no-underline transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
         >
-          Book a call
+          Request a call
         </a>
       </div>
     </nav>
@@ -116,7 +129,7 @@ function HeroSection() {
                 href="#book"
                 className="inline-block bg-[#F26A21] text-[#10222F] px-7 py-4 rounded-full font-medium text-[17px] no-underline transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
               >
-                Book a 15-minute call
+                Request a 15-minute call
               </a>
               <span className="text-[15px] text-[#3B5565]">
                 No contract. First month free.
@@ -457,12 +470,28 @@ function FounderSection() {
     email: "",
     preferredDate: "",
     preferredTime: "",
+    timezone: "",
     challenge: "",
     smsConsent: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [detectedTz, setDetectedTz] = useState(false);
+
+  /* Auto-detect visitor timezone on mount */
+  useEffect(() => {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      /* Only auto-fill if it's a recognized US timezone */
+      if (tz && tz !== "UTC" && US_TIMEZONES.some((t) => t.value === tz)) {
+        setFormData((prev) => ({ ...prev, timezone: tz }));
+        setDetectedTz(true);
+      }
+    } catch {
+      /* Detection failed — leave blank, user must pick */
+    }
+  }, []);
 
   /* Get tomorrow's date as min for date picker */
   const tomorrow = new Date();
@@ -486,6 +515,7 @@ function FounderSection() {
           contact: formData.email,
           preferredDate: formData.preferredDate,
           preferredTime: formData.preferredTime,
+          timezone: formData.timezone,
           challenge: formData.challenge,
           smsConsent: formData.smsConsent,
           businessType: "HVAC",
@@ -494,7 +524,7 @@ function FounderSection() {
       });
 
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Failed to submit inquiry.");
+      if (!response.ok) throw new Error(data.error || "Failed to submit request.");
       setSubmitted(true);
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : "An unexpected error occurred. Please try again.";
@@ -510,6 +540,9 @@ function FounderSection() {
     const d = new Date(dateStr + "T12:00:00");
     return d.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
   };
+
+  /* Get timezone label */
+  const tzLabel = US_TIMEZONES.find((t) => t.value === formData.timezone)?.label || formData.timezone;
 
   return (
     <section id="book" className="py-16 md:py-24 bg-[#10222F]">
@@ -536,7 +569,7 @@ function FounderSection() {
           {/* Left — Form */}
           <FadeIn className="flex-[1_1_420px]">
             <h2 className="font-extrabold text-[clamp(26px,3.5vw,38px)] tracking-[-0.01em] text-white mb-2">
-              Book a free 15-minute call
+              Request a free 15-minute call
             </h2>
             <p className="text-[16px] text-[#8FA8B8] mb-8">
               Tell us about your HVAC business. We&apos;ll show you exactly where
@@ -548,13 +581,13 @@ function FounderSection() {
                 <div className="w-14 h-14 rounded-full bg-[#1E7B3A]/20 border border-[#1E7B3A]/30 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-7 h-7 text-[#4ADE80]" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">Thanks, {formData.name}!</h3>
+                <h3 className="text-2xl font-bold text-white">Request received!</h3>
                 <p className="text-[#8FA8B8] text-[15px] max-w-md mx-auto">
-                  We&apos;ve got the details for {formData.businessName}.
+                  Thanks, {formData.name}! We&apos;ve got the details for {formData.businessName}.
                   {formData.preferredDate && formData.preferredTime && (
-                    <> Your call is requested for {formatDate(formData.preferredDate)} at {formData.preferredTime}.</>
+                    <> Your preferred time is {formatDate(formData.preferredDate)} at {formData.preferredTime} {tzLabel}.</>
                   )}
-                  {" "}We&apos;ll confirm by email within 4 business hours.
+                  {" "}We&apos;ll confirm your call by email within one business day.
                 </p>
               </div>
             ) : (
@@ -617,8 +650,8 @@ function FounderSection() {
                   </div>
                 </div>
 
-                {/* Preferred date + time */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {/* Preferred date + time + timezone */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                   <div>
                     <label htmlFor="preferredDate" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
                       Preferred Date *
@@ -640,9 +673,27 @@ function FounderSection() {
                       onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors appearance-none [color-scheme:dark]"
                     >
-                      <option value="" disabled className="bg-[#10222F] text-white/50">Select a time</option>
+                      <option value="" disabled className="bg-[#10222F] text-white/50">Select time</option>
                       {TIME_SLOTS.map((slot) => (
                         <option key={slot} value={slot} className="bg-[#10222F] text-white">{slot}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="timezone" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
+                      Time Zone *
+                    </label>
+                    <select
+                      id="timezone" required
+                      value={formData.timezone}
+                      onChange={(e) => setFormData({ ...formData, timezone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors appearance-none [color-scheme:dark]"
+                    >
+                      <option value="" disabled className="bg-[#10222F] text-white/50">
+                        {detectedTz ? "Detected" : "Select zone"}
+                      </option>
+                      {US_TIMEZONES.map((tz) => (
+                        <option key={tz.value} value={tz.value} className="bg-[#10222F] text-white">{tz.label}</option>
                       ))}
                     </select>
                   </div>
@@ -683,12 +734,12 @@ function FounderSection() {
                   {isSubmitting ? (
                     <><Loader2 className="w-5 h-5 animate-spin" /><span>Sending...</span></>
                   ) : (
-                    <><span>Book a free call</span><ArrowRight className="w-4 h-4" /></>
+                    <><span>Request your call</span><ArrowRight className="w-4 h-4" /></>
                   )}
                 </button>
 
                 <p className="text-center text-[11px] text-[#8FA8B8]/60 pt-1">
-                  No payment required · 100% confidential · Response within 4 hours
+                  No payment required · 100% confidential · We&apos;ll confirm within one business day
                 </p>
               </form>
             )}
