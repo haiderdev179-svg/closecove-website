@@ -42,7 +42,7 @@ function FunnelNavbar() {
       <div className="max-w-[1120px] mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="no-underline">
           <Image
-            src="/images/closecove-logo-full.png"
+            src="/images/closecove-logo-hvac.png"
             alt="CloseCove"
             width={180}
             height={40}
@@ -146,19 +146,19 @@ function PhoneMockup() {
 
   return (
     <div className="relative">
-      <div className="absolute w-[360px] h-[360px] rounded-full bg-[#FFD7BD] top-[80px] left-1/2 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute w-[420px] h-[420px] rounded-full bg-[#FFD7BD] top-[60px] left-1/2 -translate-x-1/2 pointer-events-none" />
 
-      <div className="relative w-[280px] bg-[#10222F] rounded-[38px] p-2.5 shadow-2xl shadow-black/20">
-        <div className="bg-white rounded-[28px] px-3 pt-3 pb-3 flex flex-col gap-[5px]">
-          <p className="text-[10px] text-center text-[#5B7384] mb-0.5">Morgan Heating and Cooling</p>
+      <div className="relative w-[340px] bg-[#10222F] rounded-[42px] p-3 shadow-2xl shadow-black/20">
+        <div className="bg-white rounded-[32px] px-4 pt-4 pb-4 flex flex-col gap-[6px]">
+          <p className="text-[12px] text-center text-[#5B7384] mb-0.5">Morgan Heating and Cooling</p>
 
           {/* Missed call */}
           <motion.div custom={0} variants={bv} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="bg-[#FDE8E8] rounded-[10px] px-2.5 py-[5px] flex items-center gap-2 text-[11px]">
-            <PhoneOff className="w-4 h-4 text-[#B3261E] flex-none" />
+            className="bg-[#FDE8E8] rounded-[12px] px-3 py-1.5 flex items-center gap-2.5 text-[13px]">
+            <PhoneOff className="w-5 h-5 text-[#B3261E] flex-none" />
             <div>
-              <p className="font-semibold text-[#7A1A14] text-[11px]">Missed call</p>
-              <p className="text-[9px] text-[#7A1A14]/60">6:42 p.m.</p>
+              <p className="font-semibold text-[#7A1A14] text-[13px]">Missed call</p>
+              <p className="text-[10px] text-[#7A1A14]/60">6:42 p.m.</p>
             </div>
           </motion.div>
 
@@ -173,13 +173,13 @@ function PhoneMockup() {
 
           {/* Booked */}
           <motion.div custom={9} variants={bv} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="bg-[#E4F4E8] border border-[#9BD0A8] rounded-[10px] px-2.5 py-[5px] flex items-center gap-2 text-[11px]">
-            <div className="w-4 h-4 rounded-full bg-[#1E7B3A] flex items-center justify-center flex-none">
-              <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+            className="bg-[#E4F4E8] border border-[#9BD0A8] rounded-[12px] px-3 py-1.5 flex items-center gap-2.5 text-[13px]">
+            <div className="w-5 h-5 rounded-full bg-[#1E7B3A] flex items-center justify-center flex-none">
+              <Check className="w-3 h-3 text-white" strokeWidth={3} />
             </div>
             <div>
-              <p className="font-semibold text-[#12461F] text-[11px]">Booked: tomorrow, 8:30 a.m.</p>
-              <p className="text-[9px] text-[#12461F]/60">Confirmation sent to mike@email.com</p>
+              <p className="font-semibold text-[#12461F] text-[13px]">Booked: tomorrow, 8:30 a.m.</p>
+              <p className="text-[10px] text-[#12461F]/60">Confirmation sent to mike@email.com</p>
             </div>
           </motion.div>
         </div>
@@ -191,7 +191,7 @@ function PhoneMockup() {
 function Bot({ children, i, v }: { children: React.ReactNode; i: number; v: Variants }) {
   return (
     <motion.div custom={i} variants={v} initial="hidden" whileInView="visible" viewport={{ once: true }}
-      className="bg-[#E3EEF4] rounded-xl rounded-bl-sm px-2.5 py-[5px] text-[11px] leading-[1.35] text-[#10222F] max-w-[88%]">
+      className="bg-[#E3EEF4] rounded-xl rounded-bl-sm px-3 py-1.5 text-[13px] leading-[1.4] text-[#10222F] max-w-[88%]">
       {children}
     </motion.div>
   );
@@ -200,7 +200,7 @@ function Bot({ children, i, v }: { children: React.ReactNode; i: number; v: Vari
 function Cust({ children, i, v }: { children: React.ReactNode; i: number; v: Variants }) {
   return (
     <motion.div custom={i} variants={v} initial="hidden" whileInView="visible" viewport={{ once: true }}
-      className="bg-[#10222F] text-white rounded-xl rounded-br-sm px-2.5 py-[5px] text-[11px] leading-[1.35] max-w-[75%] self-end">
+      className="bg-[#10222F] text-white rounded-xl rounded-br-sm px-3 py-1.5 text-[13px] leading-[1.4] max-w-[75%] self-end">
       {children}
     </motion.div>
   );
@@ -330,12 +330,11 @@ function HandoffSection() {
    ═══════════════════════════════════════════════════════════════ */
 function PricingSection() {
   const checks = [
-    "No contract",
-    "30-day money-back guarantee if you don’t see clear results",
-    "Dashboard with missed calls and jobs booked",
     "Automatic text-back within 60 seconds",
     "Smart conversation that books appointments",
+    "Dashboard with missed calls and jobs booked",
     "Instant alerts when a job is booked",
+    "No contract — cancel anytime",
   ];
 
   return (
@@ -347,42 +346,53 @@ function PricingSection() {
             Simple pricing
           </h2>
           <p className="text-[18px] text-[#3B5565] max-w-[440px] leading-relaxed">
-            Getting started is one short form, about 10 minutes. Your system is
-            live in 7 to 10 business days.
+            One short form, about 10 minutes. Your system is live in 7–10
+            business days.
           </p>
         </FadeIn>
 
-        {/* Right — Card */}
+        {/* Right — Dark premium card */}
         <FadeIn delay={150} className="flex-[1_1_380px]">
-          <div className="bg-white border border-[#C3D8E3] rounded-[24px] p-8 md:p-10 shadow-xl shadow-black/[0.04]">
-            {/* Price rows */}
-            <div className="mb-2">
-              <span className="font-extrabold text-[48px] leading-none tracking-tight">$300</span>
-              <span className="text-[17px] font-semibold text-[#3B5565] ml-3">setup</span>
-            </div>
-            <div className="mb-6">
-              <span className="font-extrabold text-[48px] leading-none tracking-tight">$150</span>
-              <span className="text-[17px] font-semibold text-[#3B5565] ml-3">per month after your first 30 days</span>
+          <div className="bg-[#10222F] rounded-[24px] p-8 md:p-10 shadow-2xl shadow-black/20">
+            {/* Split prices */}
+            <div className="flex justify-between items-start mb-5">
+              <div>
+                <p className="text-[11px] uppercase tracking-[1px] text-[#8FA8B8] mb-1">Setup</p>
+                <p className="font-extrabold text-[42px] leading-none tracking-tight text-white">$300</p>
+              </div>
+              <div className="w-px bg-[#3B5565] self-stretch mx-4" />
+              <div>
+                <p className="text-[11px] uppercase tracking-[1px] text-[#8FA8B8] mb-1">Monthly</p>
+                <p className="font-extrabold text-[42px] leading-none tracking-tight text-white">$150</p>
+              </div>
             </div>
 
-            <div className="h-px bg-[#C3D8E3] mb-6" />
+            <p className="text-[13px] text-[#8FA8B8] mb-6 pb-6 border-b border-[#3B5565]">
+              First 30 days free. No contract. Cancel anytime.
+            </p>
 
             {/* Feature list */}
-            <div className="space-y-4">
+            <div className="space-y-3 mb-8">
               {checks.map((txt) => (
-                <div key={txt} className="flex gap-3 items-start">
-                  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" className="flex-none mt-0.5">
-                    <path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="#1E7B3A" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                <div key={txt} className="flex gap-3 items-center">
+                  <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" className="flex-none">
+                    <path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="#F26A21" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span className="text-[16px] leading-snug">{txt}</span>
+                  <span className="text-[14px] text-[#C3D8E3]">{txt}</span>
                 </div>
               ))}
             </div>
 
-            {/* CTA inside card */}
+            {/* 30-day guarantee */}
+            <div className="flex items-center gap-2 mb-6 bg-[#1E7B3A]/15 rounded-xl px-4 py-3">
+              <Shield className="w-5 h-5 text-[#4ADE80] flex-none" />
+              <span className="text-[13px] text-[#4ADE80] font-medium">30-day money-back guarantee</span>
+            </div>
+
+            {/* CTA */}
             <a
               href="https://www.closecove.com/#inquire"
-              className="block mt-8 bg-[#F26A21] text-[#10222F] text-center px-7 py-4 rounded-full font-medium text-[17px] no-underline transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
+              className="block bg-[#F26A21] text-white text-center px-7 py-4 rounded-full font-semibold text-[17px] no-underline transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
             >
               Get started
             </a>
@@ -398,7 +408,7 @@ function PricingSection() {
    ═══════════════════════════════════════════════════════════════ */
 function FounderSection() {
   return (
-    <section id="book" className="py-16 md:py-20 bg-[#F26A21]">
+    <section id="book" className="py-16 md:py-20 bg-[#10222F]">
       <div className="max-w-[1120px] mx-auto px-6 flex flex-wrap gap-10 items-center">
         <div className="flex-[1_1_420px] flex gap-5 items-center">
           <Image
@@ -406,9 +416,9 @@ function FounderSection() {
             alt="Haider Ali — Founder, CloseCove"
             width={88}
             height={88}
-            className="rounded-full object-cover flex-none border-2 border-[#10222F]/20"
+            className="rounded-full object-cover flex-none border-2 border-white/20"
           />
-          <p className="text-[19px] max-w-[520px] text-[#10222F]">
+          <p className="text-[19px] max-w-[520px] text-[#EAF2F6]">
             I&apos;m Haider, and I built CloseCove myself. We&apos;re onboarding
             our first local clients, which is why the guarantee is on us — not
             you.
@@ -418,13 +428,13 @@ function FounderSection() {
         <div className="flex-[1_1_280px]">
           <a
             href="https://www.closecove.com/#inquire"
-            className="inline-block bg-[#10222F] text-[#EAF2F6] px-8 py-[18px] rounded-full font-medium text-[18px] no-underline transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
+            className="inline-block bg-[#F26A21] text-white px-8 py-[18px] rounded-full font-medium text-[18px] no-underline transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
           >
             Book a 15-minute call
           </a>
-          <div className="mt-3 text-[15px] text-[#10222F]">
+          <div className="mt-3 text-[15px] text-[#8FA8B8]">
             Or call the demo first:{" "}
-            <a href="tel:+18889950954" className="font-semibold text-[#10222F] no-underline underline-offset-2 hover:underline">
+            <a href="tel:+18889950954" className="font-semibold text-[#EAF2F6] no-underline underline-offset-2 hover:underline">
               +1 (888) 995-0954
             </a>
           </div>
