@@ -34,23 +34,6 @@ export default function HVACPage() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   THEMED LOGO — Navy circle + "Close" black + "Cove" orange
-   ═══════════════════════════════════════════════════════════════ */
-function ThemedLogo() {
-  return (
-    <svg viewBox="0 0 520 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-9 w-auto">
-      {/* Circle icon */}
-      <circle cx="50" cy="50" r="46" fill="#10222F" />
-      <path d="M26 44c6 12 18 18 24 18s18-6 24-18" stroke="#fff" strokeWidth="5" strokeLinecap="round" fill="none" />
-      {/* "Close" in dark navy */}
-      <text x="116" y="68" fontFamily="Inter, system-ui, sans-serif" fontWeight="800" fontSize="52" fill="#10222F">Close</text>
-      {/* "Cove" in orange */}
-      <text x="330" y="68" fontFamily="Inter, system-ui, sans-serif" fontWeight="800" fontSize="52" fill="#F26A21">Cove</text>
-    </svg>
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════════
    NAVBAR
    ═══════════════════════════════════════════════════════════════ */
 function FunnelNavbar() {
@@ -58,7 +41,13 @@ function FunnelNavbar() {
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-[#EAF2F6]/80 border-b border-[#10222F]/5">
       <div className="max-w-[1120px] mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="no-underline">
-          <ThemedLogo />
+          <Image
+            src="/images/closecove-logo-full.png"
+            alt="CloseCove"
+            width={180}
+            height={40}
+            className="h-9 w-auto"
+          />
         </Link>
         <a
           href="https://www.closecove.com/#inquire"
@@ -143,82 +132,55 @@ function HeroSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   PHONE MOCKUP — Static 5-bubble preview + link to demo
+   PHONE MOCKUP — Collects details: issue, day, name, address, email
    ═══════════════════════════════════════════════════════════════ */
 function PhoneMockup() {
-  const bubbleVariants: Variants = {
-    hidden: { opacity: 0, y: 12 },
+  const bv: Variants = {
+    hidden: { opacity: 0, y: 10 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.7 + 0.3, duration: 0.5, ease: [0, 0, 0.2, 1] },
+      transition: { delay: i * 0.5 + 0.2, duration: 0.4, ease: [0, 0, 0.2, 1] },
     }),
   };
 
   return (
     <div className="relative">
-      {/* Background glow */}
-      <div className="absolute w-[400px] h-[400px] rounded-full bg-[#FFD7BD] top-[60px] left-1/2 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute w-[360px] h-[360px] rounded-full bg-[#FFD7BD] top-[80px] left-1/2 -translate-x-1/2 pointer-events-none" />
 
-      {/* Phone frame */}
-      <div className="relative w-[300px] h-[560px] bg-[#10222F] rounded-[42px] p-2.5 shadow-2xl shadow-black/20">
-        <div className="bg-white rounded-[32px] h-full px-3.5 pt-4 pb-4 flex flex-col justify-between overflow-hidden">
-          {/* Chat area */}
-          <div className="flex flex-col gap-2.5">
-            {/* Header */}
-            <p className="text-[11px] text-center text-[#5B7384] mb-1">
-              Sample: Morgan Heating and Cooling
-            </p>
+      <div className="relative w-[280px] bg-[#10222F] rounded-[38px] p-2.5 shadow-2xl shadow-black/20">
+        <div className="bg-white rounded-[28px] px-3 pt-3 pb-3 flex flex-col gap-[5px]">
+          <p className="text-[10px] text-center text-[#5B7384] mb-0.5">Morgan Heating and Cooling</p>
 
-            {/* 1. Missed call */}
-            <motion.div custom={0} variants={bubbleVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
-              className="bg-[#FDE8E8] rounded-[14px] px-3 py-2.5 flex items-center gap-2.5 text-[13px]">
-              <PhoneOff className="w-5 h-5 text-[#B3261E] flex-none" />
-              <div>
-                <p className="font-medium text-[#7A1A14]">Missed call</p>
-                <p className="text-[11px] text-[#7A1A14]/70">6:42 p.m. · Unknown caller</p>
-              </div>
-            </motion.div>
+          {/* Missed call */}
+          <motion.div custom={0} variants={bv} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="bg-[#FDE8E8] rounded-[10px] px-2.5 py-[5px] flex items-center gap-2 text-[11px]">
+            <PhoneOff className="w-4 h-4 text-[#B3261E] flex-none" />
+            <div>
+              <p className="font-semibold text-[#7A1A14] text-[11px]">Missed call</p>
+              <p className="text-[9px] text-[#7A1A14]/60">6:42 p.m.</p>
+            </div>
+          </motion.div>
 
-            {/* 2. Bot */}
-            <BotBubble i={1} variants={bubbleVariants}>
-              Hi, thanks for calling Morgan Heating! Sorry we missed you. Is this a repair, a tune-up, or a new system quote?
-            </BotBubble>
+          <Bot i={1} v={bv}>Hi! Sorry we missed you. Is this for a repair, tune-up, or new system?</Bot>
+          <Cust i={2} v={bv}>Furnace won&apos;t turn on</Cust>
+          <Bot i={3} v={bv}>What day works best for a tech visit?</Bot>
+          <Cust i={4} v={bv}>Tomorrow morning if possible</Cust>
+          <Bot i={5} v={bv}>8:30 a.m. is open. Can I get your name and address?</Bot>
+          <Cust i={6} v={bv}>Mike Davis, 412 Oak Hill Dr</Cust>
+          <Bot i={7} v={bv}>And your email for the confirmation?</Bot>
+          <Cust i={8} v={bv}>mike@email.com</Cust>
 
-            {/* 3. Customer */}
-            <CustomerBubble i={2} variants={bubbleVariants}>
-              No heat. Can someone come tomorrow?
-            </CustomerBubble>
-
-            {/* 4. Bot */}
-            <BotBubble i={3} variants={bubbleVariants}>
-              Got it. I can get a tech out tomorrow at 8:30 a.m. Does that work?
-            </BotBubble>
-
-            {/* 5. Booked confirmation */}
-            <motion.div custom={4} variants={bubbleVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
-              className="bg-[#E4F4E8] border border-[#9BD0A8] rounded-[14px] px-3 py-2.5 flex items-center gap-2.5 text-[13px]">
-              <div className="w-5 h-5 rounded-full bg-[#1E7B3A] flex items-center justify-center flex-none">
-                <Check className="w-3 h-3 text-white" strokeWidth={3} />
-              </div>
-              <div>
-                <p className="font-medium text-[#12461F]">Booked: tomorrow, 8:30 a.m.</p>
-                <p className="text-[11px] text-[#12461F]/70">Owner alerted instantly</p>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* See full demo link */}
-          <motion.div custom={5} variants={bubbleVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}
-            className="pt-3 text-center">
-            <a
-              href="https://demo.closecove.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[13px] font-medium text-[#F26A21] no-underline hover:underline"
-            >
-              See the full conversation →
-            </a>
+          {/* Booked */}
+          <motion.div custom={9} variants={bv} initial="hidden" whileInView="visible" viewport={{ once: true }}
+            className="bg-[#E4F4E8] border border-[#9BD0A8] rounded-[10px] px-2.5 py-[5px] flex items-center gap-2 text-[11px]">
+            <div className="w-4 h-4 rounded-full bg-[#1E7B3A] flex items-center justify-center flex-none">
+              <Check className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+            </div>
+            <div>
+              <p className="font-semibold text-[#12461F] text-[11px]">Booked: tomorrow, 8:30 a.m.</p>
+              <p className="text-[9px] text-[#12461F]/60">Confirmation sent to mike@email.com</p>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -226,19 +188,19 @@ function PhoneMockup() {
   );
 }
 
-function BotBubble({ children, i, variants }: { children: React.ReactNode; i: number; variants: Variants }) {
+function Bot({ children, i, v }: { children: React.ReactNode; i: number; v: Variants }) {
   return (
-    <motion.div custom={i} variants={variants} initial="hidden" whileInView="visible" viewport={{ once: true }}
-      className="bg-[#E3EEF4] rounded-2xl rounded-bl-sm px-3 py-2.5 text-[13px] text-[#10222F] max-w-[88%]">
+    <motion.div custom={i} variants={v} initial="hidden" whileInView="visible" viewport={{ once: true }}
+      className="bg-[#E3EEF4] rounded-xl rounded-bl-sm px-2.5 py-[5px] text-[11px] leading-[1.35] text-[#10222F] max-w-[88%]">
       {children}
     </motion.div>
   );
 }
 
-function CustomerBubble({ children, i, variants }: { children: React.ReactNode; i: number; variants: Variants }) {
+function Cust({ children, i, v }: { children: React.ReactNode; i: number; v: Variants }) {
   return (
-    <motion.div custom={i} variants={variants} initial="hidden" whileInView="visible" viewport={{ once: true }}
-      className="bg-[#10222F] text-white rounded-2xl rounded-br-sm px-3 py-2.5 text-[13px] max-w-[80%] self-end">
+    <motion.div custom={i} variants={v} initial="hidden" whileInView="visible" viewport={{ once: true }}
+      className="bg-[#10222F] text-white rounded-xl rounded-br-sm px-2.5 py-[5px] text-[11px] leading-[1.35] max-w-[75%] self-end">
       {children}
     </motion.div>
   );
