@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
@@ -14,6 +14,9 @@ import {
   Shield,
   Bell,
   UserPlus,
+  CheckCircle2,
+  Loader2,
+  ArrowRight,
 } from "lucide-react";
 
 /* ═══════════════════════════════════════════════════════════════
@@ -50,7 +53,7 @@ function FunnelNavbar() {
           />
         </Link>
         <a
-          href="https://www.closecove.com/#inquire"
+          href="#book"
           className="inline-block bg-[#10222F] text-[#EAF2F6] px-[18px] py-2.5 rounded-full font-medium text-[15px] no-underline transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
         >
           Book a call
@@ -110,13 +113,13 @@ function HeroSection() {
           <FadeIn delay={300}>
             <div className="flex flex-wrap gap-4 items-center">
               <a
-                href="https://www.closecove.com/#inquire"
+                href="#book"
                 className="inline-block bg-[#F26A21] text-[#10222F] px-7 py-4 rounded-full font-medium text-[17px] no-underline transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
               >
                 Book a 15-minute call
               </a>
               <span className="text-[15px] text-[#3B5565]">
-                No contract. 30-day money-back guarantee.
+                No contract. First month free.
               </span>
             </div>
           </FadeIn>
@@ -146,7 +149,8 @@ function PhoneMockup() {
 
   return (
     <div className="relative">
-      <div className="absolute w-[420px] h-[420px] rounded-full bg-[#FFD7BD] top-[60px] left-1/2 -translate-x-1/2 pointer-events-none" />
+      <p className="text-[11px] uppercase tracking-[1.5px] text-[#3B5565] font-medium text-center mb-3">Sample conversation</p>
+      <div className="absolute w-[420px] h-[420px] rounded-full bg-[#FFD7BD] top-[90px] left-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div className="relative w-[340px] bg-[#10222F] rounded-[42px] p-3 shadow-2xl shadow-black/20">
         <div className="bg-white rounded-[32px] px-4 pt-4 pb-4 flex flex-col gap-[6px]">
@@ -368,7 +372,7 @@ function PricingSection() {
             </div>
 
             <p className="text-[13px] text-[#8FA8B8] mb-6 pb-6 border-b border-[#3B5565]">
-              First 30 days free. No contract. Cancel anytime.
+              Your first month of service is free. No contract — cancel anytime.
             </p>
 
             {/* Feature list */}
@@ -386,12 +390,12 @@ function PricingSection() {
             {/* 30-day guarantee */}
             <div className="flex items-center gap-2 mb-6 bg-[#1E7B3A]/15 rounded-xl px-4 py-3">
               <Shield className="w-5 h-5 text-[#4ADE80] flex-none" />
-              <span className="text-[13px] text-[#4ADE80] font-medium">30-day money-back guarantee</span>
+              <span className="text-[13px] text-[#4ADE80] font-medium">$300 setup fee refunded if no clear results in 30 days</span>
             </div>
 
             {/* CTA */}
             <a
-              href="https://www.closecove.com/#inquire"
+              href="#book"
               className="block bg-[#F26A21] text-white text-center px-7 py-4 rounded-full font-semibold text-[17px] no-underline transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
             >
               Get started
@@ -404,40 +408,207 @@ function PricingSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   FOUNDER + CTA
+   FOUNDER + BOOKING FORM
    ═══════════════════════════════════════════════════════════════ */
 function FounderSection() {
-  return (
-    <section id="book" className="py-16 md:py-20 bg-[#10222F]">
-      <div className="max-w-[1120px] mx-auto px-6 flex flex-wrap gap-10 items-center">
-        <div className="flex-[1_1_420px] flex gap-5 items-center">
-          <Image
-            src="/images/haider.png"
-            alt="Haider Ali — Founder, CloseCove"
-            width={88}
-            height={88}
-            className="rounded-full object-cover flex-none border-2 border-white/20"
-          />
-          <p className="text-[19px] max-w-[520px] text-[#EAF2F6]">
-            I&apos;m Haider, and I built CloseCove myself. We&apos;re onboarding
-            our first local clients, which is why the guarantee is on us — not
-            you.
-          </p>
-        </div>
+  const [formData, setFormData] = useState({
+    name: "",
+    businessName: "",
+    contact: "",
+    challenge: "",
+    smsConsent: false,
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-        <div className="flex-[1_1_280px]">
-          <a
-            href="https://www.closecove.com/#inquire"
-            className="inline-block bg-[#F26A21] text-white px-8 py-[18px] rounded-full font-medium text-[18px] no-underline transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
-          >
-            Book a 15-minute call
-          </a>
-          <div className="mt-3 text-[15px] text-[#8FA8B8]">
-            Or call the demo first:{" "}
-            <a href="tel:+18889950954" className="font-semibold text-[#EAF2F6] no-underline underline-offset-2 hover:underline">
-              +1 (888) 995-0954
-            </a>
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage(null);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/inquire", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          businessType: "HVAC",
+          selectedTier: "HVAC Funnel — Starter Plan ($300 + $150/mo)",
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Failed to submit inquiry.");
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "An unexpected error occurred. Please try again.";
+      setErrorMessage(message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <section id="book" className="py-16 md:py-24 bg-[#10222F]">
+      <div className="max-w-[1120px] mx-auto px-6">
+        {/* Founder intro */}
+        <FadeIn>
+          <div className="flex gap-5 items-center mb-12 max-w-[640px]">
+            <Image
+              src="/images/haider.png"
+              alt="Haider Ali — Founder, CloseCove"
+              width={72}
+              height={72}
+              className="rounded-full object-cover flex-none border-2 border-white/20"
+            />
+            <p className="text-[17px] text-[#C3D8E3]">
+              I&apos;m Haider, and I built CloseCove myself. We&apos;re onboarding
+              our first local clients, which is why the guarantee is on us — not
+              you.
+            </p>
           </div>
+        </FadeIn>
+
+        <div className="flex flex-wrap gap-12 lg:gap-20 items-start">
+          {/* Left — Form */}
+          <FadeIn className="flex-[1_1_420px]">
+            <h2 className="font-extrabold text-[clamp(26px,3.5vw,38px)] tracking-[-0.01em] text-white mb-2">
+              Book a free 15-minute call
+            </h2>
+            <p className="text-[16px] text-[#8FA8B8] mb-8">
+              Tell us about your HVAC business. We&apos;ll show you exactly where
+              leads are slipping through.
+            </p>
+
+            {submitted ? (
+              <div className="bg-white/[0.06] border border-white/10 rounded-2xl p-10 text-center space-y-4">
+                <div className="w-14 h-14 rounded-full bg-[#1E7B3A]/20 border border-[#1E7B3A]/30 flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-7 h-7 text-[#4ADE80]" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">Thanks, {formData.name}!</h3>
+                <p className="text-[#8FA8B8] text-[15px] max-w-md mx-auto">
+                  We&apos;ve got the details for {formData.businessName}. We&apos;ll
+                  confirm your 15-minute call by email within 4 business hours.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {errorMessage && (
+                  <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                    {errorMessage}
+                  </div>
+                )}
+
+                <input type="hidden" name="businessType" value="HVAC" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="name" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
+                      Your Name *
+                    </label>
+                    <input
+                      id="name" type="text" required placeholder="Alex Taylor"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="businessName" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
+                      Business Name *
+                    </label>
+                    <input
+                      id="businessName" type="text" required placeholder="Morgan Heating & Cooling"
+                      value={formData.businessName}
+                      onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="contact" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
+                    Phone or Email *
+                  </label>
+                  <input
+                    id="contact" type="text" required placeholder="alex@morganheating.com or (555) 123-4567"
+                    value={formData.contact}
+                    onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="challenge" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
+                    What&apos;s your biggest challenge with missed calls?
+                  </label>
+                  <textarea
+                    id="challenge" rows={3}
+                    placeholder="e.g. We miss calls after 5 p.m. and on weekends, customers call the next company..."
+                    value={formData.challenge}
+                    onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors resize-none"
+                  />
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <input
+                    id="smsConsent" type="checkbox" required
+                    checked={formData.smsConsent}
+                    onChange={(e) => setFormData({ ...formData, smsConsent: e.target.checked })}
+                    className="mt-1 w-4 h-4 rounded border-white/20 accent-[#F26A21] cursor-pointer"
+                  />
+                  <label htmlFor="smsConsent" className="text-[11px] text-[#8FA8B8] leading-relaxed cursor-pointer">
+                    I agree to receive SMS messages and calls from CloseCove regarding my inquiry,
+                    appointment reminders, and service updates. Message &amp; data rates may apply.
+                    Reply STOP to opt out at any time.{" "}
+                    <a href="/privacy" target="_blank" className="text-[#F26A21] hover:underline">Privacy Policy</a>
+                  </label>
+                </div>
+
+                <button
+                  type="submit" disabled={isSubmitting}
+                  className="w-full bg-[#F26A21] text-white py-4 rounded-full font-semibold text-[16px] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed transition-transform duration-150 ease-in-out hover:-translate-y-0.5"
+                >
+                  {isSubmitting ? (
+                    <><Loader2 className="w-5 h-5 animate-spin" /><span>Sending...</span></>
+                  ) : (
+                    <><span>Book a free call</span><ArrowRight className="w-4 h-4" /></>
+                  )}
+                </button>
+
+                <p className="text-center text-[11px] text-[#8FA8B8]/60 pt-1">
+                  No payment required · 100% confidential · Response within 4 hours
+                </p>
+              </form>
+            )}
+          </FadeIn>
+
+          {/* Right — Demo phone + secondary CTA */}
+          <FadeIn delay={150} className="flex-[1_1_300px]">
+            <div className="bg-white/[0.04] border border-white/10 rounded-2xl p-8">
+              <h3 className="text-white font-bold text-[20px] mb-3">Want to see it first?</h3>
+              <p className="text-[#8FA8B8] text-[15px] mb-6 leading-relaxed">
+                Call our demo line. Let it ring, hang up, and watch the
+                text arrive on your phone within 60 seconds.
+              </p>
+              <div className="flex items-center gap-4 bg-white/[0.06] border border-white/10 rounded-xl px-5 py-4">
+                <div className="relative w-[44px] h-[44px] flex-none">
+                  <span className="absolute inset-0 rounded-full bg-[#F26A21] animate-ping opacity-20" />
+                  <div className="absolute inset-0 rounded-full bg-[#F26A21] flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                </div>
+                <div>
+                  <a href="tel:+18889950954" className="font-extrabold text-[22px] text-white no-underline tracking-tight">
+                    (888) 995-0954
+                  </a>
+                  <p className="text-[12px] text-[#8FA8B8]">Free demo — no signup needed</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>
