@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Script from "next/script";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Problem } from "@/components/Problem";
@@ -28,6 +29,7 @@ export default function Home() {
         onClearTier={() => setSelectedTier(null)}
       />
       <Footer />
+      <Script src="https://getclosecove.com/widget.js" strategy="lazyOnload" />
     </main>
   );
 }

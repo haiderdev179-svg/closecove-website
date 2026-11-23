@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -75,7 +74,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-white dark:bg-[#0a0a1a] text-zinc-900 dark:text-[#f0f0f5] antialiased selection:bg-accent/15 selection:text-black dark:selection:text-white font-sans transition-colors duration-300">
         {children}
-        <Script src="https://getclosecove.com/widget.js" strategy="lazyOnload" />
       </body>
     </html>
   );

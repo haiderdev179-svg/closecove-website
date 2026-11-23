@@ -95,7 +95,7 @@ function HeroSection() {
                 <span className="absolute inset-0 rounded-full bg-[#F26A21] animate-ping opacity-20" style={{ animationDelay: "0.7s" }} />
                 <span className="absolute inset-0 rounded-full bg-[#F26A21] animate-ping opacity-10" style={{ animationDelay: "1.4s" }} />
                 <div className="absolute inset-0 rounded-full bg-[#F26A21] flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-[#10222F]" />
+                  <Phone className="w-6 h-6 text-white" />
                 </div>
               </div>
               <div>
@@ -211,96 +211,124 @@ function Cust({ children, i, v }: { children: React.ReactNode; i: number; v: Var
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   HOW IT WORKS — 3 Cards with mini visual mockups
+   HOW IT WORKS — Vertical Timeline with mini mockups
    ═══════════════════════════════════════════════════════════════ */
 function HowItWorksSection() {
   return (
     <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-[1120px] mx-auto px-6">
+      <div className="max-w-[600px] mx-auto px-6">
         <FadeIn>
-          <h2 className="font-extrabold text-[clamp(28px,4vw,42px)] tracking-[-0.01em] mb-10">
-            What happens when you miss a call
-          </h2>
+          <div className="text-center mb-10">
+            <p className="text-[12px] font-medium tracking-[1.5px] text-[#F26A21] mb-2 uppercase">How it works</p>
+            <h2 className="font-extrabold text-[clamp(28px,4vw,42px)] tracking-[-0.01em]">
+              Three steps. Zero effort.
+            </h2>
+          </div>
         </FadeIn>
 
-        <div className="flex flex-wrap gap-6">
-          {/* Card 1 — Missed call */}
-          <FadeIn delay={0} className="flex-[1_1_280px]">
-            <div className="bg-[#EAF2F6] rounded-[20px] p-7 h-full">
-              <div className="bg-white rounded-xl p-4 mb-5 border border-[#C3D8E3]/50">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="relative w-10 h-10 flex-none">
-                    <span className="absolute inset-0 rounded-full bg-red-500/20 animate-ping" />
-                    <div className="absolute inset-0 rounded-full bg-red-100 flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-red-600" />
+        <div className="flex gap-0">
+          {/* Timeline dots + lines */}
+          <div className="flex flex-col items-center w-[56px] flex-shrink-0">
+            {/* Step 1 dot */}
+            <FadeIn>
+              <div className="w-[48px] h-[48px] rounded-full bg-[#D92D20] flex items-center justify-center shadow-[0_0_0_6px_rgba(217,45,32,0.15)]">
+                <PhoneOff className="w-[22px] h-[22px] text-white" />
+              </div>
+            </FadeIn>
+            <div className="w-[2px] flex-1 bg-gradient-to-b from-[#D92D20] to-[#F26A21] min-h-[40px]" />
+            {/* Step 2 dot */}
+            <FadeIn delay={120}>
+              <div className="w-[48px] h-[48px] rounded-full bg-[#F26A21] flex items-center justify-center shadow-[0_0_0_6px_rgba(242,106,33,0.15)]">
+                <MessageSquare className="w-[22px] h-[22px] text-white" />
+              </div>
+            </FadeIn>
+            <div className="w-[2px] flex-1 bg-gradient-to-b from-[#F26A21] to-[#1E7B3A] min-h-[40px]" />
+            {/* Step 3 dot */}
+            <FadeIn delay={240}>
+              <div className="w-[48px] h-[48px] rounded-full bg-[#1E7B3A] flex items-center justify-center shadow-[0_0_0_6px_rgba(30,123,58,0.15)]">
+                <CalendarCheck className="w-[22px] h-[22px] text-white" />
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Cards */}
+          <div className="flex-1 flex flex-col gap-0 pl-4">
+            {/* Card 1: Missed call */}
+            <FadeIn>
+              <div className="bg-[#EAF2F6] rounded-[16px] p-5 mb-5 border border-[#C3D8E3]/50">
+                <h3 className="font-bold text-[17px] mb-1">A customer calls. You&apos;re busy.</h3>
+                <p className="text-[13px] text-[#3B5565] leading-relaxed mb-3">
+                  On a roof, under a sink, with another client — it happens 10+ times a day.
+                </p>
+                <div className="bg-[#FDE8E8] rounded-lg px-3 py-2.5 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#D92D20] flex items-center justify-center flex-none">
+                    <PhoneOff className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-semibold text-[#7F1D1D]">Missed call</p>
+                    <p className="text-[11px] text-[#991B1B]">+1 (555) 234-8901 · Just now</p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Card 2: Auto text */}
+            <FadeIn delay={120}>
+              <div className="bg-[#EAF2F6] rounded-[16px] p-5 mb-5 border border-[#C3D8E3]/50">
+                <h3 className="font-bold text-[17px] mb-1">CloseCove texts them back instantly.</h3>
+                <p className="text-[13px] text-[#3B5565] leading-relaxed mb-3">
+                  Within 60 seconds, our AI sends a friendly text, collects details, and books the job.
+                </p>
+                <div className="bg-white rounded-lg px-3 py-3 flex flex-col gap-1.5 border border-[#C3D8E3]/50">
+                  <div className="flex justify-start">
+                    <div className="bg-[#E3EEF4] rounded-lg rounded-bl-sm px-3 py-1.5 text-[11px] text-[#10222F] max-w-[80%]">
+                      Hey! Sorry we missed your call. How can we help?
                     </div>
                   </div>
-                  <div>
-                    <p className="text-[13px] font-semibold text-[#10222F]">Incoming call</p>
-                    <p className="text-[11px] text-[#3B5565]">+1 (804) 555-0132</p>
+                  <div className="flex justify-end">
+                    <div className="bg-[#F26A21] rounded-lg rounded-br-sm px-3 py-1.5 text-[11px] text-white max-w-[75%]">
+                      My AC stopped blowing cold air
+                    </div>
+                  </div>
+                  <div className="flex justify-start">
+                    <div className="bg-[#E3EEF4] rounded-lg rounded-bl-sm px-3 py-1.5 text-[11px] text-[#10222F] max-w-[80%]">
+                      Got it. What&apos;s a good time to send a tech?
+                    </div>
+                  </div>
+                  <div className="flex justify-end">
+                    <div className="bg-[#F26A21] rounded-lg rounded-br-sm px-3 py-1.5 text-[11px] text-white max-w-[75%]">
+                      Tomorrow morning works
+                    </div>
                   </div>
                 </div>
-                <div className="flex gap-2">
-                  <div className="flex-1 bg-red-500 text-white text-[12px] font-medium text-center py-1.5 rounded-lg">Decline</div>
-                  <div className="flex-1 bg-green-500 text-white text-[12px] font-medium text-center py-1.5 rounded-lg">Accept</div>
-                </div>
-                <p className="text-[11px] text-center text-red-500 mt-2 font-medium">✕ Missed</p>
               </div>
-              <h3 className="font-bold text-[22px] mb-2">A customer calls and you can&apos;t answer</h3>
-              <p className="text-[#3B5565]">You&apos;re on a roof, under a furnace, or the office is closed. The call goes unanswered.</p>
-            </div>
-          </FadeIn>
+            </FadeIn>
 
-          {/* Card 2 — Auto text */}
-          <FadeIn delay={120} className="flex-[1_1_280px]">
-            <div className="bg-[#EAF2F6] rounded-[20px] p-7 h-full">
-              <div className="bg-white rounded-xl p-4 mb-5 border border-[#C3D8E3]/50">
-                <div className="flex items-center gap-2 mb-3">
-                  <MessageSquare className="w-4 h-4 text-[#F26A21]" />
-                  <p className="text-[11px] font-medium text-[#3B5565]">Auto-reply sent · 58s later</p>
+            {/* Card 3: Job booked */}
+            <FadeIn delay={240}>
+              <div className="bg-[#EAF2F6] rounded-[16px] p-5 border border-[#C3D8E3]/50">
+                <h3 className="font-bold text-[17px] mb-1">You get an alert. Job&apos;s booked.</h3>
+                <p className="text-[13px] text-[#3B5565] leading-relaxed mb-3">
+                  Name, number, issue, preferred time — all waiting for you when you&apos;re free.
+                </p>
+                <div className="bg-[#E4F4E8] rounded-lg px-3 py-2.5 flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-full bg-[#1E7B3A] flex items-center justify-center flex-none">
+                    <CalendarCheck className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-[12px] font-semibold text-[#14532D]">New job booked</p>
+                    <p className="text-[11px] text-[#166534]">AC repair · Tomorrow 9 AM</p>
+                  </div>
                 </div>
-                <div className="bg-[#E3EEF4] rounded-xl rounded-bl-sm px-3 py-2 text-[12px] text-[#10222F] mb-2">
-                  Hi! Sorry we missed your call. How can we help — repair, tune-up, or quote?
-                </div>
-                <div className="bg-[#10222F] text-white rounded-xl rounded-br-sm px-3 py-2 text-[12px] max-w-[85%] ml-auto">
-                  No heat. Can someone come out?
+                <div className="bg-[#F0FDF4] rounded-md px-3 py-2 flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-[#1E7B3A] flex items-center justify-center flex-none">
+                    <Bell className="w-3 h-3 text-white" />
+                  </div>
+                  <p className="text-[11px] text-[#166534]">SMS + email alert sent to you</p>
                 </div>
               </div>
-              <h3 className="font-bold text-[22px] mb-2">They get a text within 60 seconds</h3>
-              <p className="text-[#3B5565]">CloseCove answers common questions and offers times from your calendar — before they call the next company.</p>
-            </div>
-          </FadeIn>
-
-          {/* Card 3 — Booked alert */}
-          <FadeIn delay={240} className="flex-[1_1_280px]">
-            <div className="bg-[#EAF2F6] rounded-[20px] p-7 h-full">
-              <div className="bg-white rounded-xl p-4 mb-5 border border-[#C3D8E3]/50 space-y-2.5">
-                <div className="bg-[#EAF2F6] rounded-lg px-3 py-2 flex items-center gap-2.5">
-                  <Bell className="w-4 h-4 text-[#F26A21] flex-none" />
-                  <div>
-                    <p className="text-[11px] font-semibold text-[#10222F]">New booking</p>
-                    <p className="text-[10px] text-[#3B5565]">Mike Davis — Furnace repair, 8:30 a.m.</p>
-                  </div>
-                </div>
-                <div className="bg-[#E4F4E8] rounded-lg px-3 py-2 flex items-center gap-2.5">
-                  <CalendarCheck className="w-4 h-4 text-[#1E7B3A] flex-none" />
-                  <div>
-                    <p className="text-[11px] font-semibold text-[#12461F]">Added to calendar</p>
-                    <p className="text-[10px] text-[#12461F]/70">Tomorrow · 8:30 a.m. · 412 Oak Hill Dr</p>
-                  </div>
-                </div>
-                <div className="bg-[#E3EEF4] rounded-lg px-3 py-2 flex items-center gap-2.5">
-                  <UserPlus className="w-4 h-4 text-[#0066FF] flex-none" />
-                  <div>
-                    <p className="text-[11px] font-semibold text-[#10222F]">Lead added to dashboard</p>
-                    <p className="text-[10px] text-[#3B5565]">mike@email.com · +1 (804) 555-0132</p>
-                  </div>
-                </div>
-              </div>
-              <h3 className="font-bold text-[22px] mb-2">You get an alert when it&apos;s booked</h3>
-              <p className="text-[#3B5565]">A push notification, a calendar entry, and the lead in your dashboard — all automatic.</p>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>
@@ -408,19 +436,38 @@ function PricingSection() {
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   TIME SLOTS for preferred time dropdown
+   ═══════════════════════════════════════════════════════════════ */
+const TIME_SLOTS = [
+  "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM",
+  "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM",
+  "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM",
+  "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM",
+  "5:00 PM",
+];
+
+/* ═══════════════════════════════════════════════════════════════
    FOUNDER + BOOKING FORM
    ═══════════════════════════════════════════════════════════════ */
 function FounderSection() {
   const [formData, setFormData] = useState({
     name: "",
     businessName: "",
-    contact: "",
+    phone: "",
+    email: "",
+    preferredDate: "",
+    preferredTime: "",
     challenge: "",
     smsConsent: false,
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  /* Get tomorrow's date as min for date picker */
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const minDate = tomorrow.toISOString().split("T")[0];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -432,7 +479,15 @@ function FounderSection() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name,
+          businessName: formData.businessName,
+          phone: formData.phone,
+          email: formData.email,
+          contact: formData.email,
+          preferredDate: formData.preferredDate,
+          preferredTime: formData.preferredTime,
+          challenge: formData.challenge,
+          smsConsent: formData.smsConsent,
           businessType: "HVAC",
           selectedTier: "HVAC Funnel — Starter Plan ($300 + $150/mo)",
         }),
@@ -447,6 +502,13 @@ function FounderSection() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  /* Format date for display */
+  const formatDate = (dateStr: string) => {
+    if (!dateStr) return "";
+    const d = new Date(dateStr + "T12:00:00");
+    return d.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
   };
 
   return (
@@ -488,8 +550,11 @@ function FounderSection() {
                 </div>
                 <h3 className="text-2xl font-bold text-white">Thanks, {formData.name}!</h3>
                 <p className="text-[#8FA8B8] text-[15px] max-w-md mx-auto">
-                  We&apos;ve got the details for {formData.businessName}. We&apos;ll
-                  confirm your 15-minute call by email within 4 business hours.
+                  We&apos;ve got the details for {formData.businessName}.
+                  {formData.preferredDate && formData.preferredTime && (
+                    <> Your call is requested for {formatDate(formData.preferredDate)} at {formData.preferredTime}.</>
+                  )}
+                  {" "}We&apos;ll confirm by email within 4 business hours.
                 </p>
               </div>
             ) : (
@@ -527,16 +592,60 @@ function FounderSection() {
                   </div>
                 </div>
 
-                <div>
-                  <label htmlFor="contact" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
-                    Phone or Email *
-                  </label>
-                  <input
-                    id="contact" type="text" required placeholder="alex@morganheating.com or (555) 123-4567"
-                    value={formData.contact}
-                    onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                    className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="phone" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
+                      Phone *
+                    </label>
+                    <input
+                      id="phone" type="tel" required placeholder="+1 (555) 123-4567"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
+                      Email *
+                    </label>
+                    <input
+                      id="email" type="email" required placeholder="alex@morganheating.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors"
+                    />
+                  </div>
+                </div>
+
+                {/* Preferred date + time */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="preferredDate" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
+                      Preferred Date *
+                    </label>
+                    <input
+                      id="preferredDate" type="date" required min={minDate}
+                      value={formData.preferredDate}
+                      onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors [color-scheme:dark]"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="preferredTime" className="block text-[11px] uppercase tracking-wider text-[#8FA8B8] font-medium mb-1.5">
+                      Preferred Time *
+                    </label>
+                    <select
+                      id="preferredTime" required
+                      value={formData.preferredTime}
+                      onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
+                      className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors appearance-none [color-scheme:dark]"
+                    >
+                      <option value="" disabled className="bg-[#10222F] text-white/50">Select a time</option>
+                      {TIME_SLOTS.map((slot) => (
+                        <option key={slot} value={slot} className="bg-[#10222F] text-white">{slot}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
 
                 <div>
@@ -602,7 +711,7 @@ function FounderSection() {
                 </div>
                 <div>
                   <a href="tel:+18889950954" className="font-extrabold text-[22px] text-white no-underline tracking-tight">
-                    (888) 995-0954
+                    +1 (888) 995-0954
                   </a>
                   <p className="text-[12px] text-[#8FA8B8]">Free demo — no signup needed</p>
                 </div>
