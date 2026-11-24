@@ -1,8 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FadeIn } from "./FadeIn";
 import { CheckCircle2, Loader2, ArrowRight } from "lucide-react";
+
+/* ═══════════════════════════════════════════════════════════════
+   US TIMEZONE OPTIONS (IANA)
+   ═══════════════════════════════════════════════════════════════ */
+const US_TIMEZONES = [
+  { value: "America/New_York", label: "Eastern Time" },
+  { value: "America/Chicago", label: "Central Time" },
+  { value: "America/Denver", label: "Mountain Time" },
+  { value: "America/Los_Angeles", label: "Pacific Time" },
+  { value: "America/Phoenix", label: "Arizona (no DST)" },
+  { value: "America/Anchorage", label: "Alaska Time" },
+  { value: "Pacific/Honolulu", label: "Hawaii Time" },
+];
+
+const TIME_SLOTS = [
+  "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM",
+  "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM",
+  "1:00 PM", "1:30 PM", "2:00 PM", "2:30 PM",
+  "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM",
+  "5:00 PM",
+];
 
 interface InquiryFormProps {
   selectedTier?: "starter" | "growth" | null;
@@ -14,7 +35,11 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
     name: "",
     businessName: "",
     businessType: "Home Services",
-    contact: "",
+    phone: "",
+    email: "",
+    preferredDate: "",
+    preferredTime: "",
+    timezone: "",
     challenge: "",
     smsConsent: false,
   });
@@ -22,8 +47,31 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [detectedTz, setDetectedTz] = useState(false);
+
+  /* Auto-detect visitor timezone on mount */
+  useEffect(() => {
+    try {
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (tz && tz !== "UTC" && US_TIMEZONES.some((t) => t.value === tz)) {
+        setFormData((prev) => ({ ...prev, timezone: tz }));
+        setDetectedTz(true);
+      }
+    } catch {
+      /* Detection failed — leave blank, user must pick */
+    }
+  }, []);
+
+  /* Get tomorrow's date as min for date picker */
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const minDate = tomorrow.toISOString().split("T")[0];
 
   const businessTypes = [
+    "HVAC",
+    "Plumbing",
+    "Roofing",
+    "Electrical",
     "Fitness / Gym",
     "Home Services",
     "Pet Care",
@@ -42,7 +90,17 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ...formData,
+          name: formData.name,
+          businessName: formData.businessName,
+          businessType: formData.businessType,
+          phone: formData.phone,
+          email: formData.email,
+          contact: formData.email,
+          preferredDate: formData.preferredDate,
+          preferredTime: formData.preferredTime,
+          timezone: formData.timezone,
+          challenge: formData.challenge,
+          smsConsent: formData.smsConsent,
           selectedTier: selectedTier
             ? selectedTier === "growth"
               ? "Growth Plan ($650 + $250/mo)"
@@ -54,16 +112,27 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || "Failed to submit inquiry.");
+        throw new Error(data.error || "Failed to submit request.");
       }
 
       setSubmitted(true);
-    } catch (err: any) {
-      setErrorMessage(err.message || "An unexpected error occurred. Please try again.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "An unexpected error occurred. Please try again.";
+      setErrorMessage(message);
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  /* Format date for display */
+  const formatDate = (dateStr: string) => {
+    if (!dateStr) return "";
+    const d = new Date(dateStr + "T12:00:00");
+    return d.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
+  };
+
+  /* Get timezone label */
+  const tzLabel = US_TIMEZONES.find((t) => t.value === formData.timezone)?.label || formData.timezone;
 
   return (
     <section
@@ -77,7 +146,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
           </div>
           <div className="text-center max-w-xl mx-auto mb-12">
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-950 dark:text-white mb-4">
-              Book a free 15-minute
+              Request a free 15-minute
               <br />
               <span className="text-zinc-500 dark:text-white/45 font-normal">
                 lead audit call.
@@ -124,12 +193,15 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                   <CheckCircle2 className="w-8 h-8 text-accent" />
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 dark:text-white tracking-tight">
-                  Inquiry Received!
+                  Request Received!
                 </h3>
                 <p className="text-zinc-600 dark:text-white/50 max-w-md mx-auto text-sm sm:text-base leading-relaxed">
-                  Thanks <span className="text-zinc-950 dark:text-white font-semibold">{formData.name}</span>. We've
-                  noted details for <span className="text-zinc-950 dark:text-white font-semibold">{formData.businessName}</span>.
-                  We'll review your lead flow and reach out within 4 business hours to lock in your call.
+                  Thanks <span className="text-zinc-950 dark:text-white font-semibold">{formData.name}</span>. We&apos;ve
+                  got the details for <span className="text-zinc-950 dark:text-white font-semibold">{formData.businessName}</span>.
+                  {formData.preferredDate && formData.preferredTime && (
+                    <> Your preferred time is {formatDate(formData.preferredDate)} at {formData.preferredTime} {tzLabel}.</>
+                  )}
+                  {" "}We&apos;ll confirm your call by email within one business day.
                 </p>
                 <div className="pt-4">
                   <button
@@ -140,14 +212,18 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                         name: "",
                         businessName: "",
                         businessType: "Home Services",
-                        contact: "",
+                        phone: "",
+                        email: "",
+                        preferredDate: "",
+                        preferredTime: "",
+                        timezone: "",
                         challenge: "",
                         smsConsent: false,
                       });
                     }}
                     className="btn-secondary px-6 py-2.5 rounded-lg text-sm font-medium cursor-pointer shadow-sm hover:shadow-accent-glow"
                   >
-                    Submit Another Inquiry
+                    Submit Another Request
                   </button>
                 </div>
               </div>
@@ -239,19 +315,19 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
 
                   <div>
                     <label
-                      htmlFor="contact"
+                      htmlFor="phone"
                       className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
                     >
-                      Phone or Email *
+                      Phone *
                     </label>
                     <input
-                      id="contact"
-                      type="text"
+                      id="phone"
+                      type="tel"
                       required
-                      placeholder="alex@brightsmile.com or (555) 019-2834"
-                      value={formData.contact}
+                      placeholder="+1 (555) 123-4567"
+                      value={formData.phone}
                       onChange={(e) =>
-                        setFormData({ ...formData, contact: e.target.value })
+                        setFormData({ ...formData, phone: e.target.value })
                       }
                       className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25 dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08]"
                     />
@@ -260,10 +336,99 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
 
                 <div>
                   <label
+                    htmlFor="email"
+                    className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
+                  >
+                    Email *
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    required
+                    placeholder="alex@brightsmile.com"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    className="w-full px-4 py-3 rounded-lg input-studio text-sm placeholder:text-zinc-400 dark:placeholder:text-white/25 dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08]"
+                  />
+                </div>
+
+                {/* Preferred date + time + timezone */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                  <div>
+                    <label
+                      htmlFor="preferredDate"
+                      className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
+                    >
+                      Preferred Date *
+                    </label>
+                    <input
+                      id="preferredDate"
+                      type="date"
+                      required
+                      min={minDate}
+                      value={formData.preferredDate}
+                      onChange={(e) =>
+                        setFormData({ ...formData, preferredDate: e.target.value })
+                      }
+                      className="w-full px-4 py-3 rounded-lg input-studio text-sm dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08] [color-scheme:light] dark:[color-scheme:dark]"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="preferredTime"
+                      className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
+                    >
+                      Preferred Time *
+                    </label>
+                    <select
+                      id="preferredTime"
+                      required
+                      value={formData.preferredTime}
+                      onChange={(e) =>
+                        setFormData({ ...formData, preferredTime: e.target.value })
+                      }
+                      className="w-full px-4 py-3 rounded-lg input-studio text-sm cursor-pointer dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08]"
+                    >
+                      <option value="" disabled className="text-zinc-400">Select time</option>
+                      {TIME_SLOTS.map((slot) => (
+                        <option key={slot} value={slot} className="bg-white dark:bg-[#1a1a2e] text-zinc-900 dark:text-white">{slot}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="timezone"
+                      className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
+                    >
+                      Time Zone *
+                    </label>
+                    <select
+                      id="timezone"
+                      required
+                      value={formData.timezone}
+                      onChange={(e) =>
+                        setFormData({ ...formData, timezone: e.target.value })
+                      }
+                      className="w-full px-4 py-3 rounded-lg input-studio text-sm cursor-pointer dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08]"
+                    >
+                      <option value="" disabled className="text-zinc-400">
+                        {detectedTz ? "Detected" : "Select zone"}
+                      </option>
+                      {US_TIMEZONES.map((tz) => (
+                        <option key={tz.value} value={tz.value} className="bg-white dark:bg-[#1a1a2e] text-zinc-900 dark:text-white">{tz.label}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label
                     htmlFor="challenge"
                     className="block text-xs uppercase tracking-wider text-zinc-700 dark:text-white/50 font-medium mb-2"
                   >
-                    What's your biggest challenge with leads or bookings right now?
+                    What&apos;s your biggest challenge with leads or bookings right now?
                   </label>
                   <textarea
                     id="challenge"
@@ -293,9 +458,9 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                     htmlFor="smsConsent"
                     className="text-xs text-zinc-600 dark:text-white/50 leading-relaxed cursor-pointer"
                   >
-                    I agree to receive SMS messages and calls from CloseCove regarding my inquiry, appointment reminders, and service updates. Message & data rates may apply. Reply STOP to opt out at any time.{" "}
+                    I agree to receive SMS messages and calls from CloseCove regarding my inquiry, appointment reminders, and service updates. Message &amp; data rates may apply. Reply STOP to opt out at any time.{" "}
                     <a
-                      href="/legal"
+                      href="/privacy"
                       target="_blank"
                       className="text-accent hover:underline"
                     >
@@ -313,11 +478,11 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-5 h-5 animate-spin" />
-                        <span>Sending details...</span>
+                        <span>Sending...</span>
                       </>
                     ) : (
                       <>
-                        <span>Book a Free Call</span>
+                        <span>Request your call</span>
                         <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                       </>
                     )}
@@ -325,7 +490,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                 </div>
 
                 <div className="text-center text-xs text-zinc-400 dark:text-white/30 pt-2">
-                  No payment required • 100% confidential • Direct response within 4 hours
+                  No payment required · 100% confidential · We&apos;ll confirm within one business day
                 </div>
               </form>
             )}
