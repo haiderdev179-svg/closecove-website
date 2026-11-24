@@ -34,7 +34,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     businessName: "",
-    businessType: "Home Services",
+    businessType: "",
     phone: "",
     email: "",
     preferredDate: "",
@@ -72,11 +72,14 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
     "Plumbing",
     "Roofing",
     "Electrical",
+    "Garage Door",
+    "Pest Control",
+    "Landscaping",
+    "Tree Service",
+    "Painting",
     "Fitness / Gym",
-    "Home Services",
-    "Pet Care",
     "Salon & Spa",
-    "Professional Services",
+    "Home Services",
     "Other",
   ];
 
@@ -149,12 +152,12 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
               Request a free 15-minute
               <br />
               <span className="text-zinc-500 dark:text-white/45 font-normal">
-                lead audit call.
+                call.
               </span>
             </h2>
             <p className="text-zinc-600 dark:text-white/50 text-base">
-              Tell us a bit about your business. We'll examine your current
-              response speed and show you exactly where leads are leaking.
+              Tell us a bit about your business and we'll show you how the
+              system would handle your missed calls.
             </p>
           </div>
         </FadeIn>
@@ -211,7 +214,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       setFormData({
                         name: "",
                         businessName: "",
-                        businessType: "Home Services",
+                        businessType: "",
                         phone: "",
                         email: "",
                         preferredDate: "",
@@ -301,6 +304,9 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       }
                       className="w-full px-4 py-3 rounded-lg input-studio text-sm cursor-pointer dark:text-white dark:bg-white/[0.05] dark:border-white/[0.08]"
                     >
+                      <option value="" disabled className="text-zinc-400">
+                        Select your trade
+                      </option>
                       {businessTypes.map((type) => (
                         <option
                           key={type}

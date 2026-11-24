@@ -118,7 +118,7 @@ export function DemoShowcase() {
                       <div className="w-5 h-5 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5">
                         <Check className="w-3 h-3 text-accent" />
                       </div>
-                      <span>Inspect the autonomous calendar reservation confirmation</span>
+                      <span>Inspect the calendar reservation confirmation</span>
                     </div>
                   </div>
 

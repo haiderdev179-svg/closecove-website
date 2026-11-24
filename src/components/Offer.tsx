@@ -19,7 +19,7 @@ export function Offer() {
       title: "Instant Lead Response",
       subtitle: "Chat + Missed-Call Text-Back",
       description:
-        "The moment an inbound caller hangs up or a website visitor asks a question, our AI responds instantly via SMS or web chat — securing the lead before they contact a competitor.",
+        "The moment an inbound caller hangs up or a website visitor asks a question, our AI responds within 60 seconds via SMS or web chat — securing the lead before they contact a competitor.",
     },
     {
       step: "02",
@@ -32,10 +32,10 @@ export function Offer() {
     {
       step: "03",
       icon: RefreshCw,
-      title: "Win-Back & Retention",
-      subtitle: "Lapsed Member Reactivation",
+      title: "Win-Back and Reminders",
+      subtitle: "Re-engage Past Customers",
       description:
-        "Automatically identifies inactive customers or past clients who haven't visited in 30+ days and triggers personalized, low-friction re-engagement messages to reactivate lost revenue.",
+        "Reach past customers when it's time for maintenance, a tune-up, or a new project, with a short personalized message.",
     },
   ];
 
@@ -53,13 +53,14 @@ export function Offer() {
             Three simple systems.
             <br />
             <span className="text-zinc-500 dark:text-white/45 font-normal">
-              Zero missed opportunities.
+              Fewer missed calls.
             </span>
           </h2>
           <p className="text-lg text-zinc-600 dark:text-white/50 font-normal max-w-2xl mb-16 leading-relaxed">
-            We don't sell bloated software dashboards. We install autonomous
+            We don't sell bloated software dashboards. We install
             lead capture and booking systems that work invisibly in the
             background using your existing phone numbers and calendar.
+            If it doesn't know the answer, it hands the conversation to you or your office. It never guesses.
           </p>
         </FadeIn>
 
@@ -97,7 +98,7 @@ export function Offer() {
 
                   <div className="pt-8 mt-6 border-t border-zinc-100 dark:border-white/[0.06] flex items-center gap-2 text-xs text-zinc-500 dark:text-white/35">
                     <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                    <span>Autonomous & fully managed</span>
+                    <span>Set up and managed for you</span>
                   </div>
                 </div>
               </FadeIn>

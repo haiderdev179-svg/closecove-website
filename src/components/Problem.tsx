@@ -27,7 +27,7 @@ export function Problem() {
           <p className="text-lg sm:text-xl text-white/70 leading-relaxed font-normal mb-16 max-w-3xl">
              Every week, high-intent prospects call, text, or message your
             business while you're serving customers, managing appointments, or
-            closed for the night. Faster response means significantly higher conversion.
+            closed for the night. Callers who don't get an answer often call the next company.
             When your response takes hours, that revenue quietly walks down the street to your competitor.
           </p>
         </FadeIn>
@@ -64,12 +64,12 @@ export function Problem() {
                   Delayed Inquiries
                 </h3>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  Inquiries that sit unanswered lose momentum quickly. Leads that
-                  don't hear back within a day rarely convert.
+                  Inquiries that sit unanswered lose momentum quickly. Callers who
+                  don't get an answer often call the next company.
                 </p>
               </div>
               <div className="pt-6 mt-6 border-t border-white/10 text-xs font-mono text-white/50">
-                Key takeaway: Leads that don't hear back within a day rarely convert
+                Key takeaway: Slow replies lose leads to the next listing
               </div>
             </div>
           </FadeIn>
@@ -81,7 +81,7 @@ export function Problem() {
                   <UserX className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">
-                  Silent Customer Churn
+                  Past customers go quiet
                 </h3>
                 <p className="text-sm text-white/70 leading-relaxed">
                   Regulars and past customers quietly stop booking without a

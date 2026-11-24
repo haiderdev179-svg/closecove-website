@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2, Play } from "lucide-react";
 
 export function Hero() {
@@ -40,10 +41,18 @@ export function Hero() {
         </h1>
 
         {/* Niche Value Proposition */}
-        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-zinc-600 dark:text-white/50 font-normal leading-relaxed mb-10 animate-fade-in animation-delay-200">
-          AI systems that catch every inbound lead your local business
-          would otherwise lose — responding in seconds and booking directly into
-          your schedule 24/7.
+        <p className="max-w-2xl mx-auto text-lg sm:text-xl text-zinc-600 dark:text-white/50 font-normal leading-relaxed mb-6 animate-fade-in animation-delay-200">
+          AI that texts back missed callers within 60 seconds and books the job,
+          so fewer leads slip away.
+        </p>
+
+        {/* Demo phone line */}
+        <p className="text-sm sm:text-base text-zinc-600 dark:text-white/50 mb-10 animate-fade-in animation-delay-200">
+          Try it yourself: call{" "}
+          <a href="tel:+18889950954" className="text-accent font-semibold hover:underline">
+            888-995-0954
+          </a>
+          , let it ring, and a text arrives within 60 seconds.
         </p>
 
         {/* CTAs with polished hover states */}
@@ -96,7 +105,6 @@ export function Hero() {
               <div className="absolute inset-0 flex flex-col bg-[#EDF2F7]" style={{ filter: 'blur(1.5px)' }}>
                 <div className="flex-1 flex flex-col items-center justify-center pb-5">
                   <h3 className="text-2xl sm:text-4xl md:text-[56px] font-extrabold tracking-tight leading-tight text-center px-5">
-                    <span className="mr-2">🎬</span>
                     <span className="text-zinc-900">See </span>
                     <span className="text-accent">CloseCove </span>
                     <span className="text-zinc-900">in </span>
@@ -153,7 +161,7 @@ export function Hero() {
         <div className="pt-8 border-t border-zinc-200 dark:border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in animation-delay-400">
           <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/55 text-sm">
             <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
-            <span className="font-medium">&lt; 30s Lead Response Time</span>
+            <span className="font-medium">Under 60 seconds Lead Response Time</span>
           </div>
           <div className="flex items-center justify-center gap-2 text-zinc-600 dark:text-white/55 text-sm">
             <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
@@ -163,6 +171,20 @@ export function Hero() {
             <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
             <span className="font-medium">No Extra Hiring Needed</span>
           </div>
+        </div>
+
+        {/* Founder block */}
+        <div className="flex items-center gap-4 max-w-xl mx-auto mt-12 animate-fade-in animation-delay-400">
+          <Image
+            src="/images/haider.png"
+            alt="Haider Ali — Founder, CloseCove"
+            width={56}
+            height={56}
+            className="rounded-full object-cover flex-none border-2 border-zinc-200 dark:border-white/20"
+          />
+          <p className="text-sm text-zinc-600 dark:text-white/50 text-left leading-relaxed">
+            I&apos;m Haider, and I built CloseCove myself. We&apos;re onboarding our first local clients, which is why the guarantee is on us, not you.
+          </p>
         </div>
       </div>
     </section>

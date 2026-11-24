@@ -86,18 +86,21 @@ export function Pricing({ onSelectTier }: PricingProps) {
                   </div>
                 </div>
 
+                <p className="text-xs text-zinc-500 dark:text-white/40 mb-6 leading-relaxed">
+                  Your first month of service is free. $300 setup refundable within 30 days if no clear results. No contract, cancel anytime.
+                </p>
+
                 <div className="space-y-3 mb-6">
                   <div className="text-xs uppercase tracking-wider text-zinc-500 dark:text-white/40 font-medium">
                     What is included:
                   </div>
                   {[
-                    "📞 24/7 Missed-Call AI Text-Back",
-                    "💬 Custom Website Booking Chat Agent",
-                    "📅 Google Calendar Sync",
-                    "🔄 Up to 300 conversations per month",
-                    "⚡ Instant SMS alerts for new leads",
-                    "📊 Owner Dashboard Panel",
-                    "✅ No long-term contract — cancel anytime",
+                    "Missed-call text-back within 60 seconds",
+                    "Website booking chat agent",
+                    "Google Calendar sync",
+                    "Up to 300 conversations per month",
+                    "Instant SMS and email alerts",
+                    "Owner dashboard",
                   ].map((feature) => (
                     <div
                       key={feature}
@@ -126,11 +129,6 @@ export function Pricing({ onSelectTier }: PricingProps) {
               className="card-interactive h-full rounded-2xl bg-white dark:bg-[#1c1c42] border border-transparent p-6 sm:p-7 flex flex-col justify-between relative shadow-md dark:shadow-none hover:shadow-xl hover:shadow-accent-glow hover:-translate-y-1 transition-all duration-300 ease-out ring-1 ring-zinc-200/50 dark:ring-transparent"
               onMouseMove={setSpotlightPosition}
             >
-              {/* Accent Badge */}
-              <div className="absolute -top-2.5 right-8 px-3 py-0.5 rounded-full bg-accent text-white text-[10px] font-semibold uppercase tracking-wider shadow-sm w-fit">
-                Most Popular
-              </div>
-
               <div>
                 <div className="text-xs font-mono uppercase tracking-wider text-accent mb-2 font-semibold">
                   Growth Tier
@@ -139,7 +137,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                   Growth & Retention
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-white/50 mb-4 leading-relaxed">
-                  For growing businesses wanting to both capture every new lead and systematically revive lapsed clients
+                  For retention and win-back
                 </p>
 
                 <div className="mb-6 p-4 rounded-xl bg-blue-50/60 dark:bg-accent/10 border border-blue-100/80 dark:border-accent/20">
@@ -159,14 +157,13 @@ export function Pricing({ onSelectTier }: PricingProps) {
                   <div className="text-xs uppercase tracking-wider text-zinc-500 dark:text-white/40 font-medium">
                     What is included:
                   </div>
-                  <div className="text-xs text-zinc-500 dark:text-white/35 font-medium pb-1">
-                    Everything in Starter, plus:
-                  </div>
                   {[
-                    "🔁 Automated Win-Back & Retention Workflows",
-                    "🎯 Custom Lead Qualification & Screening Logic",
-                    "♾️ Unlimited conversations per month",
-                    "📊 Monthly check-in call to review performance",
+                    "Everything in Starter",
+                    "Automated win-back and reminder workflows",
+                    "Custom lead qualification and screening",
+                    "Unlimited conversations",
+                    "Monthly check-in call",
+                    "Lead audit: we test how your business handles missed calls and show you the gaps",
                   ].map((feature) => (
                     <div
                       key={feature}

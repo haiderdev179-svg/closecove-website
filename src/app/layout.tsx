@@ -11,14 +11,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://closecove.com"),
-  title: "CloseCove — Turn Missed Opportunities Into Booked Customers",
+  title: "CloseCove | Missed-call text-back for local service businesses",
   description:
-    "AI automation systems that catch every lead your local business would otherwise lose. Instant 60-second response, autonomous booking, and retention.",
+    "When you can't answer, CloseCove texts the caller back within 60 seconds and books the appointment. $300 setup, no contract, 30-day money-back guarantee.",
   keywords: [
-    "AI Automation",
+    "Missed Call Text Back",
     "Local Business Automation",
     "Lead Capture",
-    "Missed Call Text Back",
     "Automated Booking",
     "CloseCove",
   ],
@@ -28,21 +27,28 @@ export const metadata: Metadata = {
     apple: "/closecove-icon-512.png",
   },
   openGraph: {
-    title: "CloseCove — Turn Missed Opportunities Into Booked Customers",
+    title: "CloseCove | Missed-call text-back for local service businesses",
     description:
-      "AI systems that catch every lead your local business would otherwise lose.",
+      "When you can't answer, CloseCove texts the caller back within 60 seconds and books the appointment. $300 setup, no contract, 30-day money-back guarantee.",
     url: "https://closecove.com",
     siteName: "CloseCove",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/closecove-icon-512.png",
-        width: 512,
-        height: 512,
-        alt: "CloseCove logo",
+        url: "/images/og-closecove.png",
+        width: 1200,
+        height: 630,
+        alt: "CloseCove — Missed-call text-back for local service businesses",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CloseCove | Missed-call text-back for local service businesses",
+    description:
+      "When you can't answer, CloseCove texts the caller back within 60 seconds and books the appointment. $300 setup, no contract, 30-day money-back guarantee.",
+    images: ["/images/og-closecove.png"],
   },
   robots: {
     index: true,
