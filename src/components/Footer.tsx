@@ -20,8 +20,8 @@ export function Footer() {
             className="transition-transform duration-200 hover:scale-105"
           />
           <p className="text-xs text-white/60 max-w-sm leading-relaxed">
-            Turn missed opportunities into booked customers. AI lead capture &
-            autonomous scheduling systems for local businesses.
+            Turn missed opportunities into booked customers. AI missed-call
+            text-back and booking systems for local businesses.
           </p>
         </div>
 

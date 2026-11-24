@@ -44,12 +44,12 @@ export function Problem() {
                   Unanswered Calls
                 </h3>
                 <p className="text-sm text-white/70 leading-relaxed">
-                  Most calls during busy hours or after closing go unanswered.
-                  Callers rarely leave voicemails — they move on to the next listing.
+                  Calls during busy hours or after closing often go unanswered,
+                  and many callers move on to the next listing.
                 </p>
               </div>
               <div className="pt-6 mt-6 border-t border-white/10 text-xs font-mono text-white/50">
-                Key takeaway: Most calls during busy hours go unanswered
+                Key takeaway: Unanswered calls often go to the next company
               </div>
             </div>
           </FadeIn>

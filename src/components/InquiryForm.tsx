@@ -271,7 +271,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                       id="businessName"
                       type="text"
                       required
-                      placeholder="Bright Smile Dental"
+                      placeholder="Summit Roofing"
                       value={formData.businessName}
                       onChange={(e) =>
                         setFormData({
@@ -351,7 +351,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                     id="email"
                     type="email"
                     required
-                    placeholder="alex@brightsmile.com"
+                    placeholder="alex@summitroofing.com"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
