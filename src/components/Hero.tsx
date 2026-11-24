@@ -92,6 +92,27 @@ export function Hero() {
           </a>
         </div>
 
+        {/* Trade page links */}
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-12 animate-fade-in animation-delay-300">
+          <span className="text-xs uppercase tracking-widest text-zinc-400 dark:text-white/35 font-semibold mr-1">
+            Built for your trade
+          </span>
+          {[
+            { label: "HVAC", href: "/hvac" },
+            { label: "Plumbing", href: "/plumbing" },
+            { label: "Roofing", href: "/roofing" },
+            { label: "Electrical", href: "/electrical" },
+          ].map((trade) => (
+            <a
+              key={trade.href}
+              href={trade.href}
+              className="px-4 py-1.5 rounded-full border border-zinc-200/80 dark:border-white/[0.08] bg-white/80 dark:bg-white/[0.05] text-xs font-medium text-zinc-700 dark:text-white/60 hover:border-accent hover:text-accent dark:hover:text-accent transition-colors duration-200"
+            >
+              {trade.label}
+            </a>
+          ))}
+        </div>
+
         {/* Explainer video — loads only when the visitor presses play */}
         <div
           id="watch"

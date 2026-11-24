@@ -59,6 +59,22 @@ export function Footer() {
             <span>FAQ</span>
             <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
           </Link>
+          <Link href="/hvac" className="relative hover:text-white transition-colors duration-200 py-1 group">
+            <span>HVAC</span>
+            <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
+          </Link>
+          <Link href="/plumbing" className="relative hover:text-white transition-colors duration-200 py-1 group">
+            <span>Plumbing</span>
+            <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
+          </Link>
+          <Link href="/roofing" className="relative hover:text-white transition-colors duration-200 py-1 group">
+            <span>Roofing</span>
+            <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
+          </Link>
+          <Link href="/electrical" className="relative hover:text-white transition-colors duration-200 py-1 group">
+            <span>Electrical</span>
+            <span className="absolute -bottom-0.5 left-0 w-full h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-center rounded-full" />
+          </Link>
         </div>
 
         {/* Contact info & back to top */}
