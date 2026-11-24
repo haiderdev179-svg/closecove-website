@@ -91,7 +91,7 @@ function HeroSection() {
 
           <FadeIn delay={100}>
             <p className="text-[19px] text-[#3B5565] mb-7 max-w-[520px]">
-              When you can&apos;t answer, CloseCove texts the caller back within about a minute, answers common questions, and books the estimate.
+              When you can&apos;t answer, CloseCove texts the caller back within 60 seconds, answers common questions, and books the estimate.
             </p>
           </FadeIn>
 
@@ -111,7 +111,7 @@ function HeroSection() {
                   +1 (888) 995-0954
                 </a>
                 <div className="text-sm text-[#3B5565]">
-                  Call, let it ring, and a text arrives within about a minute.
+                  Call, let it ring, and a text arrives within 60 seconds.
                 </div>
               </div>
             </div>
@@ -225,7 +225,7 @@ function HowItWorksSection() {
           <div className="text-center mb-10">
             <p className="text-[12px] font-medium tracking-[1.5px] text-[#F26A21] mb-2 uppercase">How it works</p>
             <h2 className="font-extrabold text-[clamp(28px,4vw,42px)] tracking-[-0.01em]">
-              Three steps. Zero effort.
+              Three steps. No extra work for you.
             </h2>
           </div>
         </FadeIn>
@@ -256,7 +256,7 @@ function HowItWorksSection() {
               <div className="bg-[#EAF2F6] rounded-[16px] p-5 mb-5 border border-[#C3D8E3]/50">
                 <h3 className="font-bold text-[17px] mb-1">A customer calls. You&apos;re busy.</h3>
                 <p className="text-[13px] text-[#3B5565] leading-relaxed mb-3">
-                  On a roof, mid-inspection, with another client — it happens 10+ times a day.
+                  On a roof, mid-inspection, with another client. Calls slip through.
                 </p>
                 <div className="bg-[#FDE8E8] rounded-lg px-3 py-2.5 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#D92D20] flex items-center justify-center flex-none">
@@ -264,7 +264,7 @@ function HowItWorksSection() {
                   </div>
                   <div>
                     <p className="text-[12px] font-semibold text-[#7F1D1D]">Missed call</p>
-                    <p className="text-[11px] text-[#991B1B]">+1 (555) 234-8901 · Just now</p>
+                    <p className="text-[11px] text-[#991B1B]">Unknown caller · Just now</p>
                   </div>
                 </div>
               </div>
@@ -272,9 +272,9 @@ function HowItWorksSection() {
 
             <FadeIn delay={120}>
               <div className="bg-[#EAF2F6] rounded-[16px] p-5 mb-5 border border-[#C3D8E3]/50">
-                <h3 className="font-bold text-[17px] mb-1">CloseCove texts them back instantly.</h3>
+                <h3 className="font-bold text-[17px] mb-1">CloseCove texts them back within 60 seconds.</h3>
                 <p className="text-[13px] text-[#3B5565] leading-relaxed mb-3">
-                  Within about a minute, our AI sends a friendly text, collects details, and books the job.
+                  Our AI sends a friendly text, collects details, and books the job.
                 </p>
                 <div className="bg-white rounded-lg px-3 py-3 flex flex-col gap-1.5 border border-[#C3D8E3]/50">
                   <div className="flex justify-start">
@@ -373,7 +373,7 @@ function HandoffSection() {
    ═══════════════════════════════════════════════════════════════ */
 function PricingSection() {
   const checks = [
-    "Automatic text-back within about a minute",
+    "Automatic text-back within 60 seconds",
     "Smart conversation that books appointments",
     "Dashboard with missed calls and jobs booked",
     "Instant alerts when a job is booked",
@@ -654,7 +654,7 @@ function FounderSection() {
               <h3 className="text-white font-bold text-[20px] mb-3">Want to see it first?</h3>
               <p className="text-[#8FA8B8] text-[15px] mb-6 leading-relaxed">
                 Call our demo line. Let it ring, hang up, and watch the
-                text arrive on your phone within about a minute.
+                text arrive on your phone within 60 seconds.
               </p>
               <div className="flex items-center gap-4 bg-white/[0.06] border border-white/10 rounded-xl px-5 py-4">
                 <div className="relative w-[44px] h-[44px] flex-none">
