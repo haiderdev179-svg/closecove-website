@@ -13,11 +13,34 @@ import {
   Check,
   Shield,
   Bell,
-  UserPlus,
   CheckCircle2,
   Loader2,
   ArrowRight,
 } from "lucide-react";
+
+/* ═══════════════════════════════════════════════════════════════
+   META
+   ═══════════════════════════════════════════════════════════════ */
+export const metadata = {
+  title: "Missed-call text-back for HVAC companies | CloseCove",
+  description:
+    "When your office is closed or your techs are out on jobs, CloseCove texts the caller back within about a minute and books the appointment. $300 setup, no contract, 30-day money-back guarantee.",
+  openGraph: {
+    title: "Missed-call text-back for HVAC companies | CloseCove",
+    description:
+      "When your office is closed or your techs are out on jobs, CloseCove texts the caller back within about a minute and books the appointment. $300 setup, no contract, 30-day money-back guarantee.",
+    url: "https://www.closecove.com/hvac",
+    images: [{ url: "/images/og-hvac.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Missed-call text-back for HVAC companies | CloseCove",
+    description:
+      "When your office is closed or your techs are out on jobs, CloseCove texts the caller back within about a minute and books the appointment. $300 setup, no contract, 30-day money-back guarantee.",
+    images: ["/images/og-hvac.png"],
+  },
+};
 
 /* ═══════════════════════════════════════════════════════════════
    US TIMEZONE OPTIONS (IANA)
@@ -94,7 +117,7 @@ function HeroSection() {
           <FadeIn delay={100}>
             <p className="text-[19px] text-[#3B5565] mb-7 max-w-[520px]">
               When your office is closed or your techs are out on jobs,
-              CloseCove texts the caller back within 60 seconds and books
+              CloseCove texts the caller back within about a minute and books
               the appointment.
             </p>
           </FadeIn>
@@ -117,7 +140,7 @@ function HeroSection() {
                   +1 (888) 995-0954
                 </a>
                 <div className="text-sm text-[#3B5565]">
-                  Call, let it ring, and a text arrives within 60 seconds.
+                  Call, let it ring, and a text arrives within about a minute.
                 </div>
               </div>
             </div>
@@ -162,7 +185,9 @@ function PhoneMockup() {
 
   return (
     <div className="relative">
-      <p className="text-[11px] uppercase tracking-[1.5px] text-[#3B5565] font-medium text-center mb-3">Sample conversation</p>
+      <p className="text-[11px] uppercase tracking-[1.5px] text-[#3B5565] font-medium text-center mb-3">
+        Sample conversation. Names and details are made up.
+      </p>
       <div className="absolute w-[420px] h-[420px] rounded-full bg-[#FFD7BD] top-[90px] left-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div className="relative w-[340px] bg-[#10222F] rounded-[42px] p-3 shadow-2xl shadow-black/20">
@@ -290,7 +315,7 @@ function HowItWorksSection() {
               <div className="bg-[#EAF2F6] rounded-[16px] p-5 mb-5 border border-[#C3D8E3]/50">
                 <h3 className="font-bold text-[17px] mb-1">CloseCove texts them back instantly.</h3>
                 <p className="text-[13px] text-[#3B5565] leading-relaxed mb-3">
-                  Within 60 seconds, our AI sends a friendly text, collects details, and books the job.
+                  Within about a minute, our AI sends a friendly text, collects details, and books the job.
                 </p>
                 <div className="bg-white rounded-lg px-3 py-3 flex flex-col gap-1.5 border border-[#C3D8E3]/50">
                   <div className="flex justify-start">
@@ -375,7 +400,7 @@ function HandoffSection() {
    ═══════════════════════════════════════════════════════════════ */
 function PricingSection() {
   const checks = [
-    "Automatic text-back within 60 seconds",
+    "Automatic text-back within about a minute",
     "Smart conversation that books appointments",
     "Dashboard with missed calls and jobs booked",
     "Instant alerts when a job is booked",
@@ -413,7 +438,7 @@ function PricingSection() {
             </div>
 
             <p className="text-[13px] text-[#8FA8B8] mb-6 pb-6 border-b border-[#3B5565]">
-              Your first month of service is free. No contract — cancel anytime.
+              Your first month of service is free. $300 setup refundable within 30 days if no clear results. No contract — cancel anytime.
             </p>
 
             {/* Feature list */}
@@ -617,7 +642,7 @@ function FounderSection() {
                       Business Name *
                     </label>
                     <input
-                      id="businessName" type="text" required placeholder="Morgan Heating & Cooling"
+                      id="businessName" type="text" required placeholder="Morgan Heating &amp; Cooling"
                       value={formData.businessName}
                       onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
                       className="w-full px-4 py-3 rounded-lg bg-white/[0.06] border border-white/10 text-white text-sm placeholder:text-white/25 focus:outline-none focus:border-[#F26A21]/50 focus:ring-1 focus:ring-[#F26A21]/30 transition-colors"
@@ -751,7 +776,7 @@ function FounderSection() {
               <h3 className="text-white font-bold text-[20px] mb-3">Want to see it first?</h3>
               <p className="text-[#8FA8B8] text-[15px] mb-6 leading-relaxed">
                 Call our demo line. Let it ring, hang up, and watch the
-                text arrive on your phone within 60 seconds.
+                text arrive on your phone within about a minute.
               </p>
               <div className="flex items-center gap-4 bg-white/[0.06] border border-white/10 rounded-xl px-5 py-4">
                 <div className="relative w-[44px] h-[44px] flex-none">
@@ -768,6 +793,11 @@ function FounderSection() {
                 </div>
               </div>
             </div>
+
+            {/* Safety line */}
+            <p className="text-[11px] text-[#8FA8B8]/50 mt-4 leading-relaxed">
+              If you smell gas or suspect carbon monoxide, leave the building and call 911.
+            </p>
           </FadeIn>
         </div>
       </div>
