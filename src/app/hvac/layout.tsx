@@ -1,29 +1,26 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Missed-Call Text-Back for HVAC | CloseCove",
+  title: "Missed-call text-back for HVAC companies | CloseCove",
   description:
-    "Never lose an HVAC lead to a missed call again. CloseCove texts your caller back, collects the job details, and books the appointment — all automatically.",
+    "When your office is closed or your techs are out on jobs, CloseCove texts the caller back within about a minute and books the appointment. $300 setup, no contract, 30-day money-back guarantee.",
   openGraph: {
-    title: "Missed-Call Text-Back for HVAC | CloseCove",
+    title: "Missed-call text-back for HVAC companies | CloseCove",
     description:
-      "Never lose an HVAC lead to a missed call again. CloseCove texts your caller back, collects the job details, and books the appointment — all automatically.",
+      "When your office is closed or your techs are out on jobs, CloseCove texts the caller back within about a minute and books the appointment. $300 setup, no contract, 30-day money-back guarantee.",
     url: "https://www.closecove.com/hvac",
-    siteName: "CloseCove",
+    images: [{ url: "/images/og-hvac.png", width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Missed-Call Text-Back for HVAC | CloseCove",
+    title: "Missed-call text-back for HVAC companies | CloseCove",
     description:
-      "Never lose an HVAC lead to a missed call again. CloseCove texts your caller back, collects the job details, and books the appointment — all automatically.",
+      "When your office is closed or your techs are out on jobs, CloseCove texts the caller back within about a minute and books the appointment. $300 setup, no contract, 30-day money-back guarantee.",
+    images: ["/images/og-hvac.png"],
   },
 };
 
-export default function HVACLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function HVACLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
