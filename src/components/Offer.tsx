@@ -42,7 +42,7 @@ export function Offer() {
   return (
     <section
       id="offer"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0a0a1a] dark:to-[#0a0a1a]"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#EAF2F6] to-[#F2F7FA] dark:from-[#0a0a1a] dark:to-[#0a0a1a]"
     >
       <div className="max-w-5xl mx-auto">
         <FadeIn>

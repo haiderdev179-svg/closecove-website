@@ -31,7 +31,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
   return (
     <section
       id="pricing"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0f0f24] dark:to-[#0f0f24]"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#EAF2F6] to-[#F2F7FA] dark:from-[#0f0f24] dark:to-[#0f0f24]"
     >
       <div className="max-w-5xl mx-auto">
         <FadeIn>
@@ -140,7 +140,7 @@ export function Pricing({ onSelectTier }: PricingProps) {
                   For retention and win-back
                 </p>
 
-                <div className="mb-6 p-4 rounded-xl bg-blue-50/60 dark:bg-accent/10 border border-blue-100/80 dark:border-accent/20">
+                <div className="mb-6 p-4 rounded-xl bg-orange-50/60 dark:bg-accent/10 border border-orange-100/80 dark:border-accent/20">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-zinc-950 dark:text-white tracking-tight">
                       $650

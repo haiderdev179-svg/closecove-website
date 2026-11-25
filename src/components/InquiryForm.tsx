@@ -140,7 +140,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
   return (
     <section
       id="inquire"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0f0f24] dark:to-[#0f0f24] relative"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#EAF2F6] to-[#F2F7FA] dark:from-[#0f0f24] dark:to-[#0f0f24] relative"
     >
       <div className="max-w-3xl mx-auto">
         <FadeIn>
@@ -192,7 +192,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
             {submitted ? (
               /* Success State Card */
               <div className="py-12 text-center space-y-5 animate-fade-in">
-                <div className="w-16 h-16 rounded-full bg-blue-50 dark:bg-accent/10 border border-blue-100 dark:border-accent/20 flex items-center justify-center mx-auto text-accent shadow-xs dark:shadow-none">
+                <div className="w-16 h-16 rounded-full bg-orange-50 dark:bg-accent/10 border border-orange-100 dark:border-accent/20 flex items-center justify-center mx-auto text-accent shadow-xs dark:shadow-none">
                   <CheckCircle2 className="w-8 h-8 text-accent" />
                 </div>
                 <h3 className="text-2xl sm:text-3xl font-bold text-zinc-950 dark:text-white tracking-tight">
@@ -458,7 +458,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                     onChange={(e) =>
                       setFormData({ ...formData, smsConsent: e.target.checked })
                     }
-                    className="mt-1 w-4 h-4 rounded border-zinc-300 dark:border-white/20 text-accent focus:ring-accent/50 cursor-pointer accent-[#3678F2]"
+                    className="mt-1 w-4 h-4 rounded border-zinc-300 dark:border-white/20 text-accent focus:ring-accent/50 cursor-pointer accent-[#F26A21]"
                   />
                   <label
                     htmlFor="smsConsent"
@@ -479,7 +479,7 @@ export function InquiryForm({ selectedTier, onClearTier }: InquiryFormProps) {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-accent w-full py-4 rounded-lg text-base font-semibold flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed group shadow-sm hover:shadow-accent-glow text-white"
+                    className="btn-accent w-full py-4 rounded-lg text-base font-semibold flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed group shadow-sm hover:shadow-accent-glow text-[#10222F]"
                   >
                     {isSubmitting ? (
                       <>

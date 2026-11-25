@@ -8,10 +8,10 @@ export function DemoShowcase() {
   return (
     <section
       id="demo"
-      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0f0f24] dark:to-[#0f0f24] relative overflow-hidden"
+      className="py-24 md:py-32 px-6 border-t border-zinc-200/60 dark:border-transparent bg-gradient-to-b from-[#EAF2F6] to-[#F2F7FA] dark:from-[#0f0f24] dark:to-[#0f0f24] relative overflow-hidden"
     >
       {/* Ambient glow elements for demo section */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-blue-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-orange-400/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         <FadeIn>

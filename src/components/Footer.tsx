@@ -7,17 +7,17 @@ export function Footer() {
   return (
     <footer className="border-t border-white/10 dark-section dark:bg-none dark:!bg-[#0f0f24] py-16 px-6 relative overflow-hidden">
       {/* Ambient glow elements for footer */}
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-gradient-to-br from-blue-500/10 to-transparent blur-3xl opacity-50 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-gradient-to-br from-indigo-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-gradient-to-br from-orange-400/10 to-transparent blur-3xl opacity-50 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-gradient-to-br from-amber-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
       
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 relative z-10">
         <div className="space-y-3">
           <Image
-            src="/closecove-icon-512.png"
+            src="/images/closecove-logo-hvac.png"
             alt="CloseCove"
-            width={32}
+            width={120}
             height={32}
-            className="transition-transform duration-200 hover:scale-105"
+            className="h-[32px] w-auto transition-transform duration-200 hover:scale-105"
           />
           <p className="text-xs text-white/60 max-w-sm leading-relaxed">
             Turn missed opportunities into booked customers. AI missed-call

@@ -18,15 +18,15 @@ export function Hero() {
   };
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 px-6 overflow-hidden bg-gradient-to-b from-[#F5F7FA] to-[#FAFAFA] dark:from-[#0a0a1a] dark:to-[#0a0a1a]">
+    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 px-6 overflow-hidden bg-gradient-to-b from-[#EAF2F6] to-[#F2F7FA] dark:from-[#0a0a1a] dark:to-[#0a0a1a]">
       {/* Ambient glow elements */}
-      <div className="absolute -top-48 -right-48 w-96 h-96 rounded-full bg-gradient-to-br from-blue-500/10 to-transparent blur-3xl opacity-50 pointer-events-none" />
-      <div className="absolute top-1/4 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-indigo-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
+      <div className="absolute -top-48 -right-48 w-96 h-96 rounded-full bg-gradient-to-br from-orange-400/10 to-transparent blur-3xl opacity-50 pointer-events-none" />
+      <div className="absolute top-1/4 -left-40 w-80 h-80 rounded-full bg-gradient-to-br from-amber-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         {/* Subtitle / positioning pill */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-200/80 dark:border-white/[0.08] bg-white/80 dark:bg-white/[0.05] backdrop-blur-sm text-xs uppercase tracking-widest mb-8 animate-fade-in shadow-sm dark:shadow-none transition-all duration-300 font-semibold">
-          <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_3px_rgba(0,102,255,0.7)]" />
+          <span className="w-2 h-2 rounded-full bg-accent animate-pulse shadow-[0_0_10px_3px_rgba(242,106,33,0.7)]" />
           <span><span className="text-zinc-900 dark:text-white/80">AI Automation</span> <span className="text-zinc-400 dark:text-white/40">for Local Businesses</span></span>
         </div>
 
@@ -136,7 +136,7 @@ export function Hero() {
                 </div>
                 <div className="w-full mt-auto">
                   <svg viewBox="0 0 800 50" preserveAspectRatio="none" className="block w-full h-[30px]" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0,35 C150,10 350,48 500,30 C650,10 750,40 800,25 L800,50 L0,50 Z" fill="#0066FF"/>
+                    <path d="M0,35 C150,10 350,48 500,30 C650,10 750,40 800,25 L800,50 L0,50 Z" fill="#F26A21"/>
                   </svg>
                   <div className="bg-accent px-5 py-2 flex items-center justify-between gap-3">
                     <div className="flex items-center gap-3.5 text-[11px] text-white font-medium">

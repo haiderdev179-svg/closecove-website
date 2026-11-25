@@ -9,8 +9,8 @@ export function Problem() {
       className="py-24 md:py-32 px-6 border-t border-white/10 dark-section relative overflow-hidden"
     >
       {/* Ambient glow elements for dark section */}
-      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-gradient-to-br from-blue-500/10 to-transparent blur-3xl opacity-50 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-gradient-to-br from-indigo-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-gradient-to-br from-orange-400/10 to-transparent blur-3xl opacity-50 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-gradient-to-br from-amber-500/8 to-transparent blur-3xl opacity-50 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10">
         <FadeIn>
