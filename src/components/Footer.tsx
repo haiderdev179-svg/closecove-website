@@ -13,7 +13,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8 relative z-10">
         <div className="space-y-3">
           <Image
-            src="/images/closecove-logo-hvac.png"
+            src="/images/closecove-logo-hvac-light.png"
             alt="CloseCove"
             width={120}
             height={32}
